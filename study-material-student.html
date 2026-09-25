@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Study Material | UPSC Student Portal</title>
+<meta name="description" content="UPSC student portal study material library with subject filters, progress tracking, saved resources and premium access." />
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--cream:#f7f4ed;--ink:#18212b;--muted:#667085;--white:#fff;--line:#e5e7eb;--green:#198754;--soft:#f7f9fc;--red:#b42318;--shadow:0 12px 30px rgba(16,36,62,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#f7f9fc;line-height:1.5}a{text-decoration:none;color:inherit}button,input,select{font:inherit}.container{max-width:1280px;margin:auto;padding:0 22px}
+.topbar{height:68px;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}.topnav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:9px;font-weight:850;color:var(--navy);font-size:17px}.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.nav-right{display:flex;align-items:center;gap:11px}.search{width:240px;height:38px;border:1px solid var(--line);border-radius:9px;padding:0 12px;color:var(--ink);outline:none;background:#fff}.search:focus{border-color:#9dbedd;box-shadow:0 0 0 3px rgba(29,95,167,.08)}.notif{width:38px;height:38px;border:1px solid var(--line);border-radius:9px;background:#fff;position:relative;cursor:pointer}.notif-dot{position:absolute;right:8px;top:7px;width:6px;height:6px;border-radius:50%;background:#d94841}.profile{display:flex;align-items:center;gap:9px}.avatar{width:34px;height:34px;border-radius:50%;background:#e8eef5;color:var(--navy);display:grid;place-items:center;font-size:11px;font-weight:900}.profile-name{font-size:11px;font-weight:900;color:var(--navy)}.profile-sub{font-size:9px;color:var(--muted);margin-top:1px}.mobile-menu{display:none}
+.layout{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 68px)}.sidebar{background:#fff;border-right:1px solid var(--line);padding:19px 13px;position:sticky;top:68px;height:calc(100vh - 68px)}.side-label{font-size:9px;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#98a2b3;padding:10px 10px 7px}.side-nav{display:grid;gap:3px}.side-nav a,.side-btn{display:flex;align-items:center;gap:10px;padding:10px 11px;border-radius:9px;border:0;background:transparent;color:#4a5565;font-size:11px;font-weight:800;cursor:pointer;text-align:left;width:100%}.side-nav a:hover,.side-nav a.active,.side-btn:hover{background:#edf4fb;color:var(--blue)}.side-nav .icon{width:20px;text-align:center;font-size:13px}.side-bottom{position:absolute;left:13px;right:13px;bottom:16px}.upgrade{background:var(--navy);color:#fff;border-radius:12px;padding:13px}.upgrade small{display:block;color:#b7c3d1;font-size:9px;margin-bottom:3px}.upgrade strong{display:block;font-size:11px;line-height:1.35}.upgrade a{display:inline-flex;margin-top:8px;background:#fff;color:var(--navy);padding:7px 9px;border-radius:7px;font-size:10px;font-weight:900}
+.main{padding:27px 0 52px}.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}.eyebrow{display:inline-flex;align-items:center;gap:7px;background:#eaf2fb;color:var(--blue);border-radius:999px;padding:6px 10px;font-size:9px;text-transform:uppercase;letter-spacing:.06em;font-weight:900}.page-head h1{font-size:32px;line-height:1.08;letter-spacing:-.04em;color:var(--navy);margin:10px 0 5px}.page-head p{margin:0;color:var(--muted);font-size:12px;max-width:760px}.date-badge{padding:8px 11px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#556274;font-size:10px;font-weight:800;white-space:nowrap}
+.hero-strip{display:grid;grid-template-columns:1.2fr .8fr;gap:15px;margin-bottom:18px}.feature{border-radius:16px;border:1px solid #d7e1eb;background:linear-gradient(135deg,#eef5fb,#fff);padding:20px;min-height:176px}.feature .label{font-size:9px;font-weight:900;color:var(--blue);letter-spacing:.06em;text-transform:uppercase}.feature h2{font-size:20px;color:var(--navy);line-height:1.25;margin:8px 0 7px}.feature p{font-size:11px;color:#5d6878;margin:0;max-width:670px}.feature-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:14px}.btn{border:1px solid transparent;border-radius:8px;padding:9px 12px;font-size:10px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}.btn-primary{background:var(--blue);color:#fff}.btn-ghost{background:#fff;border-color:var(--line);color:var(--navy)}.mini-stat-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:18px;display:flex;flex-direction:column;justify-content:space-between}.mini-stat-title{font-size:10px;font-weight:850;color:#6b7583}.mini-big{font-size:28px;font-weight:900;color:var(--navy);letter-spacing:-.03em;margin-top:5px}.mini-note{font-size:10px;color:var(--green);font-weight:850}
+.toolbar{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;box-shadow:0 7px 20px rgba(16,36,62,.03);margin-bottom:18px}.search-row{display:grid;grid-template-columns:1.5fr repeat(3,1fr) auto;gap:9px}.field label{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:#7c8795;font-weight:900;margin-bottom:5px}.input,.select{width:100%;height:40px;border:1px solid #d6dce3;border-radius:8px;padding:0 10px;font-size:11px;color:var(--ink);outline:none;background:#fff}.input:focus,.select:focus{border-color:#9dbedd;box-shadow:0 0 0 3px rgba(29,95,167,.08)}.toolbar-actions{display:flex;align-items:end}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.tab{border:1px solid #dfe4e8;background:#fff;border-radius:999px;padding:7px 10px;color:#5e6977;font-size:9px;font-weight:900;cursor:pointer}.tab.active{background:#edf4fb;color:var(--blue);border-color:#cbddea}.reset{border:0;background:transparent;color:var(--blue);font-size:10px;font-weight:900;cursor:pointer;margin-left:auto}
+.content-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:17px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:15px 17px;border-bottom:1px solid #eef0f2;display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-head h2{margin:0;font-size:14px;color:var(--navy)}.panel-head .small{font-size:9px;color:var(--muted)}.resource-list{padding:14px 17px;display:grid;gap:10px}.resource{border:1px solid #e8ebee;border-radius:13px;padding:15px;background:#fff}.resource-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{padding:4px 7px;border-radius:999px;border:1px solid #dde4ea;background:#f8fbfd;color:#526274;font-size:9px;font-weight:900}.chip.blue{background:#edf5fc;border-color:#cbe0f1;color:var(--blue)}.chip.gold{background:#fbf6e6;border-color:#eadfb9;color:#8d6c13}.chip.green{background:#eef8f3;border-color:#cbe7d7;color:#18794e}.save{border:1px solid #dde3e8;background:#fff;border-radius:8px;width:30px;height:30px;cursor:pointer;color:#7b8794}.save.saved{background:#fbf3d9;border-color:#eadba8;color:#7c5f0d}.resource h3{margin:9px 0 6px;font-size:16px;line-height:1.35;color:var(--navy)}.resource p{margin:0;color:#596575;font-size:11px}.resource-meta{display:flex;gap:13px;flex-wrap:wrap;margin-top:9px;color:#8993a0;font-size:9px}.resource-progress{height:6px;border-radius:999px;background:#edf0f3;margin-top:12px;overflow:hidden}.resource-progress>span{display:block;height:100%;background:var(--blue);border-radius:inherit}.resource-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}.progress-label{font-size:9px;color:#7c8795;font-weight:800}.article-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.text-btn{border:0;background:transparent;color:var(--blue);font-size:9px;font-weight:900;cursor:pointer;padding:0}.countline{padding:0 17px 13px;color:#808b98;font-size:9px}
+.side{display:grid;gap:14px;height:max-content}.side-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:16px}.side-card h3{margin:0 0 11px;color:var(--navy);font-size:14px}.category-list{display:grid;gap:7px}.cat{display:flex;justify-content:space-between;align-items:center;border:1px solid #edf0f2;background:#fbfcfd;border-radius:9px;padding:9px 10px;color:#536172;font-size:10px;font-weight:800;cursor:pointer;text-align:left}.cat:hover{background:#f0f5fa;border-color:#dce7f0}.cat strong{color:var(--navy);font-size:10px}.progress-box{display:grid;gap:11px}.progress-row{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#5e6875}.bar{height:7px;background:#edf0f3;border-radius:999px;overflow:hidden;margin-top:5px}.bar span{display:block;height:100%;background:var(--blue);border-radius:inherit}.quick-list{display:grid;gap:8px}.quick{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;border:1px solid #edf0f2;border-radius:9px;background:#fbfcfd}.quick div:first-child{min-width:0}.quick strong{display:block;font-size:10px;color:var(--navy)}.quick small{display:block;font-size:8px;color:var(--muted);margin-top:2px}.quick button{border:0;background:transparent;color:var(--blue);font-size:9px;font-weight:900;cursor:pointer}.empty{display:none;padding:35px 17px;text-align:center;color:#7c8795;font-size:11px}.note{margin-top:14px;background:#fbf8ee;border:1px solid #eee3bf;border-radius:12px;padding:11px;color:#6f5a1c;font-size:9px}.modal{display:none;position:fixed;inset:0;background:rgba(7,18,31,.46);align-items:center;justify-content:center;padding:20px;z-index:80}.modal.show{display:flex}.modal-box{width:min(680px,100%);background:#fff;border-radius:16px;box-shadow:0 22px 60px rgba(0,0,0,.18);overflow:hidden}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line)}.modal-head h2{margin:7px 0 0;color:var(--navy);font-size:19px;line-height:1.3}.close{border:1px solid var(--line);background:#fff;border-radius:8px;width:34px;height:34px;cursor:pointer}.modal-body{padding:19px 20px}.modal-body p{font-size:11px;color:#596575}.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}.meta-item{border:1px solid #e8ebee;border-radius:10px;padding:10px}.meta-item small{display:block;color:#8a94a0;font-size:8px;text-transform:uppercase;font-weight:900;letter-spacing:.05em}.meta-item strong{display:block;color:var(--navy);font-size:12px;margin-top:3px}.modal-foot{display:flex;gap:8px;flex-wrap:wrap;padding:14px 20px;border-top:1px solid var(--line);justify-content:flex-end}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:9px 12px;border-radius:8px;font-size:10px;font-weight:800;opacity:0;pointer-events:none;transition:.2s;z-index:90}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1050px){.search-row{grid-template-columns:1fr 1fr}.content-grid{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.hero-strip{grid-template-columns:1fr}.search{display:none}}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.sidebar{display:none}.mobile-menu{display:inline-flex;width:38px;height:38px;border:1px solid var(--line);border-radius:9px;background:#fff;align-items:center;justify-content:center;cursor:pointer}.topnav{gap:8px}.profile-name,.profile-sub{display:none}.container{padding:0 14px}.page-head{align-items:flex-start;flex-direction:column}.page-head h1{font-size:27px}.search-row{grid-template-columns:1fr}.side{grid-template-columns:1fr}.meta-grid{grid-template-columns:1fr 1fr}.resource h3{font-size:15px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topnav">
+    <a class="brand" href="student-dashboard.html"><span class="brand-mark">U</span><span>UPSC<span style="font-weight:500;color:#6c7784">Prep</span></span></a>
+    <div class="nav-right">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+      <input class="search" id="globalSearch" placeholder="Search resources..." />
+      <button class="notif" aria-label="Notifications" id="notifBtn">🔔<span class="notif-dot"></span></button>
+      <div class="profile"><div class="avatar">AK</div><div><div class="profile-name">Abhishek Kumar</div><div class="profile-sub">UPSC 2027</div></div></div>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="side-label">Study</div>
+    <nav class="side-nav">
+      <a href="student-dashboard.html"><span class="icon">⌂</span>Dashboard</a>
+      <a href="my-tests.html"><span class="icon">▣</span>My Tests</a>
+      <a href="question-bank.html"><span class="icon">?</span>Question Bank</a>
+      <a href="performance.html"><span class="icon">◒</span>Performance</a>
+      <a href="mistake-notebook.html"><span class="icon">▤</span>Mistake Notebook</a>
+      <a href="current-affairs-student.html"><span class="icon">◷</span>Current Affairs</a>
+      <a class="active" href="study-material-student.html"><span class="icon">▥</span>Study Material</a>
+      <a href="student-pyqs.html"><span class="icon">⌕</span>PYQs</a>
+    </nav>
+    <div class="side-label">Account</div>
+    <nav class="side-nav">
+      <a href="test-series.html#plans"><span class="icon">₹</span>Subscription</a>
+      <a href="contact.html"><span class="icon">?</span>Support</a>
+      <button class="side-btn" id="logoutBtn"><span class="icon">↪</span>Logout</button>
+    </nav>
+    <div class="side-bottom">
+      <div class="upgrade"><small>Current plan</small><strong>Complete Prelims</strong><a href="test-series.html#plans">Manage plan →</a></div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="container">
+      <div class="page-head">
+        <div><span class="eyebrow">Student Library</span><h1>Study Material</h1><p>Organised notes, revision sheets and practice resources to help you cover the UPSC syllabus systematically.</p></div>
+        <div class="date-badge">12 resources in your library</div>
+      </div>
+
+      <section class="hero-strip">
+        <div class="feature">
+          <div class="label">Continue learning</div>
+          <h2>Finish Indian Polity: Parliament & Constitutional Bodies</h2>
+          <p>You are 68% through this revision pack. Continue from the last saved section and then practise linked MCQs.</p>
+          <div class="feature-foot"><button class="btn btn-primary" id="continueBtn">Continue Reading</button><a class="btn btn-ghost" href="question-bank.html">Practise MCQs</a></div>
+        </div>
+        <div class="mini-stat-card"><div><div class="mini-stat-title">Library progress</div><div class="mini-big" id="progressBig">54%</div></div><div class="mini-note">↑ 8% this week</div><div class="resource-progress"><span style="width:54%"></span></div></div>
+      </section>
+
+      <section class="toolbar">
+        <div class="search-row">
+          <div class="field"><label>Search</label><input class="input" id="search" placeholder="Search topic, title or keyword..." /></div>
+          <div class="field"><label>Subject</label><select class="select" id="subject"><option value="all">All subjects</option><option>Polity</option><option>Economy</option><option>History</option><option>Geography</option><option>Environment</option><option>Science & Technology</option><option>Culture</option><option>Ethics</option></select></div>
+          <div class="field"><label>Format</label><select class="select" id="format"><option value="all">All formats</option><option>Notes</option><option>Revision Sheet</option><option>PDF</option><option>Practice Set</option></select></div>
+          <div class="field"><label>Access</label><select class="select" id="access"><option value="all">All access</option><option value="free">Free</option><option value="premium">Premium</option></select></div>
+          <div class="toolbar-actions"><button class="btn btn-ghost" id="resetBtn">Reset</button></div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="all">All Resources</button><button class="tab" data-tab="inprogress">In Progress</button><button class="tab" data-tab="saved">Saved</button><button class="tab" data-tab="completed">Completed</button><button class="tab" data-tab="free">Free</button>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section class="panel">
+          <div class="panel-head"><div><h2>Recommended Resources</h2><span class="small">Curated for your current preparation stage</span></div><span class="small" id="count">8 resources</span></div>
+          <div class="resource-list" id="resourceList"></div>
+          <div class="empty" id="empty">No resources match your filters. Try changing the subject, format or access type.</div>
+          <div class="countline">Demo resources shown here; production files will be loaded from the CMS/file-storage system.</div>
+        </section>
+        <aside class="side">
+          <div class="side-card"><h3>Browse by Subject</h3><div class="category-list" id="categoryList"></div></div>
+          <div class="side-card"><h3>Your Study Progress</h3><div class="progress-box"><div><div class="progress-row"><span>Polity</span><strong>78%</strong></div><div class="bar"><span style="width:78%"></span></div></div><div><div class="progress-row"><span>Economy</span><strong>61%</strong></div><div class="bar"><span style="width:61%"></span></div></div><div><div class="progress-row"><span>Environment</span><strong>47%</strong></div><div class="bar"><span style="width:47%"></span></div></div><div><div class="progress-row"><span>History</span><strong>69%</strong></div><div class="bar"><span style="width:69%"></span></div></div></div></div>
+          <div class="side-card"><h3>Quick Resources</h3><div class="quick-list"><div class="quick"><div><strong>Prelims Revision Pack</strong><small>120-page PDF</small></div><button data-quick="revision">Open</button></div><div class="quick"><div><strong>Constitution Articles</strong><small>Revision sheet</small></div><button data-quick="articles">Open</button></div><div class="quick"><div><strong>Environment One-Liners</strong><small>Practice set</small></div><button data-quick="environment">Open</button></div></div></div>
+          <div class="note"><strong>Study tip:</strong> Read a compact note, solve linked questions, then add recurring errors to your Mistake Notebook for spaced revision.</div>
+        </aside>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal" id="resourceModal" aria-hidden="true"><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><div><div class="eyebrow" id="modalEyebrow">Study resource</div><h2 id="modalTitle">Resource</h2></div><button class="close" id="closeModal">✕</button></div><div class="modal-body"><p id="modalIntro"></p><div class="meta-grid"><div class="meta-item"><small>Subject</small><strong id="modalSubject">—</strong></div><div class="meta-item"><small>Format</small><strong id="modalFormat">—</strong></div><div class="meta-item"><small>Access</small><strong id="modalAccess">—</strong></div><div class="meta-item"><small>Progress</small><strong id="modalProgress">—</strong></div></div></div><div class="modal-foot"><button class="btn btn-ghost" id="saveFromModal">Save resource</button><a class="btn btn-ghost" href="question-bank.html">Practice linked MCQs</a><button class="btn btn-primary" id="openResource">Open Resource</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const resources=[
+ {id:1,title:'Parliament & Constitutional Bodies',subject:'Polity',format:'Notes',access:'premium',topic:'Parliament',pages:'42 pages',updated:'18 Sep 2026',progress:68,summary:'Structured notes covering Parliament, committees, constitutional bodies and key prelims traps.'},
+ {id:2,title:'Constitutional Articles — Rapid Revision Sheet',subject:'Polity',format:'Revision Sheet',access:'free',topic:'Constitution',pages:'8 pages',updated:'17 Sep 2026',progress:100,summary:'Quick-reference sheet for important Articles, schedules and constitutional provisions.'},
+ {id:3,title:'Monetary Policy & Inflation',subject:'Economy',format:'PDF',access:'premium',topic:'Monetary Policy',pages:'31 pages',updated:'15 Sep 2026',progress:42,summary:'Concept notes on inflation, monetary transmission, policy tools and common prelims confusions.'},
+ {id:4,title:'Ancient India: Art & Architecture',subject:'History',format:'Notes',access:'premium',topic:'Ancient History',pages:'26 pages',updated:'12 Sep 2026',progress:75,summary:'Revision-oriented notes on architecture, sculpture, traditions and archaeological sources.'},
+ {id:5,title:'Physical Geography One-Liners',subject:'Geography',format:'Practice Set',access:'free',topic:'Physical Geography',pages:'50 MCQs',updated:'10 Sep 2026',progress:30,summary:'Rapid practice set focused on physical geography concepts and factual elimination.'},
+ {id:6,title:'Biodiversity & Protected Areas',subject:'Environment',format:'Revision Sheet',access:'premium',topic:'Biodiversity',pages:'14 pages',updated:'09 Sep 2026',progress:47,summary:'High-yield environment revision sheet linked to protected-area categories and biodiversity concepts.'},
+ {id:7,title:'Semiconductors & Emerging Technologies',subject:'Science & Technology',format:'PDF',access:'premium',topic:'Technology',pages:'19 pages',updated:'07 Sep 2026',progress:10,summary:'Concise notes on semiconductor value chains, fabrication, packaging and technology ecosystem terms.'},
+ {id:8,title:'Ethics Case Study Framework',subject:'Ethics',format:'Notes',access:'free',topic:'GS-IV',pages:'18 pages',updated:'05 Sep 2026',progress:0,summary:'Foundational note on identifying stakeholders, ethical issues, options and justified responses.'}
+];
+let activeTab='all',saved=new Set(JSON.parse(localStorage.getItem('studySaved')||'[]')),modalId=null;
+const list=document.getElementById('resourceList'),empty=document.getElementById('empty'),count=document.getElementById('count');
+function render(){
+ const q=document.getElementById('search').value.trim().toLowerCase(),subject=document.getElementById('subject').value,format=document.getElementById('format').value,access=document.getElementById('access').value;
+ let data=resources.filter(r=>{
+   const mq=!q||[r.title,r.subject,r.format,r.topic,r.summary].join(' ').toLowerCase().includes(q);
+   const ms=subject==='all'||r.subject===subject,mf=format==='all'||r.format===format,ma=access==='all'||r.access===access;
+   const mt=activeTab==='all'||(activeTab==='inprogress'&&r.progress>0&&r.progress<100)||(activeTab==='saved'&&saved.has(r.id))||(activeTab==='completed'&&r.progress===100)||(activeTab==='free'&&r.access==='free');
+   return mq&&ms&&mf&&ma&&mt;
+ });
+ count.textContent=data.length+' resource'+(data.length===1?'':'s');
+ list.innerHTML=data.map(r=>`<article class="resource"><div class="resource-top"><div class="chips"><span class="chip blue">${r.subject}</span><span class="chip">${r.format}</span><span class="chip ${r.access==='premium'?'gold':'green'}">${r.access==='premium'?'Premium':'Free'}</span></div><button class="save ${saved.has(r.id)?'saved':''}" data-save="${r.id}" aria-label="Save resource">${saved.has(r.id)?'★':'☆'}</button></div><h3>${r.title}</h3><p>${r.summary}</p><div class="resource-meta"><span>${r.topic}</span><span>${r.pages}</span><span>Updated ${r.updated}</span></div><div class="resource-progress"><span style="width:${r.progress}%"></span></div><div class="resource-foot"><span class="progress-label">${r.progress===0?'Not started':r.progress===100?'Completed':r.progress+'% complete'}</span><div class="article-actions"><button class="btn btn-primary" data-open="${r.id}">${r.progress>0&&r.progress<100?'Continue':'Open Resource'}</button><button class="btn btn-ghost" data-practise="${r.id}">Practice MCQs</button></div></div></article>`).join('');
+ empty.style.display=data.length?'none':'block';
+ document.querySelectorAll('[data-save]').forEach(b=>b.addEventListener('click',()=>toggleSave(Number(b.dataset.save))));
+ document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openResource(Number(b.dataset.open))));
+ document.querySelectorAll('[data-practise]').forEach(b=>b.addEventListener('click',()=>toast('Practice flow will open the linked question set for this topic.')));
+ renderCategoryCounts();
+}
+function renderCategoryCounts(){const subjects=[...new Set(resources.map(r=>r.subject))];document.getElementById('categoryList').innerHTML=subjects.map(s=>{const n=resources.filter(r=>r.subject===s).length;return `<button class="cat" data-subject="${s}"><span>${s}</span><strong>${n}</strong></button>`}).join('');document.querySelectorAll('[data-subject]').forEach(b=>b.addEventListener('click',()=>{document.getElementById('subject').value=b.dataset.subject;render();}));}
+function toggleSave(id){saved.has(id)?saved.delete(id):saved.add(id);localStorage.setItem('studySaved',JSON.stringify([...saved]));render();toast(saved.has(id)?'Saved to your library':'Removed from saved');}
+function openResource(id){const r=resources.find(x=>x.id===id);if(!r)return;modalId=id;document.getElementById('modalTitle').textContent=r.title;document.getElementById('modalEyebrow').textContent=r.access==='premium'?'Premium resource':'Study resource';document.getElementById('modalIntro').textContent=r.summary+' This demo resource establishes the reading/download workflow; production files will be loaded from the CMS and file storage.';document.getElementById('modalSubject').textContent=r.subject;document.getElementById('modalFormat').textContent=r.format;document.getElementById('modalAccess').textContent=r.access==='premium'?'Premium':'Free';document.getElementById('modalProgress').textContent=r.progress+'%';document.getElementById('resourceModal').classList.add('show');document.getElementById('resourceModal').setAttribute('aria-hidden','false');}
+function closeModal(){document.getElementById('resourceModal').classList.remove('show');document.getElementById('resourceModal').setAttribute('aria-hidden','true');}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>t.classList.remove('show'),1800);}
+['search','subject','format','access'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+document.getElementById('resetBtn').addEventListener('click',()=>{document.getElementById('search').value='';document.getElementById('subject').value='all';document.getElementById('format').value='all';document.getElementById('access').value='all';activeTab='all';document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab==='all'));render();});
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{activeTab=t.dataset.tab;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===t));render();}));
+document.getElementById('globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){document.getElementById('search').value=e.target.value;render();document.getElementById('search').focus();}});
+document.getElementById('continueBtn').addEventListener('click',()=>openResource(1));document.getElementById('closeModal').addEventListener('click',closeModal);document.getElementById('resourceModal').addEventListener('click',e=>{if(e.target.id==='resourceModal')closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});document.getElementById('saveFromModal').addEventListener('click',()=>{if(modalId!=null)toggleSave(modalId);});document.getElementById('openResource').addEventListener('click',()=>toast('Resource viewer/download will connect to file storage.'));
+document.querySelectorAll('[data-quick]').forEach(b=>b.addEventListener('click',()=>toast('Quick resource viewer will connect to the CMS file library.')));document.getElementById('notifBtn').addEventListener('click',()=>toast('No new study notifications.'));document.getElementById('logoutBtn').addEventListener('click',()=>toast('Logout will be connected to the authentication API.'));document.getElementById('mobileMenu').addEventListener('click',()=>toast('Mobile navigation will open here.'));
+render();
+</script>
+<script src="api-client.js"></script><script src="student-api.js"></script>
+</body>
+</html>

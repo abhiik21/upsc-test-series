@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Test Instructions | UPSC Test Series</title>
+<meta name="description" content="Pre-test instructions and confirmation screen for the UPSC Test Series test engine." />
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--cream:#f7f4ed;--ink:#18212b;--muted:#667085;--white:#fff;--line:#e5e7eb;--soft:#f6f8fb;--green:#198754;--orange:#b66a00;--red:#b42318;--shadow:0 14px 40px rgba(16,36,62,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--soft);line-height:1.55}a{text-decoration:none;color:inherit}button,input{font:inherit}
+.topbar{height:72px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;z-index:20}.container{max-width:1180px;margin:auto;padding:0 24px;width:100%}.topnav{display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);font-size:18px}.brand-mark{width:36px;height:36px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.top-right{display:flex;align-items:center;gap:14px}.secure{font-size:11px;font-weight:800;color:#667085;background:#f8fafc;border:1px solid var(--line);padding:8px 11px;border-radius:9px}.profile{display:flex;align-items:center;gap:9px}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#eaf2fb;color:var(--blue);font-weight:900}.profile-name{font-size:12px;font-weight:800;color:var(--navy)}.profile-sub{font-size:10px;color:var(--muted)}
+.main{padding:38px 0 70px}.crumbs{display:flex;gap:8px;align-items:center;color:#7b8794;font-size:11px;margin-bottom:14px}.crumbs a{color:var(--blue);font-weight:800}.hero{background:linear-gradient(135deg,#10243e 0%,#173d67 55%,#1d5fa7 100%);border-radius:20px;color:#fff;padding:28px 30px;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;box-shadow:var(--shadow);margin-bottom:20px}.eyebrow{display:inline-flex;align-items:center;gap:7px;color:#d8e7f8;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 10px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.hero h1{font-size:31px;line-height:1.12;letter-spacing:-.04em;margin:12px 0 7px}.hero p{margin:0;color:#dce7f3;font-size:12px;max-width:670px}.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.hero-meta span{font-size:10px;font-weight:800;padding:6px 9px;border-radius:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12)}.hero-badge{min-width:170px;padding:18px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);text-align:center}.hero-badge .big{font-size:22px;font-weight:900}.hero-badge .small{font-size:10px;color:#dce7f3;margin-top:2px;font-weight:800}
+.grid{display:grid;grid-template-columns:1.45fr .75fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow)}.panel-head{padding:17px 19px;border-bottom:1px solid #f0f2f4}.panel-head h2{margin:0;color:var(--navy);font-size:16px;letter-spacing:-.02em}.panel-head p{margin:4px 0 0;color:var(--muted);font-size:11px}.panel-body{padding:18px 19px}.rules{display:grid;gap:10px}.rule{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:11px;border:1px solid #edf0f3;border-radius:12px;background:#fbfcfd}.rule-num{width:30px;height:30px;border-radius:9px;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:11px;font-weight:900}.rule strong{display:block;color:var(--navy);font-size:12px}.rule p{margin:3px 0 0;font-size:10px;color:var(--muted)}
+.summary{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sum{border:1px solid #edf0f3;border-radius:12px;padding:12px;background:#fbfcfd}.sum .label{font-size:10px;color:var(--muted);font-weight:800}.sum .value{font-size:18px;color:var(--navy);font-weight:900;margin-top:3px}.split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.mini{padding:11px 12px;border:1px solid #edf0f3;border-radius:10px}.mini strong{display:block;font-size:11px;color:var(--navy)}.mini span{display:block;font-size:10px;color:var(--muted);margin-top:2px}.side-note{padding:13px;border-radius:12px;background:#fffaf0;border:1px solid #f2e5bf;margin-top:12px}.side-note strong{display:block;color:#795b08;font-size:11px}.side-note p{margin:4px 0 0;color:#806f3d;font-size:10px}
+.checkbar{margin-top:18px;padding:14px 15px;border:1px solid #dfe7ef;border-radius:12px;background:#f8fbfe;display:flex;align-items:flex-start;gap:10px}.checkbar input{margin-top:3px;width:16px;height:16px;accent-color:var(--blue)}.checkbar label{font-size:11px;color:#475467}.checkbar label strong{color:var(--navy)}.actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.back{font-size:11px;color:#667085;font-weight:800}.btn{border-radius:10px;padding:11px 16px;font-size:11px;font-weight:900;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-primary:disabled{background:#b8c8d9;color:#f4f7fa;cursor:not-allowed}.btn-ghost{border-color:var(--line);background:#fff;color:var(--navy)}.error{display:none;color:var(--red);font-size:10px;font-weight:800;margin-top:7px}.error.show{display:block}.progress{height:6px;background:#eef2f6;border-radius:999px;overflow:hidden;margin-top:14px}.progress span{display:block;width:33%;height:100%;background:var(--blue);border-radius:999px}.footer-note{text-align:center;color:#98a2b3;font-size:10px;margin-top:17px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.hero-badge{justify-self:start;min-width:155px}.main{padding-top:25px}}
+@media(max-width:620px){.topbar{height:64px}.container{padding:0 15px}.top-right .secure{display:none}.profile-name,.profile-sub{display:none}.main{padding:22px 0 48px}.hero{padding:21px 18px;border-radius:16px}.hero h1{font-size:26px}.grid{gap:12px}.panel-head,.panel-body{padding:15px}.summary{grid-template-columns:1fr 1fr}.actions{flex-direction:column-reverse;align-items:stretch}.back{text-align:center}.btn{width:100%}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topnav">
+    <a class="brand" href="student-dashboard.html"><span class="brand-mark">U</span> UPSC Test Series</a>
+    <div class="top-right">
+      <div class="secure">🔒 Secure Test Environment</div>
+      <div class="profile"><div class="avatar">AK</div><div><div class="profile-name">Abhishek Kumar</div><div class="profile-sub">UPSC 2027</div></div></div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <div class="crumbs"><a href="my-tests.html">My Tests</a><span>›</span><span>Pre-test instructions</span></div>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Test 05 · Prelims GS</span>
+        <h1>Indian Polity · Full Test 05</h1>
+        <p>Review the test structure and instructions before entering the timed examination environment.</p>
+        <div class="hero-meta"><span>100 Questions</span><span>200 Marks</span><span>120 Minutes</span><span>1/3 Negative Marking</span></div>
+      </div>
+      <div class="hero-badge"><div class="big">120:00</div><div class="small">Total test duration</div></div>
+    </section>
+
+    <div class="grid">
+      <section class="panel">
+        <div class="panel-head"><h2>Instructions</h2><p>Please read these instructions carefully before starting.</p></div>
+        <div class="panel-body">
+          <div class="rules">
+            <div class="rule"><div class="rule-num">01</div><div><strong>Time limit</strong><p>You will have 120 minutes. The timer begins immediately after you enter the test.</p></div></div>
+            <div class="rule"><div class="rule-num">02</div><div><strong>Marking scheme</strong><p>Each question carries 2 marks. An incorrect answer attracts a negative mark of one-third of the question value.</p></div></div>
+            <div class="rule"><div class="rule-num">03</div><div><strong>Saving responses</strong><p>Responses are auto-saved as you answer. A temporary network interruption should not erase saved responses.</p></div></div>
+            <div class="rule"><div class="rule-num">04</div><div><strong>Navigation & review</strong><p>You may move between questions, clear an answer and mark a question for review before submission.</p></div></div>
+            <div class="rule"><div class="rule-num">05</div><div><strong>Submission</strong><p>You may submit manually at any time. The test will also auto-submit when the timer reaches zero.</p></div></div>
+            <div class="rule"><div class="rule-num">06</div><div><strong>Result availability</strong><p>Your score and detailed analysis will be generated after submission, subject to the test-series result rules.</p></div></div>
+          </div>
+
+          <div class="checkbar">
+            <input id="confirm" type="checkbox" />
+            <label for="confirm"><strong>I have read and understood the instructions.</strong> I understand that the timer will start when I begin the test and that my attempt will be recorded.</label>
+          </div>
+          <div class="error" id="error">Please confirm that you have read and understood the instructions.</div>
+
+          <div class="actions">
+            <a class="back" href="my-tests.html">← Return to My Tests</a>
+            <button class="btn btn-primary" id="startBtn" disabled>Start Test →</button>
+          </div>
+          <div class="progress" aria-hidden="true"><span></span></div>
+          <div class="footer-note">Step 1 of 3 · Instructions → Test → Result</div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head"><h2>Test Summary</h2><p>Your attempt parameters</p></div>
+        <div class="panel-body">
+          <div class="summary">
+            <div class="sum"><div class="label">Questions</div><div class="value">100</div></div>
+            <div class="sum"><div class="label">Marks</div><div class="value">200</div></div>
+            <div class="sum"><div class="label">Duration</div><div class="value">120m</div></div>
+            <div class="sum"><div class="label">Negative</div><div class="value">⅓</div></div>
+          </div>
+          <div class="split">
+            <div class="mini"><strong>Attempt</strong><span>1 of 1 allowed</span></div>
+            <div class="mini"><strong>Mode</strong><span>Timed online test</span></div>
+          </div>
+          <div class="side-note"><strong>Before you begin</strong><p>Keep a stable internet connection, close unnecessary tabs and use a full-screen browser window for the best experience.</p></div>
+          <div class="side-note" style="background:#f5fbf7;border-color:#dbeee2"><strong style="color:#146c43">Your progress is saved</strong><p style="color:#527566">Saved responses remain available if you temporarily lose connectivity and return to the test.</p></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<script>
+// Live behaviour is provided by api-client.js + student-api.js.
+</script>
+<script src="api-client.js"></script><script src="student-api.js"></script>
+</body>
+</html>

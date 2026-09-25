@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin Dashboard | UPSC Test Series</title>
+<meta name="description" content="Administration dashboard for the UPSC Test Series platform."/>
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--cream:#f7f4ed;--ink:#18212b;--muted:#667085;--white:#fff;--line:#e5e7eb;--green:#198754;--red:#c2413a;--sidebar:#0f2238}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f6f8fb;color:var(--ink)}a{text-decoration:none;color:inherit}.app{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.sidebar{background:var(--sidebar);color:#c7d2de;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:10px;padding:7px 10px 22px;color:#fff;font-weight:800}.mark{width:35px;height:35px;border-radius:10px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}.nav-section{margin:18px 8px 8px;color:#7f91a6;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:13px;margin:2px 0}.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);color:#fff}.nav .badge{margin-left:auto;background:#d7a93b;color:#132130;border-radius:999px;padding:2px 6px;font-size:10px;font-weight:800}.sidebar-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding:15px 8px 0}.sidebar-bottom a{display:block;padding:8px 4px;font-size:12px;color:#a9b7c7}.main{min-width:0}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10}.top-title strong{display:block;color:var(--navy);font-size:16px}.top-title span{font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:10px}.search{border:1px solid #d9dee5;background:#f8fafc;border-radius:9px;padding:9px 12px;width:230px;font-size:13px}.admin{display:flex;align-items:center;gap:9px;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:#fff}.avatar{width:30px;height:30px;border-radius:50%;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800}.content{padding:28px}.head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}.head h1{margin:0;font-size:28px;color:var(--navy);letter-spacing:-.03em}.head p{margin:5px 0 0;color:var(--muted);font-size:13px}.btn{border:1px solid transparent;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-outline{background:#fff;color:var(--navy);border-color:#d6dce3}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:27px;font-weight:850;color:var(--navy);margin-top:5px}.stat .delta{font-size:11px;margin-top:7px}.up{color:var(--green)}.warn{color:#a46a00}.section{margin-top:20px;display:grid;grid-template-columns:1.4fr 1fr;gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.card-head{padding:17px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.card-head h2{font-size:15px;color:var(--navy);margin:0}.card-head a{font-size:12px;color:var(--blue);font-weight:750}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:12px 16px;border-bottom:1px solid #eef0f3;font-size:12px}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#85909d;background:#fafbfc}.table tr:last-child td{border-bottom:0}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800}.pill.green{background:#eaf7ef;color:#167343}.pill.blue{background:#eaf2fb;color:#245e9a}.pill.amber{background:#fff5dc;color:#946200}.activity{padding:16px 18px;display:grid;gap:13px}.activity-item{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center}.ico{width:34px;height:34px;border-radius:10px;background:#eef4fb;color:var(--blue);display:grid;place-items:center;font-weight:850}.activity-item strong{font-size:12px;color:var(--navy)}.activity-item span{display:block;color:var(--muted);font-size:11px;margin-top:2px}.activity-time{font-size:10px;color:#98a2b3}.chart{height:180px;padding:16px 18px 18px;display:flex;align-items:flex-end;gap:10px}.barwrap{flex:1;height:100%;display:flex;align-items:flex-end;justify-content:center;gap:3px}.barx{width:100%;max-width:24px;background:#cbdcf0;border-radius:6px 6px 2px 2px}.barx.main{background:var(--blue)}.chart-label{font-size:9px;color:#98a2b3;text-align:center;margin-top:7px}.subject-list{padding:14px 18px 18px}.sub{margin:12px 0}.subhead{display:flex;justify-content:space-between;font-size:11px;font-weight:750;color:#344054}.track{height:7px;background:#edf0f4;border-radius:10px;overflow:hidden;margin-top:6px}.track i{display:block;height:100%;background:var(--blue)}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.quick a{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}.quick strong{display:block;color:var(--navy);font-size:13px}.quick span{display:block;color:var(--muted);font-size:11px;margin-top:4px}.quick .qico{font-size:18px;margin-bottom:9px;color:var(--blue)}
+@media(max-width:1000px){.app{grid-template-columns:82px 1fr}.sidebar{padding:16px 9px}.brand span:last-child,.nav-section,.nav a span:not(.badge),.sidebar-bottom{display:none}.brand{justify-content:center}.nav a{justify-content:center}.nav a .badge{display:none}.grid4{grid-template-columns:repeat(2,1fr)}.section{grid-template-columns:1fr}.search{display:none}}
+@media(max-width:650px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{padding:0 16px}.content{padding:20px 16px}.head{align-items:flex-start;flex-direction:column}.grid4{grid-template-columns:1fr 1fr}.quick{grid-template-columns:1fr}.admin .name{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="mark">U</div><span>UPSC Admin</span></div>
+  <div class="nav-section">Overview</div>
+  <nav class="nav">
+    <a class="active" href="admin-dashboard.html">▦ <span>Dashboard</span></a>
+    <a href="student-management.html">◉ <span>Students</span><span class="badge">18.5k</span></a>
+    <a href="question-bank-admin.html">☑ <span>Questions</span></a>
+    <a href="test-management-admin.html">▤ <span>Tests</span></a>
+    <a href="test-management-admin.html#series">▥ <span>Test Series</span></a>
+  </nav>
+  <div class="nav-section">Content</div>
+  <nav class="nav">
+    <a href="blog-admin.html">✦ <span>Current Affairs</span></a>
+    <a href="study-material-admin.html">▣ <span>Study Material</span></a>
+    <a href="blog-admin.html">◌ <span>Blog / CMS</span></a>
+  </nav>
+  <div class="nav-section">Business</div>
+  <nav class="nav">
+    <a href="subscriptions-admin.html">₹ <span>Subscriptions</span></a>
+    <a href="payments-admin.html">◫ <span>Payments</span></a>
+    <a href="coupons-admin.html">◇ <span>Coupons</span></a>
+  </nav>
+  <div class="nav-section">Operations</div>
+  <nav class="nav">
+    <a href="results-admin.html">◎ <span>Results & Rankings</span></a>
+    <a href="notifications-admin.html">◫ <span>Notifications</span></a>
+    <a href="reports-admin.html">◈ <span>Reports</span></a>
+    <a href="settings-admin.html">⚙ <span>Settings</span></a>
+  </nav>
+  <div class="sidebar-bottom"><a href="index.html">View public website →</a><a href="login.html">Student login →</a></div>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div class="top-title"><strong>Admin Dashboard</strong><span>Platform overview</span></div>
+    <div class="top-actions"><input class="search" placeholder="Search students, tests, questions…"/><div class="admin"><div class="avatar">AD</div><span class="name" style="font-size:12px;font-weight:750;color:#344054">Admin</span></div></div>
+  </header>
+  <div class="content">
+    <div class="head"><div><h1>Good morning, Admin</h1><p>Here’s what is happening across the UPSC Test Series platform.</p></div><button class="btn btn-primary" onclick="alert('Create Test flow will connect to the Test Builder.')">+ Create Test</button></div>
+    <div class="grid4">
+      <div class="stat"><div class="label">Total Students</div><div class="value">18,542</div><div class="delta up">↑ 6.8% this month</div></div>
+      <div class="stat"><div class="label">Active Students</div><div class="value">8,421</div><div class="delta up">↑ 3.1% this week</div></div>
+      <div class="stat"><div class="label">Tests Attempted</div><div class="value">74,328</div><div class="delta up">↑ 12.4% this month</div></div>
+      <div class="stat"><div class="label">Revenue</div><div class="value">₹12.84L</div><div class="delta up">↑ 9.2% this month</div></div>
+    </div>
+    <div class="section">
+      <div class="card"><div class="card-head"><h2>Test activity</h2><a href="#">View analytics →</a></div><div class="chart"> <div class="barwrap"><div class="barx" style="height:44%"></div></div><div class="barwrap"><div class="barx" style="height:62%"></div></div><div class="barwrap"><div class="barx" style="height:51%"></div></div><div class="barwrap"><div class="barx main" style="height:79%"></div></div><div class="barwrap"><div class="barx" style="height:66%"></div></div><div class="barwrap"><div class="barx" style="height:87%"></div></div><div class="barwrap"><div class="barx main" style="height:92%"></div></div></div><div style="padding:0 18px 16px;display:flex;justify-content:space-between;font-size:10px;color:#98a2b3"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+      <div class="card"><div class="card-head"><h2>Recent activity</h2><a href="#">View all</a></div><div class="activity"><div class="activity-item"><div class="ico">✓</div><div><strong>Test 15 published</strong><span>UPSC Prelims GS</span></div><div class="activity-time">8m</div></div><div class="activity-item"><div class="ico">+</div><div><strong>147 new registrations</strong><span>Students joined today</span></div><div class="activity-time">1h</div></div><div class="activity-item"><div class="ico">₹</div><div><strong>42 successful payments</strong><span>Subscriptions</span></div><div class="activity-time">2h</div></div><div class="activity-item"><div class="ico">!</div><div><strong>27 questions need review</strong><span>Question Bank</span></div><div class="activity-time">3h</div></div></div></div>
+    </div>
+    <div class="section">
+      <div class="card"><div class="card-head"><h2>Recent tests</h2><a href="#">Manage tests →</a></div><table class="table"><thead><tr><th>Test</th><th>Series</th><th>Attempts</th><th>Avg. score</th><th>Status</th></tr></thead><tbody><tr><td><strong>Polity Test 05</strong></td><td>Prelims GS</td><td>1,842</td><td>108 / 200</td><td><span class="pill green">Published</span></td></tr><tr><td><strong>Economy Test 03</strong></td><td>Prelims GS</td><td>1,164</td><td>96 / 200</td><td><span class="pill green">Published</span></td></tr><tr><td><strong>Full Length Test 02</strong></td><td>Prelims GS</td><td>2,308</td><td>112 / 200</td><td><span class="pill blue">Scheduled</span></td></tr><tr><td><strong>CSAT Test 04</strong></td><td>CSAT</td><td>786</td><td>118 / 200</td><td><span class="pill amber">Draft</span></td></tr></tbody></table></div>
+      <div class="card"><div class="card-head"><h2>Subject performance</h2><a href="#">Details</a></div><div class="subject-list"><div class="sub"><div class="subhead"><span>Polity</span><span>74%</span></div><div class="track"><i style="width:74%"></i></div></div><div class="sub"><div class="subhead"><span>History</span><span>69%</span></div><div class="track"><i style="width:69%"></i></div></div><div class="sub"><div class="subhead"><span>Geography</span><span>65%</span></div><div class="track"><i style="width:65%"></i></div></div><div class="sub"><div class="subhead"><span>Economy</span><span>58%</span></div><div class="track"><i style="width:58%"></i></div></div><div class="sub"><div class="subhead"><span>Environment</span><span>55%</span></div><div class="track"><i style="width:55%"></i></div></div></div></div>
+    </div>
+    <div style="margin-top:20px"><div class="card-head" style="padding:0 0 12px"><h2 style="font-size:15px;color:var(--navy);margin:0">Quick management</h2></div><div class="quick"><a href="#"><div class="qico">☑</div><strong>Question Bank</strong><span>12,840 questions · 27 pending review</span></a><a href="#"><div class="qico">▤</div><strong>Test Builder</strong><span>Create, schedule and publish tests</span></a><a href="#"><div class="qico">◎</div><strong>Results & Rankings</strong><span>Analyse attempts and leaderboards</span></a></div></div>
+  </div>
+</main></div>
+<script src="api-client.js"></script><script src="admin-api.js"></script>
+</body></html>

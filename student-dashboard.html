@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Dashboard | UPSC Test Series</title>
+<meta name="description" content="UPSC Test Series student dashboard with upcoming tests, performance, recent results, current affairs and study resources." />
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--cream:#f7f4ed;--ink:#18212b;--muted:#667085;--white:#fff;--line:#e5e7eb;--soft:#f6f8fb;--green:#198754;--orange:#b66a00;--red:#b42318;--shadow:0 12px 36px rgba(16,36,62,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--soft);line-height:1.5}a{text-decoration:none;color:inherit}button{font:inherit}
+.container{max-width:1380px;margin:auto;padding:0 24px}
+.topbar{height:72px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}.topnav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);font-size:18px}.brand-mark{width:36px;height:36px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.nav-right{display:flex;align-items:center;gap:14px}.search{width:260px;border:1px solid var(--line);border-radius:10px;padding:10px 13px;background:#fff;font-size:13px;outline:none}.search:focus{border-color:#9bbbdc;box-shadow:0 0 0 3px rgba(29,95,167,.1)}.notif{width:38px;height:38px;border:1px solid var(--line);border-radius:10px;background:#fff;display:grid;place-items:center;color:var(--navy);cursor:pointer;position:relative}.notif-dot{position:absolute;right:7px;top:6px;width:7px;height:7px;border-radius:50%;background:var(--red);border:2px solid #fff}.profile{display:flex;align-items:center;gap:9px;padding-left:6px}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#eaf2fb;color:var(--blue);font-weight:900}.profile-name{font-size:13px;font-weight:800;color:var(--navy)}.profile-sub{font-size:11px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:245px 1fr;min-height:calc(100vh - 72px)}
+.sidebar{background:#fff;border-right:1px solid var(--line);padding:22px 14px;position:sticky;top:72px;height:calc(100vh - 72px)}.side-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:#98a2b3;font-weight:900;padding:0 12px;margin:7px 0 9px}.side-nav{display:grid;gap:4px}.side-nav a,.side-btn{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;color:#526071;font-size:13px;font-weight:700;border:0;background:transparent;width:100%;text-align:left;cursor:pointer}.side-nav a:hover,.side-btn:hover{background:#f5f8fc;color:var(--navy)}.side-nav a.active{background:#eaf2fb;color:var(--blue);font-weight:900}.icon{width:20px;text-align:center;font-size:14px}.side-bottom{position:absolute;left:14px;right:14px;bottom:18px}.upgrade{padding:14px;border-radius:14px;background:var(--navy);color:#fff}.upgrade small{display:block;color:#b7c3d1;font-size:10px;margin-bottom:4px}.upgrade strong{display:block;font-size:13px;line-height:1.35}.upgrade a{display:inline-flex;margin-top:10px;background:#fff;color:var(--navy);padding:8px 10px;border-radius:8px;font-size:11px;font-weight:900}
+.main{padding:30px 0 56px}.welcome{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:22px}.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--blue);background:#eaf2fb;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.welcome h1{margin:11px 0 4px;font-size:34px;line-height:1.1;letter-spacing:-.04em;color:var(--navy)}.welcome p{margin:0;color:var(--muted);font-size:13px}.date-pill{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:12px;color:#526071;font-weight:800}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px 18px;box-shadow:0 6px 20px rgba(16,36,62,.03)}.stat-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.stat-label{font-size:11px;color:var(--muted);font-weight:800}.stat-icon{width:31px;height:31px;border-radius:9px;background:#f0f5fa;color:var(--blue);display:grid;place-items:center;font-size:13px}.stat-value{font-size:25px;color:var(--navy);font-weight:900;letter-spacing:-.03em}.stat-meta{font-size:10px;color:var(--green);font-weight:800;margin-top:4px}
+.content-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:18px}.stack{display:grid;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.panel-head{padding:17px 18px 13px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #f0f2f4}.panel-head h2{margin:0;font-size:15px;color:var(--navy);letter-spacing:-.01em}.panel-head a{font-size:11px;color:var(--blue);font-weight:900}.panel-body{padding:15px 18px}
+.test-card{border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:10px}.test-card + .test-card{margin-top:11px}.test-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.test-title{font-weight:900;color:var(--navy);font-size:13px}.tag{font-size:9px;border-radius:999px;padding:4px 7px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.tag-blue{background:#eaf2fb;color:var(--blue)}.tag-gold{background:#fbf3d9;color:#856515}.tag-green{background:#ebf7f0;color:#146c43}.test-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:10px;color:var(--muted)}.test-actions{display:flex;justify-content:space-between;align-items:center;gap:10px}.test-note{font-size:10px;color:#98a2b3}.btn{border-radius:9px;padding:8px 11px;font-size:11px;font-weight:900;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}.btn-primary{background:var(--blue);color:#fff}.btn-ghost{border-color:var(--line);background:#fff;color:var(--navy)}
+.chart{height:190px;display:flex;align-items:flex-end;gap:11px;padding:14px 8px 4px}.bar-col{height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:7px}.bar{width:100%;max-width:26px;border-radius:7px 7px 3px 3px;background:#b9cee3;min-height:12px}.bar.current{background:var(--blue)}.bar-label{font-size:9px;color:#98a2b3;font-weight:700}.legend{display:flex;gap:15px;font-size:10px;color:var(--muted)}.legend span{display:inline-flex;align-items:center;gap:5px}.legend i{width:7px;height:7px;border-radius:2px;background:#b9cee3}.legend i.current{background:var(--blue)}
+.subject-row{display:grid;grid-template-columns:120px 1fr 45px;gap:12px;align-items:center;margin:12px 0}.subject-name{font-size:11px;font-weight:800;color:#475467}.progress{height:8px;background:#edf0f3;border-radius:999px;overflow:hidden}.progress span{display:block;height:100%;background:var(--blue);border-radius:999px}.pct{text-align:right;font-size:11px;font-weight:900;color:var(--navy)}
+.result-row{display:grid;grid-template-columns:1fr auto auto;gap:13px;align-items:center;padding:12px 0;border-bottom:1px solid #f0f2f4}.result-row:last-child{border-bottom:0}.result-title{font-size:12px;font-weight:900;color:var(--navy)}.result-sub{font-size:10px;color:var(--muted);margin-top:2px}.score{font-size:13px;font-weight:900;color:var(--navy)}.rank{font-size:10px;color:var(--muted)}
+.affair{display:grid;grid-template-columns:auto 1fr;gap:11px;padding:12px 0;border-bottom:1px solid #f0f2f4}.affair:last-child{border-bottom:0}.affair-date{width:42px;height:42px;border-radius:10px;background:#f7f4ed;display:grid;place-items:center;color:#856515;font-size:9px;font-weight:900;text-align:center}.affair-title{font-size:11px;font-weight:900;line-height:1.45;color:var(--navy)}.affair-meta{font-size:9px;color:var(--muted);margin-top:4px}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick{padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}.quick strong{display:block;color:var(--navy);font-size:11px}.quick span{display:block;color:var(--muted);font-size:9px;margin-top:2px}.quick-icon{width:28px;height:28px;border-radius:8px;background:#f0f5fa;color:var(--blue);display:grid;place-items:center;margin-bottom:8px;font-size:12px}
+.notice{margin-bottom:18px;background:#fff8e6;border:1px solid #f1dfaa;color:#705516;border-radius:13px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px}.notice strong{font-size:12px}.notice a{font-weight:900;color:#7b5d09;white-space:nowrap}
+.mobile-menu{display:none}.mobile-panel{display:none}
+@media(max-width:1120px){.layout{grid-template-columns:82px 1fr}.sidebar{padding:18px 9px}.side-label,.side-nav a span:not(.icon),.upgrade{display:none}.side-nav a,.side-btn{justify-content:center}.side-bottom{left:9px;right:9px}.grid4{grid-template-columns:repeat(2,1fr)}.content-grid{grid-template-columns:1fr}.search{width:200px}}
+@media(max-width:720px){.topbar,.topnav{height:64px}.topnav{padding:0 15px}.layout{display:block}.sidebar{display:none}.main{padding:22px 0 45px}.container{padding:0 15px}.mobile-menu{display:grid;width:38px;height:38px;border:1px solid var(--line);background:#fff;border-radius:9px;place-items:center;color:var(--navy);cursor:pointer}.nav-right{gap:8px}.search{display:none}.profile-name,.profile-sub{display:none}.welcome{align-items:flex-start;flex-direction:column}.welcome h1{font-size:29px}.date-pill{font-size:10px}.grid4{grid-template-columns:1fr 1fr;gap:10px}.stat{padding:13px}.stat-value{font-size:21px}.content-grid{grid-template-columns:1fr}.panel-head{padding:15px}.panel-body{padding:13px 15px}.subject-row{grid-template-columns:105px 1fr 40px}}
+@media(max-width:460px){.grid4{grid-template-columns:1fr 1fr}.stat-label{font-size:10px}.test-actions{align-items:flex-start;flex-direction:column}.btn{width:100%}.quick-grid{grid-template-columns:1fr}.notice{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topnav">
+    <div style="display:flex;align-items:center;gap:10px"><button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button><a class="brand" href="index.html"><span class="brand-mark">U</span> UPSC Test Series</a></div>
+    <div class="nav-right">
+      <input class="search" placeholder="Search tests, topics, resources..." aria-label="Search" />
+      <button class="notif" aria-label="Notifications">🔔<span class="notif-dot"></span></button>
+      <div class="profile"><div class="avatar">AK</div><div><div class="profile-name">Abhishek Kumar</div><div class="profile-sub">UPSC 2027</div></div></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-label">Workspace</div>
+    <nav class="side-nav">
+      <a class="active" href="student-dashboard.html"><span class="icon">⌂</span><span>Dashboard</span></a>
+      <a href="my-tests.html"><span class="icon">▣</span><span>My Tests</span></a>
+      <a href="my-tests.html"><span class="icon">◉</span><span>All Tests</span></a>
+      <a href="results.html"><span class="icon">▤</span><span>Results</span></a>
+      <a href="performance.html"><span class="icon">↗</span><span>Performance</span></a>
+      <a href="student-pyqs.html"><span class="icon">⌁</span><span>Question Bank</span></a>
+    </nav>
+    <div class="side-label">Resources</div>
+    <nav class="side-nav">
+      <a href="current-affairs-student.html"><span class="icon">●</span><span>Current Affairs</span></a>
+      <a href="study-material-student.html"><span class="icon">□</span><span>Study Material</span></a>
+      <a href="bookmarks.html"><span class="icon">☆</span><span>Bookmarks</span></a>
+      <a href="mistake-notebook.html"><span class="icon">✓</span><span>Mistake Notebook</span></a>
+    </nav>
+    <div class="side-label">Account</div>
+    <nav class="side-nav">
+      <a href="subscription.html"><span class="icon">₹</span><span>Subscription</span></a>
+      <a href="contact.html"><span class="icon">?</span><span>Help & Support</span></a>
+      <button class="side-btn" id="logoutBtn"><span class="icon">↪</span><span>Logout</span></button>
+    </nav>
+    <div class="side-bottom"><div class="upgrade"><small>YOUR CURRENT PLAN</small><strong>Prelims Complete · Active</strong><a href="test-series.html#plans">Manage Plan</a></div></div>
+  </aside>
+
+  <main class="main">
+    <div class="container">
+      <div class="welcome">
+        <div>
+          <span class="eyebrow">Student Dashboard <span style="width:6px;height:6px;border-radius:50%;background:var(--green)"></span></span>
+          <h1>Good morning, Abhishek.</h1>
+          <p>Here’s your preparation snapshot. Keep your focus on the next test.</p>
+        </div>
+        <div class="date-pill">Saturday, 19 September 2026</div>
+      </div>
+
+      <div class="notice"><div><strong>Next scheduled test: Environment & Ecology — Test 04</strong><br><span>20 September · 10:00 AM · 100 questions · 120 minutes</span></div><a href="test-series-detail.html">View Test →</a></div>
+
+      <section class="grid4" aria-label="Summary metrics">
+        <div class="stat"><div class="stat-top"><span class="stat-label">Tests Attempted</span><span class="stat-icon">▣</span></div><div class="stat-value">24</div><div class="stat-meta">+3 this month</div></div>
+        <div class="stat"><div class="stat-top"><span class="stat-label">Average Score</span><span class="stat-icon">◒</span></div><div class="stat-value">112<span style="font-size:13px;color:var(--muted)"> / 200</span></div><div class="stat-meta">+8 vs last month</div></div>
+        <div class="stat"><div class="stat-top"><span class="stat-label">Overall Accuracy</span><span class="stat-icon">✓</span></div><div class="stat-value">71%</div><div class="stat-meta">+4.2 percentage points</div></div>
+        <div class="stat"><div class="stat-top"><span class="stat-label">Current Percentile</span><span class="stat-icon">↗</span></div><div class="stat-value">93.1</div><div class="stat-meta">Based on recent tests</div></div>
+      </section>
+
+      <div class="content-grid">
+        <div class="stack">
+          <section class="panel">
+            <div class="panel-head"><h2>Upcoming Tests</h2><a href="test-series.html">View all tests →</a></div>
+            <div class="panel-body">
+              <div class="test-card"><div class="test-top"><div class="test-title">Environment & Ecology · Test 04</div><span class="tag tag-gold">Tomorrow</span></div><div class="test-meta"><span>100 Questions</span><span>200 Marks</span><span>120 Minutes</span><span>1/3 Negative</span></div><div class="test-actions"><span class="test-note">Scheduled for 20 Sept · 10:00 AM</span><a class="btn btn-primary" href="test-series-detail.html">View Test</a></div></div>
+              <div class="test-card"><div class="test-top"><div class="test-title">Current Affairs · September Week 3</div><span class="tag tag-blue">24 Sept</span></div><div class="test-meta"><span>50 Questions</span><span>100 Marks</span><span>60 Minutes</span></div><div class="test-actions"><span class="test-note">Available as part of your plan</span><a class="btn btn-ghost" href="test-series-detail.html">View Details</a></div></div>
+              <div class="test-card"><div class="test-top"><div class="test-title">Full-Length Prelims Mock · Test 05</div><span class="tag tag-green">28 Sept</span></div><div class="test-meta"><span>100 Questions</span><span>200 Marks</span><span>120 Minutes</span></div><div class="test-actions"><span class="test-note">Full syllabus simulation</span><a class="btn btn-ghost" href="test-series-detail.html">View Details</a></div></div>
+            </div>
+          </section>
+
+          <section class="panel" id="performance">
+            <div class="panel-head"><h2>Score Trend</h2><a href="#performance">Detailed analytics →</a></div>
+            <div class="panel-body">
+              <div class="chart" aria-label="Recent test score trend">
+                <div class="bar-col"><div class="bar" style="height:46%"></div><div class="bar-label">T18</div></div>
+                <div class="bar-col"><div class="bar" style="height:57%"></div><div class="bar-label">T19</div></div>
+                <div class="bar-col"><div class="bar" style="height:52%"></div><div class="bar-label">T20</div></div>
+                <div class="bar-col"><div class="bar" style="height:63%"></div><div class="bar-label">T21</div></div>
+                <div class="bar-col"><div class="bar" style="height:59%"></div><div class="bar-label">T22</div></div>
+                <div class="bar-col"><div class="bar" style="height:68%"></div><div class="bar-label">T23</div></div>
+                <div class="bar-col"><div class="bar current" style="height:75%"></div><div class="bar-label">T24</div></div>
+              </div>
+              <div class="legend"><span><i></i>Previous tests</span><span><i class="current"></i>Latest test</span></div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head"><h2>Subject Performance</h2><a href="performance.html">View analysis →</a></div>
+            <div class="panel-body">
+              <div class="subject-row"><div class="subject-name">Polity</div><div class="progress"><span style="width:82%"></span></div><div class="pct">82%</div></div>
+              <div class="subject-row"><div class="subject-name">History</div><div class="progress"><span style="width:76%"></span></div><div class="pct">76%</div></div>
+              <div class="subject-row"><div class="subject-name">Geography</div><div class="progress"><span style="width:68%"></span></div><div class="pct">68%</div></div>
+              <div class="subject-row"><div class="subject-name">Economy</div><div class="progress"><span style="width:57%"></span></div><div class="pct">57%</div></div>
+              <div class="subject-row"><div class="subject-name">Environment</div><div class="progress"><span style="width:49%"></span></div><div class="pct">49%</div></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="stack">
+          <section class="panel">
+            <div class="panel-head"><h2>Recent Results</h2><a href="results.html">View all →</a></div>
+            <div class="panel-body">
+              <div class="result-row"><div><div class="result-title">Polity · Test 03</div><div class="result-sub">Completed 17 Sept</div></div><div class="score">126/200</div><div class="rank">Rank 421</div></div>
+              <div class="result-row"><div><div class="result-title">Economy · Test 02</div><div class="result-sub">Completed 14 Sept</div></div><div class="score">108/200</div><div class="rank">Rank 687</div></div>
+              <div class="result-row"><div><div class="result-title">History · Test 04</div><div class="result-sub">Completed 11 Sept</div></div><div class="score">118/200</div><div class="rank">Rank 532</div></div>
+              <div class="result-row"><div><div class="result-title">Full-Length · Test 04</div><div class="result-sub">Completed 07 Sept</div></div><div class="score">103/200</div><div class="rank">Rank 914</div></div>
+            </div>
+          </section>
+
+          <section class="panel" id="bookmarks">
+            <div class="panel-head"><h2>Quick Access</h2><a href="study-material-student.html">Browse resources →</a></div>
+            <div class="panel-body"><div class="quick-grid">
+              <a class="quick" href="student-pyqs.html"><div class="quick-icon">⌁</div><strong>UPSC PYQs</strong><span>Search & practise previous years</span></a>
+              <a class="quick" href="current-affairs-student.html"><div class="quick-icon">●</div><strong>Current Affairs</strong><span>Latest UPSC-relevant updates</span></a>
+              <a class="quick" href="study-material-student.html"><div class="quick-icon">□</div><strong>Study Material</strong><span>Notes, PDFs & revision sheets</span></a>
+              <a class="quick" href="mistake-notebook.html"><div class="quick-icon">✓</div><strong>Mistake Notebook</strong><span>Revisit questions you got wrong</span></a>
+            </div></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head"><h2>Latest Current Affairs</h2><a href="current-affairs-student.html">Read all →</a></div>
+            <div class="panel-body">
+              <div class="affair"><div class="affair-date">19<br>SEP</div><div><div class="affair-title">New developments in India’s space programme: key points for Prelims</div><div class="affair-meta">Science & Technology · 5 min read</div></div></div>
+              <div class="affair"><div class="affair-date">18<br>SEP</div><div><div class="affair-title">Recent policy developments in renewable energy and grid integration</div><div class="affair-meta">Environment & Economy · 6 min read</div></div></div>
+              <div class="affair"><div class="affair-date">18<br>SEP</div><div><div class="affair-title">Important constitutional and governance developments this week</div><div class="affair-meta">Polity · 4 min read</div></div></div>
+            </div>
+          </section>
+
+          <section class="panel" id="mistakes">
+            <div class="panel-head"><h2>Revision Reminder</h2><a href="student-pyqs.html">Open notebook →</a></div>
+            <div class="panel-body"><div style="padding:2px 0 4px"><div style="font-size:13px;font-weight:900;color:var(--navy)">37 questions are waiting for revision.</div><div style="font-size:10px;color:var(--muted);margin-top:4px">Most are from Economy and Environment.</div><div style="margin-top:12px"><a class="btn btn-primary" href="student-pyqs.html">Review Mistakes</a></div></div></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="api-client.js"></script>
+<script>
+const mobileMenu=document.getElementById('mobileMenu');
+const sidebar=document.getElementById('sidebar');
+mobileMenu?.addEventListener('click',()=>{sidebar.style.display=sidebar.style.display==='block'?'none':'block';sidebar.style.position='fixed';sidebar.style.zIndex='40';sidebar.style.top='64px';sidebar.style.left='0';sidebar.style.bottom='0';sidebar.style.width='245px';sidebar.style.height='calc(100vh - 64px)';});
+document.getElementById('logoutBtn')?.addEventListener('click',()=>{alert('Demo logout action. This will connect to the authentication API later.');});
+</script>
+
+<script>
+(async()=>{
+  const token=localStorage.getItem('upsc_access_token');
+  if(!token || !window.UPSC_API) return;
+  try{
+    const data=await UPSC_API.get('/student/dashboard');
+    const u=data.user||{};
+    const fullName=[u.first_name,u.last_name].filter(Boolean).join(' ')||'Student';
+    const initials=fullName.split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase();
+    document.querySelector('.profile-name').textContent=fullName;
+    document.querySelector('.avatar').textContent=initials;
+    const h=document.querySelector('.welcome h1');
+    if(h) h.textContent=`Good morning, ${u.first_name||'Student'}.`;
+    const statValues=document.querySelectorAll('.stat-value');
+    if(statValues[0]) statValues[0].textContent=data.stats.tests_attempted;
+    const notifDot=document.querySelector('.notif-dot');
+    if(notifDot && data.stats.mistakes>0) notifDot.title=`${data.stats.mistakes} unresolved mistakes`;
+  }catch(err){
+    console.info('Dashboard API unavailable; retaining demo content.',err.message);
+  }
+})();
+</script>
+<script src="student-api.js"></script>
+</body>
+</html>

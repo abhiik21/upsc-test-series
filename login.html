@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login | UPSC Test Series</title>
+<meta name="description" content="Sign in to your UPSC Test Series account to access tests, results, analytics and study resources." />
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--cream:#f7f4ed;--ink:#18212b;--muted:#667085;--white:#fff;--line:#e5e7eb;--green:#198754;--soft:#f7f9fc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--soft);line-height:1.55}a{text-decoration:none;color:inherit}
+.container{max-width:1180px;margin:auto;padding:0 24px}
+header{background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);font-size:18px}.brand-mark{width:36px;height:36px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.back{color:var(--blue);font-weight:800;font-size:14px}
+main{min-height:calc(100vh - 72px);display:grid;align-items:center;padding:58px 0}.auth-grid{display:grid;grid-template-columns:1fr 430px;gap:70px;align-items:center}.intro .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#eaf2fb;color:var(--blue);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.intro .dot{width:7px;height:7px;border-radius:50%;background:var(--green)}.intro h1{font-size:clamp(42px,5.5vw,68px);line-height:1.03;letter-spacing:-.05em;color:var(--navy);margin:19px 0 16px}.intro h1 em{font-style:normal;color:var(--blue)}.intro>p{font-size:18px;color:#526071;max-width:620px;margin:0 0 30px}.benefits{display:grid;gap:13px;max-width:520px}.benefit{display:flex;gap:12px;align-items:flex-start}.check{width:25px;height:25px;border-radius:50%;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-weight:900;flex:0 0 auto}.benefit strong{color:var(--navy);font-size:14px}.benefit span{display:block;color:var(--muted);font-size:13px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 18px 55px rgba(16,36,62,.08)}.card-top{text-align:center;margin-bottom:24px}.card-top h2{margin:0;color:var(--navy);font-size:28px;letter-spacing:-.02em}.card-top p{margin:6px 0 0;color:var(--muted);font-size:13px}.form{display:grid;gap:15px}.field{display:grid;gap:7px}.field label{font-size:12px;font-weight:800;color:#475467}.input-wrap{position:relative}.field input{width:100%;border:1px solid #d6dbe1;border-radius:10px;padding:12px 13px;font:inherit;font-size:14px;color:var(--ink);background:#fff;outline:none}.field input:focus{border-color:#8db4d8;box-shadow:0 0 0 3px rgba(29,95,167,.1)}.password-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#667085;font-size:12px;font-weight:800;cursor:pointer;padding:6px}.form-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:-2px}.remember{display:flex;align-items:center;gap:7px;color:#667085;font-size:12px}.remember input{accent-color:var(--blue)}.forgot{color:var(--blue);font-size:12px;font-weight:800;border:0;background:none;padding:0;cursor:pointer}.btn{width:100%;border:1px solid transparent;border-radius:10px;padding:12px 17px;font-weight:800;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:#164d89}.divider{display:flex;align-items:center;gap:11px;color:#98a2b3;font-size:11px;font-weight:800;text-transform:uppercase;margin:18px 0}.divider:before,.divider:after{content:"";height:1px;background:var(--line);flex:1}.google{background:#fff;border-color:#d6dbe1;color:var(--navy)}.google:hover{background:#fafbfd}.register{text-align:center;color:var(--muted);font-size:13px;margin:20px 0 0}.register a{color:var(--blue);font-weight:800}.notice{display:none;margin-top:13px;padding:11px 13px;border-radius:10px;font-size:12px}.notice.show{display:block}.notice.success{background:#edf8f1;border:1px solid #b7dfc8;color:#146c43}.notice.info{background:#eef4fb;border:1px solid #c7d9ec;color:#164d89}
+.security{text-align:center;color:#98a2b3;font-size:11px;margin-top:18px}
+footer{padding:22px 0;color:#98a2b3;font-size:11px;text-align:center}
+@media(max-width:900px){.auth-grid{grid-template-columns:1fr;gap:35px}.intro{text-align:center}.intro>p{margin-left:auto;margin-right:auto}.benefits{margin:0 auto;text-align:left}}
+@media(max-width:560px){.container{padding:0 17px}.nav{height:64px}.intro h1{font-size:43px}.intro>p{font-size:16px}.card{padding:23px}.back{font-size:13px}}
+</style>
+
+<style id="site-shell-fix">
+.site-header{position:sticky;top:0;z-index:100;background:rgba(247,244,238,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e6e0d6}
+.site-header .site-wrap{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.site-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#18212b;font-weight:800;white-space:nowrap;letter-spacing:-.02em}
+.site-brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#17324d;color:#fff;font-size:16px;font-weight:900}
+.site-links{display:flex;align-items:center;gap:6px;margin-left:auto}
+.site-links a,.site-links summary{font-size:13px;font-weight:650;color:#4c5864;text-decoration:none;padding:9px 10px;border-radius:9px;cursor:pointer;list-style:none}
+.site-links a:hover,.site-links summary:hover,.site-links details[open] summary{background:#ece7de;color:#18212b}
+.site-links .current{color:#17324d;background:#ece7de}
+.site-resource{position:relative}
+.site-resource summary::-webkit-details-marker{display:none}
+.site-resource summary:after{content:'⌄';font-size:10px;margin-left:6px}
+.site-resource-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:190px;background:#fff;border:1px solid #e2dbd1;box-shadow:0 16px 36px rgba(37,31,24,.12);border-radius:12px;padding:7px;display:grid;gap:2px}
+.site-resource-menu a{display:block;padding:9px 10px!important;border-radius:8px!important;white-space:nowrap}
+.site-actions{display:flex;align-items:center;gap:8px}
+.site-actions .site-login{color:#17324d;text-decoration:none;border:1px solid #cfd6dd;padding:9px 12px;border-radius:9px;font-size:13px;font-weight:700;background:#fff}
+.site-actions .site-cta{color:#fff;text-decoration:none;background:#17324d;padding:10px 13px;border-radius:9px;font-size:13px;font-weight:750}
+.site-menu-btn{display:none;border:1px solid #cfd6dd;background:#fff;border-radius:9px;padding:8px 10px;font-size:18px;color:#17324d}
+.site-footer{margin-top:72px;background:#132130;color:#b5c0ca}
+.site-footer .site-footer-wrap{max-width:1180px;margin:0 auto;padding:42px 24px 18px}
+.site-footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:34px}
+.site-footer-brand{color:#fff;font-weight:800;font-size:18px;margin-bottom:10px}
+.site-footer p{margin:0;line-height:1.7;font-size:13px}
+.site-footer h4{margin:0 0 12px;color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.site-footer a{display:block;color:#b5c0ca;text-decoration:none;font-size:13px;margin:0 0 9px}
+.site-footer a:hover{color:#fff}
+.site-footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:16px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px}
+.site-footer-legal{display:flex;gap:15px;flex-wrap:wrap}
+@media(max-width:960px){.site-links{gap:2px}.site-links a,.site-links summary{padding:8px 7px}.site-footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:740px){.site-header .site-wrap{padding:12px 16px}.site-links{display:none}.site-actions .site-login,.site-actions .site-cta{display:none}.site-menu-btn{display:block}.site-footer-grid{grid-template-columns:1fr 1fr}.site-footer .site-footer-wrap{padding:34px 18px 16px}}
+@media(max-width:500px){.site-footer-grid{grid-template-columns:1fr}}
+</style>
+
+<style id="mobile-nav-fix">
+@media(max-width:740px){
+  .mobile-nav{display:none!important;background:#fff;border-top:1px solid #e6e0d6;padding:10px 16px 14px}
+  .mobile-nav.show{display:grid!important}
+  .mobile-nav a{padding:9px 4px;color:#33404d;text-decoration:none;font-size:14px}
+  .mobile-nav .mobile-group{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#89939d;padding-top:11px}
+}
+</style>
+<script src="api-client.js"></script>
+<script>
+(function(){
+ function build(){
+ const el=document.getElementById('mobileNav');
+ if(!el) return;
+ el.innerHTML=`
+  <a href="index.html">Home</a>
+  <a href="test-series.html">Test Series</a>
+  <a href="free-tests.html">Free Tests</a>
+  <div class="mobile-group">Resources</div>
+  <a href="pyqs.html">UPSC PYQs</a>
+  <a href="current-affairs.html">Current Affairs</a>
+  <a href="study-material.html">Study Material</a>
+  <a href="results.html">Results</a>
+  <a href="blog.html">Blog</a>
+  <a href="faq.html">FAQ</a>
+  <div class="mobile-group">More</div>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="login.html">Login</a>`;
+ }
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',build); else build();
+})();
+</script>
+
+</head>
+<body>
+
+<header class="site-header"><div class="site-wrap"><a class="site-brand" href="index.html"><span class="site-brand-mark">U</span><span>UPSC Test Series</span></a><div style="margin-left:auto"><a class="site-login" href="index.html">← Back to website</a></div></div></header>
+
+
+<main>
+  <div class="container auth-grid">
+    <section class="intro">
+      <span class="eyebrow"><span class="dot"></span> Student portal</span>
+      <h1>Welcome <em>back.</em></h1>
+      <p>Sign in to continue your preparation, attempt tests, review results and track your performance.</p>
+      <div class="benefits">
+        <div class="benefit"><div class="check">✓</div><div><strong>Access your test series</strong><span>Continue where you left off and see upcoming tests.</span></div></div>
+        <div class="benefit"><div class="check">✓</div><div><strong>Review performance</strong><span>Track scores, accuracy, ranks and topic-wise progress.</span></div></div>
+        <div class="benefit"><div class="check">✓</div><div><strong>Keep your preparation organised</strong><span>Save bookmarks, mistakes and study resources in one place.</span></div></div>
+      </div>
+    </section>
+
+    <section class="card" aria-label="Login form">
+      <div class="card-top">
+        <h2>Sign in</h2>
+        <p>Use your registered email or mobile number.</p>
+      </div>
+      <form class="form" id="loginForm">
+        <div class="field">
+          <label for="identifier">Email or mobile</label>
+          <input id="identifier" name="identifier" type="text" autocomplete="username" placeholder="you@example.com" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="6" />
+            <button class="password-toggle" type="button" id="togglePassword">Show</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="remember"><input type="checkbox" id="remember" /> Remember me</label>
+          <button class="forgot" type="button" id="forgotPassword">Forgot password?</button>
+        </div>
+        <button class="btn btn-primary" type="submit">Login to my account</button>
+      </form>
+      <div class="divider">or</div>
+      <button class="btn google" type="button" id="googleLogin">Continue with Google</button>
+      <div class="notice" id="notice"></div>
+      <p class="register">Don't have an account? <a href="register.html">Create an account</a></p>
+      <div class="security">Your account authentication will be securely handled by the platform backend.</div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-wrap">
+    <div class="site-footer-grid">
+      <div>
+        <div class="site-footer-brand">UPSC Test Series</div>
+        <p>A structured practice platform for UPSC aspirants — tests, PYQs, current affairs, study resources and performance analysis.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <a href="test-series.html">Test Series</a>
+        <a href="free-tests.html">Free Tests</a>
+        <a href="results.html">Results</a>
+        <a href="test-series.html#plans">Pricing</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="pyqs.html">UPSC PYQs</a>
+        <a href="current-affairs.html">Current Affairs</a>
+        <a href="study-material.html">Study Material</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="about.html">About Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html">Student Login</a>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>© 2026 UPSC Test Series. All rights reserved.</span>
+      <span class="site-footer-legal">
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="refund-policy.html">Refund Policy</a>
+        <a href="cookie-policy.html">Cookies</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const form=document.getElementById('loginForm');
+const notice=document.getElementById('notice');
+const password=document.getElementById('password');
+const toggle=document.getElementById('togglePassword');
+const forgot=document.getElementById('forgotPassword');
+const google=document.getElementById('googleLogin');
+function showNotice(message,type='info'){notice.textContent=message;notice.className='notice show '+type;}
+toggle.addEventListener('click',()=>{const visible=password.type==='text';password.type=visible?'password':'text';toggle.textContent=visible?'Show':'Hide';});
+forgot.addEventListener('click',async()=>{const identifier=prompt('Enter your registered email or mobile number:');if(!identifier)return;try{const r=await UPSC_API.post('/auth/request-otp',{identifier,purpose:'password_reset'});if(r.development_otp) alert('Development OTP: '+r.development_otp);location.href='verify-reset.html?identifier='+encodeURIComponent(identifier)}catch(e){showNotice(e.message,'info')}});
+google.addEventListener('click',()=>showNotice('Google sign-in is not configured in this local build. Use email/mobile + password.','info'));
+function nextPage(){try{const r=JSON.parse(localStorage.getItem('post_login_redirect')||'null');localStorage.removeItem('post_login_redirect');if(r&&r.exp>Date.now()&&/^[a-z0-9-]+\.html(\?[A-Za-z0-9=&_%-]*)?$/.test(r.path))return r.path}catch(_){}try{const n=new URLSearchParams(location.search).get('next');if(n&&/^[a-z0-9-]+\.html(\?[A-Za-z0-9=&_%-]*)?$/.test(n))return n}catch(_){}return 'student-dashboard.html'}
+form.addEventListener('submit',async(e)=>{e.preventDefault();if(!form.checkValidity()){form.reportValidity();return;}showNotice('Signing you in…','info');try{const data=await UPSC_API.post('/auth/login',{identifier:document.getElementById('identifier').value.trim(),password:password.value});UPSC_API.setSession(data);showNotice('Login successful. Redirecting…','success');setTimeout(()=>location.href=nextPage(),500);}catch(err){showNotice(err.message,'error');}});
+</script>
+</body>
+</html>

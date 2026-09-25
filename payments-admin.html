@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payments Management | UPSC Admin</title>
+<meta name="description" content="Manage payments, verification, refunds, invoices, reconciliation and payment gateway events for the UPSC Test Series platform.">
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--bg:#f6f8fb;--white:#fff;--ink:#18212b;--muted:#667085;--line:#e5e7eb;--sidebar:#0f2238;--green:#198754;--amber:#a46a00;--red:#c2413a;--purple:#7653b5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none;color:inherit}.app{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.sidebar{background:var(--sidebar);color:#c7d2de;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:10px;padding:7px 10px 22px;color:#fff;font-weight:800}.mark{width:35px;height:35px;border-radius:10px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}.nav-section{margin:18px 8px 8px;color:#7f91a6;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:13px;margin:2px 0}.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);color:#fff}.nav .badge{margin-left:auto;background:var(--gold);color:#132130;border-radius:999px;padding:2px 6px;font-size:10px;font-weight:800}.sidebar-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding:15px 8px 0}.sidebar-bottom a{display:block;padding:8px 4px;font-size:12px;color:#a9b7c7}.main{min-width:0}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10}.top-title strong{display:block;color:var(--navy);font-size:16px}.top-title span{font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:10px}.search{border:1px solid #d9dee5;background:#f8fafc;border-radius:9px;padding:9px 12px;width:250px;font-size:13px}.admin{display:flex;align-items:center;gap:9px;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:#fff}.avatar{width:30px;height:30px;border-radius:50%;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800}.content{padding:28px}.head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}.head h1{margin:0;font-size:28px;color:var(--navy);letter-spacing:-.03em}.head p{margin:5px 0 0;color:var(--muted);font-size:13px}.btn{border:1px solid transparent;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-outline{background:#fff;color:var(--navy);border-color:#d6dce3}.btn-danger{background:#fff;color:var(--red);border-color:#e8c4c1}.btn-ghost{background:transparent;color:var(--blue);border:0;padding:7px 0;cursor:pointer;font-weight:750}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:25px;font-weight:850;color:var(--navy);margin-top:5px}.stat .meta{font-size:11px;color:#98a2b3;margin-top:6px}.tabs{display:flex;gap:6px;background:#eef2f6;padding:5px;border-radius:10px;width:max-content;margin-bottom:14px;flex-wrap:wrap}.tab{border:0;background:transparent;padding:8px 12px;border-radius:7px;font-size:12px;color:#667085;font-weight:750;cursor:pointer}.tab.active{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(16,36,62,.08)}.toolbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr auto;gap:10px;align-items:center}.field,.select{width:100%;border:1px solid #d9dee5;border-radius:9px;background:#fff;padding:10px 11px;font-size:12px;color:#344054}.field:focus,.select:focus,input:focus{outline:2px solid #dbeafe;border-color:#93c5fd}.table-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:20px}.card-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.card-head h2{font-size:15px;margin:0;color:var(--navy)}.muted{color:var(--muted);font-size:11px}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:13px 14px;border-bottom:1px solid #eef0f3;font-size:12px;vertical-align:top}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#85909d;background:#fafbfc}.table tr:last-child td{border-bottom:0}.subtext{font-size:10px;color:#8a94a3;margin-top:4px}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800;white-space:nowrap}.pill.green{background:#eaf7ef;color:#167343}.pill.blue{background:#eaf2fb;color:#245e9a}.pill.amber{background:#fff5dc;color:#946200}.pill.red{background:#fdebea;color:#a9352e}.pill.purple{background:#f1ebfb;color:#6848a1}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}.info-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.info-title{font-size:14px;font-weight:850;color:var(--navy)}.big{font-size:25px;font-weight:900;color:var(--navy);margin:10px 0 4px}.small{font-size:10px;color:var(--muted)}.kv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.kv div{padding:10px;border:1px solid #eef0f3;border-radius:10px}.kv strong{display:block;font-size:13px;color:var(--navy)}.kv span{font-size:10px;color:var(--muted)}.progress{height:8px;background:#edf0f3;border-radius:99px;overflow:hidden;margin-top:10px}.progress i{display:block;height:100%;background:#7ba5d1;border-radius:99px}.note{background:#fff8e6;border:1px solid #f0ddb0;border-radius:12px;padding:13px 14px;margin-top:18px;font-size:11px;color:#795b13;line-height:1.55}.ok{background:#eef9f2;border:1px solid #ccead6;border-radius:12px;padding:13px 14px;margin-top:18px;font-size:11px;color:#1e6b42;line-height:1.55}.modal{position:fixed;inset:0;background:rgba(15,34,56,.46);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.open{display:flex}.modal-box{background:#fff;border-radius:16px;width:min(760px,100%);max-height:90vh;overflow:auto;box-shadow:0 25px 80px rgba(0,0,0,.18)}.modal-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0;color:var(--navy);font-size:16px}.close{border:0;background:#f1f3f5;border-radius:50%;width:30px;height:30px;cursor:pointer}.form{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:13px}.form .full{grid-column:1/-1}.label{font-size:11px;font-weight:800;color:#475467;display:block;margin-bottom:6px}.check-row{display:flex;flex-wrap:wrap;gap:10px}.check{border:1px solid #d9dee5;border-radius:9px;padding:9px 10px;display:flex;gap:7px;align-items:center;font-size:11px;color:#475467;background:#fff}.modal-foot{padding:15px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:9px}@media(max-width:1050px){.stats{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr 1fr}.toolbar .field{grid-column:1/-1}}@media(max-width:760px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.nav{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}.topbar{padding:0 16px}.top-actions .search{display:none}.content{padding:18px}.stats{grid-template-columns:1fr 1fr}.toolbar{grid-template-columns:1fr}.form{grid-template-columns:1fr}.form .full{grid-column:auto}.table-card{overflow:auto}.table{min-width:1100px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="mark">U</div><span>UPSC Test Series</span></div>
+<div class="nav-section">Overview</div><nav class="nav"><a href="admin-dashboard.html">⌂ <span>Dashboard</span></a></nav>
+<div class="nav-section">Academic</div><nav class="nav">
+<a href="student-management.html">◉ <span>Students</span></a><a href="question-bank-admin.html">☑ <span>Questions</span></a><a href="test-management-admin.html">▤ <span>Tests</span></a><a href="test-series-management-admin.html">▥ <span>Test Series</span></a>
+</nav>
+<div class="nav-section">Content</div><nav class="nav"><a href="current-affairs-admin.html">◉ <span>Current Affairs</span></a><a href="study-material-admin.html">▤ <span>Study Material</span></a><a href="blog-admin.html">✎ <span>Blog / CMS</span></a></nav>
+<div class="nav-section">Commerce</div><nav class="nav"><a href="subscriptions-admin.html">◇ <span>Subscriptions</span></a><a href="payments-admin.html" class="active">₹ <span>Payments</span></a><a href="coupons-admin.html">% <span>Coupons</span></a></nav>
+<div class="nav-section">Operations</div><nav class="nav"><a href="results-admin.html">◫ <span>Results & Rankings</span></a><a href="notifications-admin.html">◌ <span>Notifications</span></a><a href="reports-admin.html">◈ <span>Reports</span></a><a href="settings-admin.html">⚙ <span>Settings</span></a></nav>
+<div class="sidebar-bottom"><a href="index.html">View public website →</a><a href="student-dashboard.html">Open student portal →</a></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="top-title"><strong>Payments Management</strong><span>Transactions → verification → refunds → reconciliation</span></div><div class="top-actions"><input class="search" id="topSearch" placeholder="Search transaction…"><div class="admin"><div class="avatar">AK</div><span style="font-size:12px;font-weight:800;color:#334155">Admin</span></div></div></header>
+<section class="content">
+<div class="head"><div><h1>Payments</h1><p>Monitor transactions, settlement status, refunds, invoices and gateway health from one place.</p></div><div style="display:flex;gap:8px"><button class="btn btn-outline" onclick="exportPayments()">Export CSV</button><button class="btn btn-primary" onclick="openRefundModal()">Process Refund</button></div></div>
+<div class="stats"><div class="stat"><div class="label">Gross Collections</div><div class="value" id="stGross">&ndash;</div><div class="meta">Successful payments, all time</div></div><div class="stat"><div class="label">Successful Payments</div><div class="value" id="stSuccess">&ndash;</div><div class="meta" id="stSuccessMeta">&nbsp;</div></div><div class="stat"><div class="label">Pending</div><div class="value" id="stPending">&ndash;</div><div class="meta">Awaiting gateway confirmation</div></div><div class="stat"><div class="label">Refunded</div><div class="value" id="stRefunded">&ndash;</div><div class="meta" id="stRefundedMeta">&nbsp;</div></div><div class="stat"><div class="label">Failed</div><div class="value" id="stFailed">&ndash;</div><div class="meta">Did not complete</div></div></div>
+<div class="tabs"><button class="tab active" data-tab="all">All Transactions</button><button class="tab" data-tab="success">Successful</button><button class="tab" data-tab="pending">Pending</button><button class="tab" data-tab="failed">Failed</button><button class="tab" data-tab="refund">Refunds</button></div>
+<div class="toolbar"><input id="search" class="field" placeholder="Search student, transaction ID, order ID, invoice…"><select id="gateway" class="select"><option value="">All Gateways</option><option value="razorpay">Razorpay</option><option value="development">Development (test)</option><option value="coupon">Free (coupon)</option></select><select id="method" class="select"><option value="">All Methods</option><option value="card">Card</option><option value="upi">UPI</option><option value="netbanking">Net Banking</option><option value="wallet">Wallet</option><option value="coupon">Coupon</option></select><select id="sort" class="select"><option value="recent">Sort: Recent</option><option value="amount">Sort: Amount</option><option value="name">Sort: Student</option></select><button class="btn btn-outline" onclick="clearFilters()">Clear</button></div>
+<div class="table-card"><div class="card-head"><div><h2>Transaction Ledger</h2><div class="muted">Live data from the payments table</div></div><span class="pill blue" id="countLabel">Showing 8</span></div><table class="table"><thead><tr><th>Student</th><th>Transaction</th><th>Order / Invoice</th><th>Plan</th><th>Gateway</th><th>Method</th><th>Amount</th><th>Created</th><th>Status</th><th>Action</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="cards">
+<div class="info-card"><div class="info-title">Payment Success Rate</div><div class="big" id="rateBig">&ndash;</div><div class="small">Across successful and failed checkout attempts</div><div class="kv"><div><strong id="rateSuccessN">0</strong><span>Successful</span></div><div><strong id="rateFailedN">0</strong><span>Failed</span></div></div><div class="progress"><i id="rateBar" style="width:0%"></i></div></div>
+</div>
+<div class="note"><strong>Payment verification:</strong> access to a paid plan should be activated only after the backend verifies the gateway response/webhook. The browser redirect after checkout must not be treated as proof of payment.</div>
+<div class="ok"><strong>Operational controls:</strong> keep an immutable transaction ID, gateway reference, order ID, invoice ID, amount, currency, status timeline and webhook audit trail for every payment event.</div>
+</section></main></div>
+<div class="modal" id="refundModal"><div class="modal-box"><div class="modal-head"><h3>Process Refund</h3><button class="close" onclick="closeRefundModal()">&times;</button></div><form class="form" onsubmit="submitRefund(event)"><div class="full" id="refundSummary" style="font-size:13px;color:#475467"></div><div><label class="label">Refund Amount (&#8377;)</label><input class="field" id="refundAmount" required type="number" min="1"></div><div><label class="label">Refund Type</label><select class="select" id="refundType"><option value="full">Full Refund</option><option value="partial">Partial Refund</option></select></div><div class="full"><label class="label">Reason (optional)</label><input class="field" id="refundReason" placeholder="e.g. Customer request, duplicate payment"></div><div class="full" id="refundNote" style="font-size:12px;color:#667085">A full refund also cancels the plan it paid for. A partial refund keeps the plan active.</div><div class="modal-foot full"><button type="button" class="btn btn-outline" onclick="closeRefundModal()">Cancel</button><button class="btn btn-primary" type="submit" id="refundSubmitBtn">Process Refund</button></div></form></div></div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rupees=paise=>'\u20B9'+(paise/100).toLocaleString('en-IN');
+const fmtDate=iso=>new Date(iso).toLocaleString('en-IN',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+const GATEWAY_NAMES={razorpay:'Razorpay',development:'Development (test)',coupon:'Free (coupon)'};
+const STATUS_PILL={successful:['green','Successful'],pending:['amber','Pending'],failed:['red','Failed'],refunded:['gray','Refunded'],partially_refunded:['blue','Partially Refunded']};
+let rows=[],selected=null;
+
+function statusOf(row){return row.status}
+function matchesTab(row,tab){
+  if(tab==='all')return true;
+  if(tab==='success')return row.status==='successful';
+  if(tab==='pending')return row.status==='pending';
+  if(tab==='failed')return row.status==='failed';
+  if(tab==='refund')return row.status==='refunded'||row.status==='partially_refunded';
+  return true;
+}
+function render(){
+  const tab=document.querySelector('.tab.active').dataset.tab;
+  const q=$('search').value.trim().toLowerCase(),gw=$('gateway').value,mth=$('method').value,sort=$('sort').value;
+  let list=rows.filter(r=>matchesTab(r,tab)
+    &&(!gw||r.gateway===gw)&&(!mth||r.method===mth)
+    &&(!q||[r.first_name+' '+(r.last_name||''),r.transaction_id,r.order_id,r.invoice_number,r.email].filter(Boolean).join(' ').toLowerCase().includes(q)));
+  if(sort==='amount')list=list.slice().sort((a,b)=>b.amount_paise-a.amount_paise);
+  else if(sort==='name')list=list.slice().sort((a,b)=>(a.first_name+(a.last_name||'')).localeCompare(b.first_name+(b.last_name||'')));
+  else list=list.slice().sort((a,b)=>b.created_at.localeCompare(a.created_at));
+  $('countLabel').textContent=`Showing ${list.length}`;
+  $('rows').innerHTML=list.length?list.map(r=>{
+    const [cls,label]=STATUS_PILL[r.status]||['gray',r.status];
+    const canRefund=r.status==='successful'||r.status==='partially_refunded';
+    return `<tr><td>${esc(r.first_name)} ${esc(r.last_name||'')}<div class="muted">${esc(r.email||'')}</div></td><td>${esc(r.transaction_id||'-')}<div class="muted">${esc(GATEWAY_NAMES[r.gateway]||r.gateway)}</div></td><td>${esc(r.order_id||'-')}${r.invoice_number?'<div class="muted">'+esc(r.invoice_number)+'</div>':''}</td><td>${esc(r.plan_name||'-')}</td><td>${esc(GATEWAY_NAMES[r.gateway]||r.gateway)}</td><td>${esc((r.method||'-').toUpperCase())}</td><td>${rupees(r.amount_paise)}${r.refund_amount_paise?'<div class="muted">Refunded '+rupees(r.refund_amount_paise)+'</div>':''}</td><td>${esc(fmtDate(r.created_at))}</td><td><span class="pill ${cls}">${esc(label)}</span></td><td>${canRefund?`<button class="btn btn-outline btn-sm" onclick="openRefundModal('${esc(r.id)}')">Refund</button>`:'&mdash;'}</td></tr>`;
+  }).join(''):'<tr><td colspan="10" style="text-align:center;padding:28px;color:#667085">No transactions match these filters.</td></tr>';
+}
+function renderStats(){
+  const n=s=>rows.filter(r=>r.status===s);
+  const gross=n('successful').reduce((a,r)=>a+r.amount_paise,0)+n('partially_refunded').reduce((a,r)=>a+r.amount_paise,0);
+  const refunded=rows.reduce((a,r)=>a+(r.refund_amount_paise||0),0);
+  const refundCount=n('refunded').length+n('partially_refunded').length;
+  $('stGross').textContent=rupees(gross);
+  $('stSuccess').textContent=n('successful').length;
+  $('stSuccessMeta').textContent=`${n('partially_refunded').length} partially refunded`;
+  $('stPending').textContent=n('pending').length;
+  $('stRefunded').textContent=rupees(refunded);
+  $('stRefundedMeta').textContent=`${refundCount} refund${refundCount===1?'':'s'}`;
+  $('stFailed').textContent=n('failed').length;
+  const succ=n('successful').length+n('partially_refunded').length+n('refunded').length,fail=n('failed').length,total=succ+fail;
+  $('rateBig').textContent=total?Math.round(succ/total*1000)/10+'%':'\u2013';
+  $('rateSuccessN').textContent=succ;$('rateFailedN').textContent=fail;
+  $('rateBar').style.width=(total?succ/total*100:0)+'%';
+}
+async function load(){
+  try{rows=await window.UPSC_API.get('/admin/payments');renderStats();render()}
+  catch(e){$('rows').innerHTML=`<tr><td colspan="10" style="text-align:center;padding:28px;color:#b42318">${esc(e.message||'Could not load payments.')}</td></tr>`}
+}
+function clearFilters(){$('search').value='';$('gateway').value='';$('method').value='';$('sort').value='recent';document.querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('active',i===0));render()}
+function openRefundModal(id){
+  selected=rows.find(r=>r.id===id);if(!selected)return;
+  $('refundSummary').innerHTML=`<strong>${esc(selected.first_name)} ${esc(selected.last_name||'')}</strong> &middot; ${esc(selected.plan_name||'')} &middot; paid ${rupees(selected.amount_paise)} on ${esc(fmtDate(selected.created_at))}`;
+  $('refundAmount').value=(selected.amount_paise/100).toFixed(2);$('refundAmount').max=(selected.amount_paise/100).toFixed(2);
+  $('refundType').value='full';$('refundReason').value='';
+  syncRefundType();
+  $('refundModal').classList.add('show');
+}
+function syncRefundType(){const full=$('refundType').value==='full';$('refundAmount').disabled=full;if(full&&selected)$('refundAmount').value=(selected.amount_paise/100).toFixed(2)}
+function closeRefundModal(){$('refundModal').classList.remove('show');selected=null}
+async function submitRefund(ev){
+  ev.preventDefault();
+  if(!selected)return;
+  const rupeesValue=parseFloat($('refundAmount').value);
+  if(!(rupeesValue>0))return alert('Enter a valid refund amount.');
+  const amount_paise=$('refundType').value==='full'?null:Math.round(rupeesValue*100);
+  const btn=$('refundSubmitBtn');btn.disabled=true;btn.textContent='Processing…';
+  try{
+    const body={payment_id:selected.id};if(amount_paise!=null)body.amount_paise=amount_paise;
+    const reason=$('refundReason').value.trim();if(reason)body.reason=reason;
+    const r=await window.UPSC_API.post('/admin/payments/refund',body);
+    closeRefundModal();
+    alert((r.status==='refunded'?'Refund processed in full.':'Partial refund processed.')+(r.subscription_cancelled?' The student\'s plan access has been cancelled.':' The student keeps their plan access.'));
+    await load();
+  }catch(e){alert(e.message||'The refund could not be processed.')}
+  finally{btn.disabled=false;btn.textContent='Process Refund'}
+}
+function exportPayments(){
+  const head=['Student','Email','Transaction','Order','Invoice','Plan','Gateway','Method','Amount (INR)','Refunded (INR)','Status','Created'];
+  const csvRow=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';
+  const lines=[head.map(csvRow).join(',')].concat(rows.map(r=>[r.first_name+' '+(r.last_name||''),r.email,r.transaction_id,r.order_id,r.invoice_number,r.plan_name,GATEWAY_NAMES[r.gateway]||r.gateway,r.method,(r.amount_paise/100).toFixed(2),((r.refund_amount_paise||0)/100).toFixed(2),r.status,r.created_at].map(csvRow).join(',')));
+  const blob=new Blob([lines.join('\n')],{type:'text/csv'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='payments.csv';a.click();URL.revokeObjectURL(a.href);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()}));
+  ['search','gateway','method','sort'].forEach(id=>$(id).addEventListener('input',render));
+  $('refundType').addEventListener('input',syncRefundType);
+  load();
+});
+</script><script src="api-client.js"></script><script src="admin-api.js"></script>
+</body></html>

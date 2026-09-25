@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Tests | UPSC Test Series</title>
+<meta name="description" content="Student test library for UPSC Test Series with upcoming, in-progress, completed and available tests." />
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--cream:#f7f4ed;--ink:#18212b;--muted:#667085;--white:#fff;--line:#e5e7eb;--soft:#f6f8fb;--green:#198754;--orange:#b66a00;--red:#b42318;--shadow:0 12px 36px rgba(16,36,62,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--soft);line-height:1.5}a{text-decoration:none;color:inherit}button,input,select{font:inherit}
+.container{max-width:1380px;margin:auto;padding:0 24px}
+.topbar{height:72px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}.topnav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);font-size:18px}.brand-mark{width:36px;height:36px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.nav-right{display:flex;align-items:center;gap:14px}.search{width:270px;border:1px solid var(--line);border-radius:10px;padding:10px 13px;background:#fff;font-size:13px;outline:none}.search:focus{border-color:#9bbbdc;box-shadow:0 0 0 3px rgba(29,95,167,.1)}.notif{width:38px;height:38px;border:1px solid var(--line);border-radius:10px;background:#fff;display:grid;place-items:center;color:var(--navy);cursor:pointer;position:relative}.notif-dot{position:absolute;right:7px;top:6px;width:7px;height:7px;border-radius:50%;background:var(--red);border:2px solid #fff}.profile{display:flex;align-items:center;gap:9px;padding-left:6px}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#eaf2fb;color:var(--blue);font-weight:900}.profile-name{font-size:13px;font-weight:800;color:var(--navy)}.profile-sub{font-size:11px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:245px 1fr;min-height:calc(100vh - 72px)}.sidebar{background:#fff;border-right:1px solid var(--line);padding:22px 14px;position:sticky;top:72px;height:calc(100vh - 72px)}.side-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:#98a2b3;font-weight:900;padding:0 12px;margin:7px 0 9px}.side-nav{display:grid;gap:4px}.side-nav a,.side-btn{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;color:#526071;font-size:13px;font-weight:700;border:0;background:transparent;width:100%;text-align:left;cursor:pointer}.side-nav a:hover,.side-btn:hover{background:#f5f8fc;color:var(--navy)}.side-nav a.active{background:#eaf2fb;color:var(--blue);font-weight:900}.icon{width:20px;text-align:center;font-size:14px}.side-bottom{position:absolute;left:14px;right:14px;bottom:18px}.upgrade{padding:14px;border-radius:14px;background:var(--navy);color:#fff}.upgrade small{display:block;color:#b7c3d1;font-size:10px;margin-bottom:4px}.upgrade strong{display:block;font-size:13px;line-height:1.35}.upgrade a{display:inline-flex;margin-top:10px;background:#fff;color:var(--navy);padding:8px 10px;border-radius:8px;font-size:11px;font-weight:900}.mobile-menu{display:none}
+.main{padding:30px 0 56px}.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:22px}.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--blue);background:#eaf2fb;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.page-head h1{margin:11px 0 4px;font-size:34px;line-height:1.1;letter-spacing:-.04em;color:var(--navy)}.page-head p{margin:0;color:var(--muted);font-size:13px}.date-pill{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:12px;color:#526071;font-weight:800;white-space:nowrap}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px 18px;box-shadow:0 6px 20px rgba(16,36,62,.03)}.stat-label{font-size:11px;color:var(--muted);font-weight:800}.stat-value{font-size:25px;color:var(--navy);font-weight:900;letter-spacing:-.03em;margin-top:6px}.stat-meta{font-size:10px;color:var(--muted);font-weight:700;margin-top:3px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.toolbar{padding:16px 18px;border-bottom:1px solid #f0f2f4;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.tabs{display:flex;gap:4px;flex-wrap:wrap}.tab{border:1px solid transparent;background:transparent;color:#667085;padding:8px 11px;border-radius:9px;font-size:11px;font-weight:900;cursor:pointer}.tab.active{background:#eaf2fb;color:var(--blue);border-color:#d7e7f7}.filters{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.filter,.sort{border:1px solid var(--line);background:#fff;color:#475467;border-radius:9px;padding:8px 10px;font-size:11px;outline:none}.filter:focus,.sort:focus{border-color:#9bbbdc}.panel-body{padding:16px 18px}
+.test-list{display:grid;gap:12px}.test{border:1px solid var(--line);border-radius:13px;padding:15px;display:grid;grid-template-columns:1fr auto;gap:14px;background:#fff}.test.hidden{display:none}.test-main{min-width:0}.test-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.series{font-size:9px;color:#7b8794;font-weight:900;text-transform:uppercase;letter-spacing:.05em}.test-title{font-size:14px;font-weight:900;color:var(--navy);margin:3px 0 7px}.test-desc{font-size:11px;color:var(--muted);margin:0 0 10px;max-width:760px}.meta{display:flex;gap:8px;flex-wrap:wrap}.meta span{font-size:10px;color:#526071;background:#f7f9fb;border:1px solid #edf0f3;border-radius:7px;padding:5px 7px;font-weight:800}.badge{font-size:9px;border-radius:999px;padding:4px 8px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.badge-upcoming{background:#fbf3d9;color:#856515}.badge-active{background:#eaf2fb;color:var(--blue)}.badge-complete{background:#ebf7f0;color:#146c43}.badge-locked{background:#f1f2f4;color:#667085}.actions{display:flex;flex-direction:column;align-items:stretch;justify-content:center;min-width:122px;gap:7px}.btn{border-radius:9px;padding:9px 11px;font-size:11px;font-weight:900;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}.btn-primary{background:var(--blue);color:#fff}.btn-ghost{border-color:var(--line);background:#fff;color:var(--navy)}.btn-disabled{background:#f2f4f7;color:#98a2b3;border-color:#e4e7ec;cursor:not-allowed}.footnote{font-size:10px;color:#98a2b3;margin-top:13px}.empty{display:none;text-align:center;padding:50px 20px}.empty.show{display:block}.empty-icon{width:44px;height:44px;border-radius:12px;background:#f0f5fa;color:var(--blue);display:grid;place-items:center;margin:0 auto 12px;font-weight:900}.empty strong{display:block;color:var(--navy);font-size:14px}.empty span{display:block;color:var(--muted);font-size:11px;margin-top:4px}.search-note{font-size:10px;color:var(--muted);padding:0 18px 16px}.mobile-menu{width:38px;height:38px;border:1px solid var(--line);background:#fff;border-radius:9px;place-items:center;color:var(--navy);cursor:pointer}
+@media(max-width:1120px){.layout{grid-template-columns:82px 1fr}.sidebar{padding:18px 9px}.side-label,.side-nav a span:not(.icon),.upgrade{display:none}.side-nav a,.side-btn{justify-content:center}.side-bottom{left:9px;right:9px}.summary{grid-template-columns:repeat(2,1fr)}.search{width:200px}}
+@media(max-width:720px){.topbar,.topnav{height:64px}.topnav{padding:0 15px}.layout{display:block}.sidebar{display:none}.main{padding:22px 0 45px}.container{padding:0 15px}.mobile-menu{display:grid}.nav-right{gap:8px}.search{display:none}.profile-name,.profile-sub{display:none}.page-head{align-items:flex-start;flex-direction:column}.page-head h1{font-size:29px}.date-pill{font-size:10px}.summary{grid-template-columns:1fr 1fr;gap:10px}.stat{padding:13px}.stat-value{font-size:21px}.toolbar{align-items:flex-start}.filters{width:100%}.filter,.sort{flex:1;min-width:120px}.test{grid-template-columns:1fr}.actions{flex-direction:row;min-width:0}.actions .btn{flex:1}.panel-body{padding:13px 15px}}
+@media(max-width:460px){.summary{grid-template-columns:1fr 1fr}.toolbar{padding:13px 14px}.tabs{width:100%;overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.filters{display:grid;grid-template-columns:1fr 1fr}.filter,.sort{min-width:0;width:100%}.test{padding:13px}.test-title{font-size:13px}.actions{flex-direction:column}.actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container topnav">
+    <div style="display:flex;align-items:center;gap:10px"><button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button><a class="brand" href="index.html"><span class="brand-mark">U</span> UPSC Test Series</a></div>
+    <div class="nav-right">
+      <input class="search" id="globalSearch" placeholder="Search tests, topics, resources..." aria-label="Search tests" />
+      <button class="notif" aria-label="Notifications">🔔<span class="notif-dot"></span></button>
+      <div class="profile"><div class="avatar">AK</div><div><div class="profile-name">Abhishek Kumar</div><div class="profile-sub">UPSC 2027</div></div></div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-label">Workspace</div>
+    <nav class="side-nav">
+      <a href="student-dashboard.html"><span class="icon">⌂</span><span>Dashboard</span></a>
+      <a class="active" href="my-tests.html"><span class="icon">▣</span><span>My Tests</span></a>
+      <a href="free-tests.html"><span class="icon">◉</span><span>All Tests</span></a>
+      <a href="results.html"><span class="icon">▤</span><span>Results</span></a>
+      <a href="student-dashboard.html#performance"><span class="icon">↗</span><span>Performance</span></a>
+      <a href="student-pyqs.html"><span class="icon">⌁</span><span>Question Bank</span></a>
+    </nav>
+    <div class="side-label">Resources</div>
+    <nav class="side-nav">
+      <a href="current-affairs.html"><span class="icon">●</span><span>Current Affairs</span></a>
+      <a href="study-material.html"><span class="icon">□</span><span>Study Material</span></a>
+      <a href="#bookmarks"><span class="icon">☆</span><span>Bookmarks</span></a>
+      <a href="#mistakes"><span class="icon">✓</span><span>Mistake Notebook</span></a>
+    </nav>
+    <div class="side-label">Account</div>
+    <nav class="side-nav">
+      <a href="#subscription"><span class="icon">₹</span><span>Subscription</span></a>
+      <a href="contact.html"><span class="icon">?</span><span>Help & Support</span></a>
+      <button class="side-btn" id="logoutBtn"><span class="icon">↪</span><span>Logout</span></button>
+    </nav>
+    <div class="side-bottom"><div class="upgrade"><small>YOUR CURRENT PLAN</small><strong>Prelims Complete · Active</strong><a href="test-series.html#plans">Manage Plan</a></div></div>
+  </aside>
+
+  <main class="main">
+    <div class="container">
+      <div class="page-head">
+        <div>
+          <span class="eyebrow">Student Workspace <span style="width:6px;height:6px;border-radius:50%;background:var(--green)"></span></span>
+          <h1>My Tests</h1>
+          <p>Track upcoming assessments, continue active tests and revisit everything you have attempted.</p>
+        </div>
+        <div class="date-pill">Saturday, 19 September 2026</div>
+      </div>
+
+      <section class="summary" aria-label="Test summary">
+        <div class="stat"><div class="stat-label">Available Tests</div><div class="stat-value">42</div><div class="stat-meta">Across your active plan</div></div>
+        <div class="stat"><div class="stat-label">Upcoming</div><div class="stat-value">7</div><div class="stat-meta">Next: Environment · Test 04</div></div>
+        <div class="stat"><div class="stat-label">In Progress</div><div class="stat-value">1</div><div class="stat-meta">Resume anytime before expiry</div></div>
+        <div class="stat"><div class="stat-label">Completed</div><div class="stat-value">24</div><div class="stat-meta">Latest: Polity · Test 03</div></div>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <div class="tabs" role="tablist" aria-label="Test status">
+            <button class="tab active" data-tab="all">All Tests <span>(42)</span></button>
+            <button class="tab" data-tab="upcoming">Upcoming <span>(7)</span></button>
+            <button class="tab" data-tab="progress">In Progress <span>(1)</span></button>
+            <button class="tab" data-tab="completed">Completed <span>(24)</span></button>
+            <button class="tab" data-tab="locked">Locked <span>(10)</span></button>
+          </div>
+          <div class="filters">
+            <select class="filter" id="seriesFilter" aria-label="Filter by series">
+              <option value="all">All series</option>
+              <option value="prelims">Prelims GS</option>
+              <option value="csat">CSAT</option>
+              <option value="current">Current Affairs</option>
+            </select>
+            <select class="filter" id="typeFilter" aria-label="Filter by test type">
+              <option value="all">All types</option>
+              <option value="subject">Subject Test</option>
+              <option value="full">Full Length</option>
+              <option value="current">Current Affairs</option>
+            </select>
+            <select class="sort" id="sortSelect" aria-label="Sort tests">
+              <option value="default">Recommended</option>
+              <option value="soonest">Soonest first</option>
+              <option value="latest">Latest completed</option>
+              <option value="alpha">A–Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="search-note" id="searchNote">Showing tests available under your current subscription.</div>
+        <div class="panel-body">
+          <div class="test-list" id="testList">
+            <article class="test" data-status="upcoming" data-series="prelims" data-type="subject" data-title="Environment & Ecology Test 04" data-order="1">
+              <div class="test-main"><div class="test-top"><span class="badge badge-upcoming">Tomorrow</span><span class="series">Prelims GS</span></div><div class="test-title">Environment & Ecology · Test 04</div><p class="test-desc">Biodiversity, protected areas, climate conventions and current environmental developments relevant to Prelims.</p><div class="meta"><span>100 Questions</span><span>200 Marks</span><span>120 Minutes</span><span>1/3 Negative</span></div></div>
+              <div class="actions"><button class="btn btn-primary start-btn">View Test</button><a class="btn btn-ghost" href="test-series-detail.html">Details</a></div>
+            </article>
+
+            <article class="test" data-status="progress" data-series="prelims" data-type="subject" data-title="Polity Test 05" data-order="2">
+              <div class="test-main"><div class="test-top"><span class="badge badge-active">In progress</span><span class="series">Prelims GS</span></div><div class="test-title">Indian Polity · Test 05</div><p class="test-desc">Continue your unfinished test. Your responses are saved automatically on the testing screen.</p><div class="meta"><span>100 Questions</span><span>200 Marks</span><span>120 Minutes</span><span>47 questions saved</span></div></div>
+              <div class="actions"><button class="btn btn-primary start-btn">Resume Test</button><a class="btn btn-ghost" href="test-series-detail.html">Details</a></div>
+            </article>
+
+            <article class="test" data-status="upcoming" data-series="current" data-type="current" data-title="Current Affairs September Week 3" data-order="3">
+              <div class="test-main"><div class="test-top"><span class="badge badge-upcoming">24 Sept</span><span class="series">Current Affairs</span></div><div class="test-title">Current Affairs · September Week 3</div><p class="test-desc">Weekly current affairs test covering national, international, economy, environment, science and governance.</p><div class="meta"><span>50 Questions</span><span>100 Marks</span><span>60 Minutes</span></div></div>
+              <div class="actions"><button class="btn btn-primary start-btn">View Test</button><a class="btn btn-ghost" href="test-series-detail.html">Details</a></div>
+            </article>
+
+            <article class="test" data-status="completed" data-series="prelims" data-type="subject" data-title="Polity Test 03" data-order="4">
+              <div class="test-main"><div class="test-top"><span class="badge badge-complete">Completed</span><span class="series">Prelims GS</span></div><div class="test-title">Indian Polity · Test 03</div><p class="test-desc">Completed on 17 September. Review the result, solutions and topic-level performance.</p><div class="meta"><span>126 / 200</span><span>Accuracy 79%</span><span>Rank 421</span><span>17 Sept</span></div></div>
+              <div class="actions"><a class="btn btn-primary" href="results.html">View Result</a><a class="btn btn-ghost" href="student-pyqs.html">Solutions</a></div>
+            </article>
+
+            <article class="test" data-status="completed" data-series="prelims" data-type="subject" data-title="Economy Test 02" data-order="5">
+              <div class="test-main"><div class="test-top"><span class="badge badge-complete">Completed</span><span class="series">Prelims GS</span></div><div class="test-title">Indian Economy · Test 02</div><p class="test-desc">Completed on 14 September. Your detailed analysis is available with question-wise explanations.</p><div class="meta"><span>108 / 200</span><span>Accuracy 68%</span><span>Rank 687</span><span>14 Sept</span></div></div>
+              <div class="actions"><a class="btn btn-primary" href="results.html">View Result</a><a class="btn btn-ghost" href="student-pyqs.html">Solutions</a></div>
+            </article>
+
+            <article class="test" data-status="upcoming" data-series="prelims" data-type="full" data-title="Full Length Prelims Mock Test 05" data-order="6">
+              <div class="test-main"><div class="test-top"><span class="badge badge-upcoming">28 Sept</span><span class="series">Prelims GS</span></div><div class="test-title">Full-Length Prelims Mock · Test 05</div><p class="test-desc">Complete UPSC-style simulation across the full GS Paper-I syllabus.</p><div class="meta"><span>100 Questions</span><span>200 Marks</span><span>120 Minutes</span><span>Full Syllabus</span></div></div>
+              <div class="actions"><button class="btn btn-primary start-btn">View Test</button><a class="btn btn-ghost" href="test-series-detail.html">Details</a></div>
+            </article>
+
+            <article class="test" data-status="locked" data-series="csat" data-type="full" data-title="CSAT Full Length Mock 03" data-order="7">
+              <div class="test-main"><div class="test-top"><span class="badge badge-locked">Locked</span><span class="series">CSAT</span></div><div class="test-title">CSAT Full-Length Mock · Test 03</div><p class="test-desc">This test is outside your current subscription. Upgrade to unlock the complete CSAT programme.</p><div class="meta"><span>80 Questions</span><span>200 Marks</span><span>120 Minutes</span><span>Premium access</span></div></div>
+              <div class="actions"><a class="btn btn-primary" href="test-series.html#plans">Unlock Test</a><a class="btn btn-ghost" href="test-series.html#plans">View Plans</a></div>
+            </article>
+
+            <article class="test" data-status="locked" data-series="current" data-type="current" data-title="Current Affairs October Master Test" data-order="8">
+              <div class="test-main"><div class="test-top"><span class="badge badge-locked">Locked</span><span class="series">Current Affairs</span></div><div class="test-title">Current Affairs · October Master Test</div><p class="test-desc">A cumulative current-affairs assessment available with the Complete + Current Affairs plan.</p><div class="meta"><span>100 Questions</span><span>200 Marks</span><span>120 Minutes</span><span>Premium access</span></div></div>
+              <div class="actions"><a class="btn btn-primary" href="test-series.html#plans">Unlock Test</a><a class="btn btn-ghost" href="test-series.html#plans">View Plans</a></div>
+            </article>
+          </div>
+          <div class="empty" id="emptyState"><div class="empty-icon">⌁</div><strong>No tests match your filters.</strong><span>Try another status, series or test type.</span></div>
+          <div class="footnote">Demo data is shown for the interface. In the live application, this list will be populated from the test, subscription and attempt APIs.</div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script>
+const mobileMenu=document.getElementById('mobileMenu');
+const sidebar=document.getElementById('sidebar');
+mobileMenu?.addEventListener('click',()=>{sidebar.style.display=sidebar.style.display==='block'?'none':'block';sidebar.style.position='fixed';sidebar.style.zIndex='40';sidebar.style.top='64px';sidebar.style.left='0';sidebar.style.bottom='0';sidebar.style.width='245px';sidebar.style.height='calc(100vh - 64px)';});
+
+document.getElementById('logoutBtn')?.addEventListener('click',()=>alert('Demo logout action. This will connect to the authentication API later.'));
+
+document.querySelectorAll('.start-btn').forEach(btn=>btn.addEventListener('click',()=>alert('Test engine placeholder. This button will open the live test-taking screen once the Test Engine is connected.')));
+
+const tabs=[...document.querySelectorAll('.tab')];
+const tests=[...document.querySelectorAll('.test')];
+const seriesFilter=document.getElementById('seriesFilter');
+const typeFilter=document.getElementById('typeFilter');
+const sortSelect=document.getElementById('sortSelect');
+const globalSearch=document.getElementById('globalSearch');
+const emptyState=document.getElementById('emptyState');
+let activeTab='all';
+
+function applyFilters(){
+  const series=seriesFilter.value;
+  const type=typeFilter.value;
+  const q=(globalSearch.value||'').trim().toLowerCase();
+  let visible=[];
+  tests.forEach(t=>{
+    const status=t.dataset.status;
+    const okTab=activeTab==='all'||status===activeTab;
+    const okSeries=series==='all'||t.dataset.series===series;
+    const okType=type==='all'||t.dataset.type===type;
+    const okSearch=!q||t.dataset.title.toLowerCase().includes(q)||t.textContent.toLowerCase().includes(q);
+    const show=okTab&&okSeries&&okType&&okSearch;
+    t.classList.toggle('hidden',!show);
+    if(show) visible.push(t);
+  });
+  const sort=sortSelect.value;
+  const sorted=[...visible].sort((a,b)=>{
+    if(sort==='alpha') return a.dataset.title.localeCompare(b.dataset.title);
+    if(sort==='latest') return Number(b.dataset.order)-Number(a.dataset.order);
+    if(sort==='soonest') return Number(a.dataset.order)-Number(b.dataset.order);
+    return Number(a.dataset.order)-Number(b.dataset.order);
+  });
+  const list=document.getElementById('testList');
+  sorted.forEach(t=>list.appendChild(t));
+  emptyState.classList.toggle('show',visible.length===0);
+}
+
+tabs.forEach(tab=>tab.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('active'));
+  tab.classList.add('active');
+  activeTab=tab.dataset.tab;
+  applyFilters();
+}));
+[seriesFilter,typeFilter,sortSelect].forEach(el=>el.addEventListener('change',applyFilters));
+globalSearch.addEventListener('input',applyFilters);
+</script>
+<script src="api-client.js"></script><script src="student-api.js"></script>
+</body>
+</html>

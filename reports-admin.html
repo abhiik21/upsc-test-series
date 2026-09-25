@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports & Analytics | UPSC Admin</title>
+<meta name="description" content="Admin reports and analytics for the UPSC Test Series platform.">
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--bg:#f6f8fb;--white:#fff;--ink:#18212b;--muted:#667085;--line:#e5e7eb;--sidebar:#0f2238;--green:#198754;--amber:#a46a00;--red:#c2413a;--purple:#7653b5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none;color:inherit}.app{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.sidebar{background:var(--sidebar);color:#c7d2de;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:10px;padding:7px 10px 22px;color:#fff;font-weight:800}.mark{width:35px;height:35px;border-radius:10px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}.nav-section{margin:18px 8px 8px;color:#7f91a6;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:13px;margin:2px 0}.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);color:#fff}.sidebar-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding:15px 8px 0}.sidebar-bottom a{display:block;padding:8px 4px;font-size:12px;color:#a9b7c7}.main{min-width:0}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10}.eyebrow{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#7b8794;font-weight:850}.top-title strong{display:block;color:var(--navy);font-size:16px}.top-title span{font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:10px}.search{border:1px solid #d9dee5;background:#f8fafc;border-radius:9px;padding:9px 12px;width:250px;font-size:13px}.admin{display:flex;align-items:center;gap:9px;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:#fff}.avatar{width:30px;height:30px;border-radius:50%;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800}.content{padding:28px}.head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}.head h1{margin:3px 0 0;font-size:28px;color:var(--navy);letter-spacing:-.03em}.head p{margin:5px 0 0;color:var(--muted);font-size:13px}.btn{border:1px solid transparent;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-outline{background:#fff;color:var(--navy);border-color:#d6dce3}.btn-ghost{background:transparent;color:var(--blue);border:0;padding:6px 0;cursor:pointer;font-weight:750}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:25px;font-weight:850;color:var(--navy);margin-top:5px}.stat .meta{font-size:11px;color:#98a2b3;margin-top:6px}.toolbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr auto;gap:10px;align-items:center}.field,.select{width:100%;border:1px solid #d9dee5;border-radius:9px;background:#fff;padding:10px 11px;font-size:12px;color:#344054}.field:focus,.select:focus{outline:2px solid #dbeafe;border-color:#93c5fd}.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;margin-top:20px}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:14px}.panel-head h2{font-size:15px;margin:0;color:var(--navy)}.panel-head p{font-size:11px;color:var(--muted);margin:4px 0 0}.chart{height:260px;position:relative;padding:14px 10px 25px 36px}.ygrid{position:absolute;left:36px;right:10px;top:16px;bottom:30px;display:flex;flex-direction:column;justify-content:space-between}.ygrid span{border-top:1px dashed #e9edf2;font-size:9px;color:#98a2b3;position:relative}.ygrid em{position:absolute;left:-28px;top:-7px;font-style:normal}.bars{position:absolute;left:50px;right:18px;bottom:32px;top:18px;display:flex;align-items:flex-end;gap:20px}.bar-wrap{height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:7px}.bar{width:70%;max-width:38px;border-radius:7px 7px 2px 2px;background:linear-gradient(to top,#1d5fa7,#6ea5d8)}.bar-alt{background:linear-gradient(to top,#d7a93b,#ecd487)}.xlab{font-size:9px;color:#7c8796}.legend{display:flex;gap:16px;font-size:11px;color:var(--muted);margin-top:6px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.dot.blue{background:#1d5fa7}.dot.gold{background:#d7a93b}.mini-list{display:grid;gap:10px}.mini{display:flex;justify-content:space-between;gap:10px;padding:12px;border:1px solid #eef0f3;border-radius:10px}.mini strong{display:block;font-size:12px;color:var(--navy)}.mini span{font-size:11px;color:var(--muted)}.mini b{font-size:12px;color:var(--navy)}.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.report-card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}.report-card h3{font-size:14px;color:var(--navy);margin:0 0 5px}.report-card p{font-size:11px;color:var(--muted);margin:0 0 13px;line-height:1.5}.report-card .actions{display:flex;gap:10px;flex-wrap:wrap}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:850px}.table th,.table td{text-align:left;padding:12px;border-bottom:1px solid #eef0f3;font-size:12px}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#85909d;background:#fafbfc}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800}.pill.green{background:#eaf7ef;color:#167343}.pill.amber{background:#fff6df;color:#946000}.pill.blue{background:#eaf2fb;color:#1d5fa7}.progress{height:7px;background:#edf1f5;border-radius:99px;overflow:hidden;margin-top:6px}.progress span{display:block;height:100%;background:#1d5fa7}.footer-note{margin-top:20px;font-size:11px;color:#98a2b3}.mobile-btn{display:none;background:none;border:0;color:var(--navy);font-size:22px}
+@media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr)}.report-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{position:fixed;left:-260px;z-index:50;transition:left .2s}.sidebar.open{left:0}.topbar{padding:0 16px}.mobile-btn{display:block}.search{display:none}.content{padding:20px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.stats,.report-grid{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}.toolbar{grid-template-columns:1fr}.bar{max-width:30px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="mark">U</div><div>UPSC<span style="color:#7aa7d4">Admin</span></div></div>
+  <div class="nav-section">Overview</div><nav class="nav">
+    <a href="admin-dashboard.html">◈ <span>Dashboard</span></a>
+    <a href="student-management.html">♙ <span>Students</span></a>
+  </nav>
+  <div class="nav-section">Content & Tests</div><nav class="nav">
+    <a href="question-bank-admin.html">▤ <span>Questions</span></a>
+    <a href="test-management-admin.html">▣ <span>Tests</span></a>
+    <a href="test-series-management-admin.html">◫ <span>Test Series</span></a>
+    <a href="current-affairs-admin.html">◉ <span>Current Affairs</span></a>
+    <a href="study-material-admin.html">▧ <span>Study Material</span></a>
+    <a href="blog-admin.html">✎ <span>Blog / CMS</span></a>
+  </nav>
+  <div class="nav-section">Commerce</div><nav class="nav">
+    <a href="subscriptions-admin.html">◌ <span>Subscriptions</span></a>
+    <a href="payments-admin.html">₹ <span>Payments</span></a>
+    <a href="coupons-admin.html">◇ <span>Coupons</span></a>
+  </nav>
+  <div class="nav-section">Operations</div><nav class="nav">
+    <a href="results-admin.html">◆ <span>Results</span></a>
+    <a href="notifications-admin.html">◍ <span>Notifications</span></a>
+    <a href="reports-admin.html" class="active">◈ <span>Reports</span></a>
+    <a href="#">⚙ <span>Settings</span></a>
+  </nav>
+  <div class="sidebar-bottom"><a href="index.html">↗ Public Website</a><a href="login.html">⇥ Student Login</a></div>
+</aside>
+<section class="main">
+<header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="mobile-btn" onclick="toggleSidebar()">☰</button><div class="top-title"><div class="eyebrow">Operations</div><strong>Reports & Analytics</strong><span>Platform-wide reporting and performance intelligence</span></div></div><div class="top-actions"><input class="search" placeholder="Search reports..." oninput="filterReports(this.value)"><div class="admin"><div class="avatar">AK</div><div style="font-size:12px"><strong style="display:block;color:var(--navy)">Admin</strong><span style="color:var(--muted)">Super Admin</span></div></div></div></header>
+<main class="content">
+  <div class="head"><div><div class="eyebrow">Reporting Centre</div><h1>Reports & Analytics</h1><p>Monitor students, tests, content, revenue and platform operations from one reporting workspace.</p></div><div style="display:flex;gap:10px"><button class="btn btn-outline" onclick="alert('Report filters saved for this demo.')">Save View</button><button class="btn btn-primary" onclick="alert('A report bundle would be generated by the backend.')">Generate Report</button></div></div>
+  <div class="stats">
+    <div class="stat"><div class="label">Active Students</div><div class="value">8,421</div><div class="meta">+6.8% vs previous period</div></div>
+    <div class="stat"><div class="label">Test Attempts</div><div class="value">74,328</div><div class="meta">+12.4% vs previous period</div></div>
+    <div class="stat"><div class="label">Avg. Accuracy</div><div class="value">68.7%</div><div class="meta">Across published tests</div></div>
+    <div class="stat"><div class="label">Content Views</div><div class="value">1.26M</div><div class="meta">Tests + CA + resources</div></div>
+    <div class="stat"><div class="label">Net Collections</div><div class="value">₹18.4L</div><div class="meta">After recorded refunds</div></div>
+  </div>
+  <div class="toolbar">
+    <input class="field" id="reportSearch" placeholder="Search report name or description..." oninput="filterReports(this.value)">
+    <select class="select"><option>Period: Last 30 days</option><option>Last 7 days</option><option>Last 90 days</option><option>Year to date</option></select>
+    <select class="select"><option>All Modules</option><option>Students</option><option>Tests</option><option>Content</option><option>Commerce</option></select>
+    <select class="select"><option>All Formats</option><option>CSV</option><option>PDF</option><option>XLSX</option></select>
+    <button class="btn btn-outline" onclick="alert('Filters applied in the demo.')">Apply</button>
+  </div>
+  <div class="grid">
+    <section class="panel">
+      <div class="panel-head"><div><h2>Activity & Collections</h2><p>Monthly comparison of test activity and net collections.</p></div><button class="btn-ghost" onclick="alert('Chart data would be exported.')">Export chart</button></div>
+      <div class="chart"><div class="ygrid"><span><em>2000</em></span><span><em>1500</em></span><span><em>1000</em></span><span><em>500</em></span><span><em>0</em></span></div><div class="bars">
+        <div class="bar-wrap"><div class="bar" style="height:42%"></div><div class="bar-alt" style="height:18%;width:26%;margin-top:-18%"></div><div class="xlab">Apr</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:51%"></div><div class="bar-alt" style="height:22%;width:26%;margin-top:-22%"></div><div class="xlab">May</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:58%"></div><div class="bar-alt" style="height:24%;width:26%;margin-top:-24%"></div><div class="xlab">Jun</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:64%"></div><div class="bar-alt" style="height:27%;width:26%;margin-top:-27%"></div><div class="xlab">Jul</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:74%"></div><div class="bar-alt" style="height:32%;width:26%;margin-top:-32%"></div><div class="xlab">Aug</div></div>
+        <div class="bar-wrap"><div class="bar" style="height:82%"></div><div class="bar-alt" style="height:38%;width:26%;margin-top:-38%"></div><div class="xlab">Sep</div></div>
+      </div></div><div class="legend"><span><i class="dot blue"></i>Test attempts</span><span><i class="dot gold"></i>Net collections (relative)</span></div>
+    </section>
+    <section class="panel"><div class="panel-head"><div><h2>Top Reporting Signals</h2><p>Current period highlights.</p></div></div><div class="mini-list">
+      <div class="mini"><div><strong>Test completion rate</strong><span>Across all published tests</span></div><b>91.6%</b></div>
+      <div class="mini"><div><strong>Result publication time</strong><span>Median after submission</span></div><b>2m 14s</b></div>
+      <div class="mini"><div><strong>Subscription renewal</strong><span>Eligible plans</span></div><b>63.4%</b></div>
+      <div class="mini"><div><strong>Content engagement</strong><span>Readers opening resources</span></div><b>57.8%</b></div>
+    </div></section>
+  </div>
+  <div class="report-grid" id="reportGrid">
+    <div class="report-card" data-search="student engagement cohort retention performance"><h3>Student Engagement Report</h3><p>Registrations, active users, attempts, completion and engagement by cohort.</p><div class="actions"><button class="btn btn-outline" onclick="generate('Student Engagement Report','PDF')">PDF</button><button class="btn btn-outline" onclick="generate('Student Engagement Report','CSV')">CSV</button></div></div>
+    <div class="report-card" data-search="test performance question difficulty accuracy results"><h3>Test Performance Report</h3><p>Attempts, average score, accuracy, completion and question-level performance.</p><div class="actions"><button class="btn btn-outline" onclick="generate('Test Performance Report','XLSX')">XLSX</button><button class="btn btn-outline" onclick="generate('Test Performance Report','CSV')">CSV</button></div></div>
+    <div class="report-card" data-search="subject topic weakness analytics"><h3>Subject & Topic Analysis</h3><p>Subject-wise accuracy, topic strengths, weak areas and question difficulty trends.</p><div class="actions"><button class="btn btn-outline" onclick="generate('Subject & Topic Analysis','PDF')">PDF</button><button class="btn btn-outline" onclick="generate('Subject & Topic Analysis','XLSX')">XLSX</button></div></div>
+    <div class="report-card" data-search="revenue subscriptions payments commerce finance"><h3>Revenue & Subscription Report</h3><p>Collections, subscriptions, renewals, refunds and plan-level revenue trends.</p><div class="actions"><button class="btn btn-outline" onclick="generate('Revenue & Subscription Report','XLSX')">XLSX</button><button class="btn btn-outline" onclick="generate('Revenue & Subscription Report','CSV')">CSV</button></div></div>
+    <div class="report-card" data-search="content current affairs study material blog views downloads"><h3>Content Performance Report</h3><p>Views, reads, downloads, saves and engagement across content modules.</p><div class="actions"><button class="btn btn-outline" onclick="generate('Content Performance Report','PDF')">PDF</button><button class="btn btn-outline" onclick="generate('Content Performance Report','CSV')">CSV</button></div></div>
+    <div class="report-card" data-search="operations notifications payment webhook system audit"><h3>Operations Report</h3><p>Notifications, payment failures, webhook status, review queues and audit signals.</p><div class="actions"><button class="btn btn-outline" onclick="generate('Operations Report','PDF')">PDF</button><button class="btn btn-outline" onclick="generate('Operations Report','CSV')">CSV</button></div></div>
+  </div>
+  <section class="panel" style="margin-top:20px"><div class="panel-head"><div><h2>Subject Performance Snapshot</h2><p>Aggregate accuracy from recent published GS tests.</p></div><button class="btn-ghost" onclick="alert('Detailed subject report would open here.')">View full report →</button></div><div class="table-wrap"><table class="table"><thead><tr><th>Subject</th><th>Attempts</th><th>Accuracy</th><th>Avg. Score</th><th>Trend</th></tr></thead><tbody>
+    <tr><td>Polity</td><td>12,410</td><td><strong>78.2%</strong><div class="progress"><span style="width:78.2%"></span></div></td><td>31.3 / 40</td><td><span class="pill green">+3.1%</span></td></tr>
+    <tr><td>History</td><td>10,882</td><td><strong>72.4%</strong><div class="progress"><span style="width:72.4%"></span></div></td><td>28.9 / 40</td><td><span class="pill green">+1.8%</span></td></tr>
+    <tr><td>Geography</td><td>9,743</td><td><strong>68.1%</strong><div class="progress"><span style="width:68.1%"></span></div></td><td>27.2 / 40</td><td><span class="pill blue">+0.6%</span></td></tr>
+    <tr><td>Economy</td><td>11,306</td><td><strong>59.7%</strong><div class="progress"><span style="width:59.7%"></span></div></td><td>23.9 / 40</td><td><span class="pill amber">-0.9%</span></td></tr>
+    <tr><td>Environment</td><td>10,114</td><td><strong>55.8%</strong><div class="progress"><span style="width:55.8%"></span></div></td><td>22.3 / 40</td><td><span class="pill amber">-1.4%</span></td></tr>
+  </tbody></table></div><div class="footer-note">Demo figures shown for interface development. Production figures should be generated from the analytics data warehouse/API.</div></section>
+</main></section></div>
+<script>
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open')}
+function filterReports(v){v=v.toLowerCase();document.querySelectorAll('.report-card').forEach(c=>{c.style.display=c.dataset.search.includes(v)?'block':'none'});let f=document.getElementById('reportSearch');if(f && document.activeElement!==f)f.value=v})
+function generate(name,fmt){alert(name+' — '+fmt+' export requested. In production this would create a server-side report and audit the download.')}
+</script>
+<script src="api-client.js"></script><script src="admin-api.js"></script>
+</body>
+</html>
