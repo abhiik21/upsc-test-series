@@ -1,0 +1,78 @@
+services:
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-upsc}
+      POSTGRES_USER: ${POSTGRES_USER:-upsc_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the deployment environment}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../backend/database/schema-runtime-postgres.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    expose:
+      - "5432"
+
+  api:
+    build:
+      context: ../backend
+    restart: unless-stopped
+    environment:
+      APP_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in the deployment environment}
+      DB_BACKEND: postgres
+      DATABASE_URL: postgresql://${POSTGRES_USER:-upsc_user}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the deployment environment}@postgres:5432/${POSTGRES_DB:-upsc}
+      CORS_ORIGINS: ${CORS_ORIGINS:?Set CORS_ORIGINS in the deployment environment}
+      PAYMENT_PROVIDER: ${PAYMENT_PROVIDER:-development}
+      RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID:-}
+      RAZORPAY_KEY_SECRET: ${RAZORPAY_KEY_SECRET:-}
+      RAZORPAY_WEBHOOK_SECRET: ${RAZORPAY_WEBHOOK_SECRET:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      EMAIL_FROM: ${EMAIL_FROM:-}
+      OBJECT_STORAGE_PROVIDER: ${OBJECT_STORAGE_PROVIDER:-s3}
+      OBJECT_STORAGE_ENDPOINT: ${OBJECT_STORAGE_ENDPOINT:-}
+      OBJECT_STORAGE_BUCKET: ${OBJECT_STORAGE_BUCKET:-}
+      OBJECT_STORAGE_ACCESS_KEY: ${OBJECT_STORAGE_ACCESS_KEY:-}
+      OBJECT_STORAGE_SECRET_KEY: ${OBJECT_STORAGE_SECRET_KEY:-}
+      OBJECT_STORAGE_REGION: ${OBJECT_STORAGE_REGION:-ap-south-1}
+      AUTH_REQUIRE_VERIFICATION: ${AUTH_REQUIRE_VERIFICATION:-true}
+      DEV_SHOW_OTP: ${DEV_SHOW_OTP:-false}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      ADMIN_NAME: ${ADMIN_NAME:-Admin}
+      SEED_DEMO_DATA: ${SEED_DEMO_DATA:-false}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ..:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      # Private by default: put HTTPS (Caddy, Cloudflare...) in front. Set WEB_BIND=0.0.0.0 to publish the port directly.
+      - "${WEB_BIND:-127.0.0.1}:8080:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
