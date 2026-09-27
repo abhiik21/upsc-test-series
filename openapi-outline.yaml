@@ -1,0 +1,45 @@
+openapi: 3.0.3
+info:
+  title: UPSC Test Series API
+  version: 1.0.0
+  description: Initial API contract for the UPSC Test Series platform.
+servers:
+  - url: /api/v1
+paths:
+  /auth/register: {post: {summary: Register student}}
+  /auth/login: {post: {summary: Login}}
+  /auth/refresh: {post: {summary: Refresh access token}}
+  /auth/logout: {post: {summary: Revoke refresh session}}
+  /student/dashboard: {get: {summary: Student dashboard}}
+  /student/tests: {get: {summary: List available tests}}
+  /tests/{testId}/instructions: {get: {summary: Get test instructions}}
+  /tests/{testId}/attempts: {post: {summary: Start an attempt}}
+  /attempts/{attemptId}/answers: {put: {summary: Save an answer}}
+  /attempts/{attemptId}/submit: {post: {summary: Submit attempt}}
+  /attempts/{attemptId}/result: {get: {summary: Get result}}
+  /student/performance: {get: {summary: Get performance analytics}}
+  /student/questions: {get: {summary: Search question bank}}
+  /student/bookmarks: {get: {summary: List bookmarks}}
+  /student/mistakes: {get: {summary: List mistake notebook}}
+  /student/current-affairs: {get: {summary: List current affairs}}
+  /student/study-material: {get: {summary: List study material}}
+  /student/subscription: {get: {summary: Get active subscription}}
+  /student/notifications: {get: {summary: List notifications}}
+  /payments/orders: {post: {summary: Create payment order}}
+  /payments/webhook: {post: {summary: Process verified payment webhook}}
+  /admin/dashboard: {get: {summary: Admin dashboard}}
+  /admin/students: {get: {summary: List students}}
+  /admin/questions: {get: {summary: List questions}}
+  /admin/questions/import: {post: {summary: Bulk import questions}}
+  /admin/tests: {get: {summary: List tests}}
+  /admin/test-series: {get: {summary: List test series}}
+  /admin/results: {get: {summary: List results}}
+  /admin/current-affairs: {get: {summary: Manage current affairs}}
+  /admin/study-material: {get: {summary: Manage study material}}
+  /admin/blog: {get: {summary: Manage blog posts}}
+  /admin/subscriptions: {get: {summary: Manage plans/subscriptions}}
+  /admin/payments: {get: {summary: Manage payments}}
+  /admin/coupons: {get: {summary: Manage coupons}}
+  /admin/notifications: {get: {summary: Manage notifications}}
+  /admin/reports: {get: {summary: Generate reports}}
+  /admin/settings: {get: {summary: Get system settings}}
