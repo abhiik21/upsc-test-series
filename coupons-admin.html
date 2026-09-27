@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coupons & Discounts | UPSC Admin</title>
+<meta name="description" content="Manage subscription plans, pricing, access rules, renewals and active student subscriptions for the UPSC Test Series platform.">
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--bg:#f6f8fb;--white:#fff;--ink:#18212b;--muted:#667085;--line:#e5e7eb;--sidebar:#0f2238;--green:#198754;--amber:#a46a00;--red:#c2413a;--purple:#7653b5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none;color:inherit}.app{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.sidebar{background:var(--sidebar);color:#c7d2de;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:10px;padding:7px 10px 22px;color:#fff;font-weight:800}.mark{width:35px;height:35px;border-radius:10px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}.nav-section{margin:18px 8px 8px;color:#7f91a6;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:13px;margin:2px 0}.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);color:#fff}.nav .badge{margin-left:auto;background:var(--gold);color:#132130;border-radius:999px;padding:2px 6px;font-size:10px;font-weight:800}.sidebar-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding:15px 8px 0}.sidebar-bottom a{display:block;padding:8px 4px;font-size:12px;color:#a9b7c7}.main{min-width:0}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10}.top-title strong{display:block;color:var(--navy);font-size:16px}.top-title span{font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:10px}.search{border:1px solid #d9dee5;background:#f8fafc;border-radius:9px;padding:9px 12px;width:250px;font-size:13px}.admin{display:flex;align-items:center;gap:9px;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:#fff}.avatar{width:30px;height:30px;border-radius:50%;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800}.content{padding:28px}.head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}.head h1{margin:0;font-size:28px;color:var(--navy);letter-spacing:-.03em}.head p{margin:5px 0 0;color:var(--muted);font-size:13px}.btn{border:1px solid transparent;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-outline{background:#fff;color:var(--navy);border-color:#d6dce3}.btn-danger{background:#fff;color:var(--red);border-color:#e8c4c1}.btn-ghost{background:transparent;color:var(--blue);border:0;padding:7px 0;cursor:pointer;font-weight:750}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:25px;font-weight:850;color:var(--navy);margin-top:5px}.stat .meta{font-size:11px;color:#98a2b3;margin-top:6px}.tabs{display:flex;gap:6px;background:#eef2f6;padding:5px;border-radius:10px;width:max-content;margin-bottom:14px;flex-wrap:wrap}.tab{border:0;background:transparent;padding:8px 12px;border-radius:7px;font-size:12px;color:#667085;font-weight:750;cursor:pointer}.tab.active{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(16,36,62,.08)}.toolbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr auto;gap:10px;align-items:center}.field,.select{width:100%;border:1px solid #d9dee5;border-radius:9px;background:#fff;padding:10px 11px;font-size:12px;color:#344054}.field:focus,.select:focus,input:focus{outline:2px solid #dbeafe;border-color:#93c5fd}.table-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:20px}.card-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.card-head h2{font-size:15px;margin:0;color:var(--navy)}.muted{color:var(--muted);font-size:11px}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:13px 14px;border-bottom:1px solid #eef0f3;font-size:12px;vertical-align:top}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#85909d;background:#fafbfc}.table tr:last-child td{border-bottom:0}.plan-title{font-weight:800;color:#253953;line-height:1.35}.subtext{font-size:10px;color:#8a94a3;margin-top:4px}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800;white-space:nowrap}.pill.green{background:#eaf7ef;color:#167343}.pill.blue{background:#eaf2fb;color:#245e9a}.pill.amber{background:#fff5dc;color:#946200}.pill.red{background:#fdebea;color:#a9352e}.pill.purple{background:#f1ebfb;color:#6848a1}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}.plan-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.plan-card.featured{border-color:#9cbce0;box-shadow:0 8px 25px rgba(29,95,167,.08)}.plan-top{display:flex;justify-content:space-between;align-items:flex-start}.plan-name{font-size:16px;font-weight:850;color:var(--navy)}.price{font-size:28px;font-weight:900;color:var(--navy);margin:16px 0 3px}.price small{font-size:11px;font-weight:600;color:var(--muted)}.features{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}.features li{font-size:11px;color:#526171}.features li::before{content:'✓';display:inline-block;margin-right:7px;color:var(--green);font-weight:900}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.metric{padding:11px;border:1px solid #eef0f3;border-radius:10px}.metric strong{display:block;font-size:16px;color:var(--navy)}.metric span{font-size:10px;color:var(--muted)}.note{background:#fff8e6;border:1px solid #f0ddb0;border-radius:12px;padding:13px 14px;margin-top:18px;font-size:11px;color:#795b13;line-height:1.55}.modal{position:fixed;inset:0;background:rgba(15,34,56,.46);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.open{display:flex}.modal-box{background:#fff;border-radius:16px;width:min(760px,100%);max-height:90vh;overflow:auto;box-shadow:0 25px 80px rgba(0,0,0,.18)}.modal-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0;color:var(--navy);font-size:16px}.close{border:0;background:#f1f3f5;border-radius:50%;width:30px;height:30px;cursor:pointer}.form{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:13px}.form .full{grid-column:1/-1}.label{font-size:11px;font-weight:800;color:#475467;display:block;margin-bottom:6px}.check-row{display:flex;flex-wrap:wrap;gap:10px}.check{border:1px solid #d9dee5;border-radius:9px;padding:9px 10px;display:flex;gap:7px;align-items:center;font-size:11px;color:#475467;background:#fff}.modal-foot{padding:15px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:9px}@media(max-width:1050px){.stats{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr 1fr}.toolbar .field{grid-column:1/-1}}@media(max-width:760px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.nav{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}.topbar{padding:0 16px}.top-actions .search{display:none}.content{padding:18px}.stats{grid-template-columns:1fr 1fr}.toolbar{grid-template-columns:1fr}.form{grid-template-columns:1fr}.form .full{grid-column:auto}.table-card{overflow:auto}.table{min-width:900px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="mark">U</div><span>UPSC Test Series</span></div>
+<div class="nav-section">Overview</div><nav class="nav">
+<a href="admin-dashboard.html">⌂ <span>Dashboard</span></a>
+</nav>
+<div class="nav-section">Academic</div><nav class="nav">
+<a href="student-management.html">◉ <span>Students</span></a>
+<a href="question-bank-admin.html">☑ <span>Questions</span></a>
+<a href="test-management-admin.html">▤ <span>Tests</span></a>
+<a href="test-series-management-admin.html">▥ <span>Test Series</span></a>
+</nav>
+<div class="nav-section">Content</div><nav class="nav">
+<a href="current-affairs-admin.html">◉ <span>Current Affairs</span></a>
+<a href="study-material-admin.html">▤ <span>Study Material</span></a>
+<a href="blog-admin.html">✎ <span>Blog / CMS</span></a>
+</nav>
+<div class="nav-section">Commerce</div><nav class="nav">
+<a href="coupons-admin.html" class="active">◇ <span>Subscriptions</span></a>
+<a href="payments-admin.html">₹ <span>Payments</span></a>
+<a href="coupons-admin.html">% <span>Coupons</span></a>
+</nav>
+<div class="nav-section">Operations</div><nav class="nav">
+<a href="results-admin.html">◫ <span>Results & Rankings</span></a>
+<a href="notifications-admin.html">◌ <span>Notifications</span></a>
+<a href="reports-admin.html">◈ <span>Reports</span></a>
+<a href="settings-admin.html">⚙ <span>Settings</span></a>
+</nav>
+<div class="sidebar-bottom"><a href="index.html">View public website →</a><a href="student-dashboard.html">Open student portal →</a></div>
+</aside>
+<main class="main-content">
+  <div class="topbar">
+    <div>
+      <div class="eyebrow">COMMERCIAL MANAGEMENT</div>
+      <h1>Coupons & Discounts</h1>
+      <p class="muted">Create, control and monitor promotional codes across plans and test series.</p>
+    </div>
+    <div class="top-actions">
+      <button class="btn secondary" onclick="openImport()">Import Codes</button>
+      <button class="btn primary" onclick="openCoupon()">+ Create Coupon</button>
+    </div>
+  </div>
+
+  <section class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">ACTIVE COUPONS</div><div class="kpi-value">18</div><div class="kpi-note positive">+4 this month</div></div>
+    <div class="kpi"><div class="kpi-label">REDEMPTIONS</div><div class="kpi-value">1,284</div><div class="kpi-note">Across all campaigns</div></div>
+    <div class="kpi"><div class="kpi-label">DISCOUNT GIVEN</div><div class="kpi-value">₹3.84L</div><div class="kpi-note">Current financial year</div></div>
+    <div class="kpi"><div class="kpi-label">COUPON CONVERSION</div><div class="kpi-value">9.6%</div><div class="kpi-note positive">+1.8 pp vs last month</div></div>
+  </section>
+
+  <section class="panel hero-panel">
+    <div class="panel-head">
+      <div><h2>Promotion Controls</h2><p>Manage eligibility, limits and validity before a code reaches students.</p></div>
+      <span class="status-pill success">Gateway Ready</span>
+    </div>
+    <div class="control-grid">
+      <div class="control-card"><div class="icon">%</div><div><strong>Percentage / Flat</strong><p>Support both discount models.</p></div></div>
+      <div class="control-card"><div class="icon">⌁</div><div><strong>Eligibility Rules</strong><p>Plan, test series, student or date based.</p></div></div>
+      <div class="control-card"><div class="icon">#</div><div><strong>Usage Limits</strong><p>Global, per-user and per-day limits.</p></div></div>
+      <div class="control-card"><div class="icon">↗</div><div><strong>Campaign Tracking</strong><p>Monitor redemptions and revenue impact.</p></div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div><h2>Coupon Library</h2><p>Search active and historical discount codes.</p></div>
+      <div class="panel-tools"><input id="search" class="search" placeholder="Search code, campaign or plan…" oninput="filterTable()"><select id="status" onchange="filterTable()"><option value="">All Status</option><option>Active</option><option>Scheduled</option><option>Expired</option><option>Paused</option></select><select id="type" onchange="filterTable()"><option value="">All Types</option><option>Percentage</option><option>Flat</option></select></div>
+    </div>
+    <div class="tabs"><button class="tab active" data-tab="all">All <span>24</span></button><button class="tab" data-tab="active">Active <span>18</span></button><button class="tab" data-tab="scheduled">Scheduled <span>3</span></button><button class="tab" data-tab="expired">Expired <span>2</span></button><button class="tab" data-tab="paused">Paused <span>1</span></button></div>
+    <div class="table-wrap"><table id="couponTable"><thead><tr><th>CODE</th><th>CAMPAIGN</th><th>DISCOUNT</th><th>APPLIES TO</th><th>VALIDITY</th><th>REDEMPTIONS</th><th>LIMIT</th><th>STATUS</th><th></th></tr></thead><tbody>
+      <tr data-status="Active" data-type="Percentage"><td><strong>UPSC10</strong><small>First-time aspirants</small></td><td>September Launch</td><td>10%</td><td>Complete Plan</td><td>12 Sep – 30 Sep</td><td>342</td><td>500</td><td><span class="status-pill success">Active</span></td><td><button class="link-btn" onclick="openCoupon('UPSC10')">Manage</button></td></tr>
+      <tr data-status="Active" data-type="Flat"><td><strong>PRELIMS200</strong><small>Prelims campaign</small></td><td>Prelims Push</td><td>₹200</td><td>Prelims Series</td><td>15 Sep – 15 Oct</td><td>271</td><td>750</td><td><span class="status-pill success">Active</span></td><td><button class="link-btn" onclick="openCoupon('PRELIMS200')">Manage</button></td></tr>
+      <tr data-status="Scheduled" data-type="Percentage"><td><strong>DIWALI15</strong><small>Festive offer</small></td><td>Diwali 2026</td><td>15%</td><td>All Plans</td><td>20 Oct – 15 Nov</td><td>0</td><td>2,000</td><td><span class="status-pill info">Scheduled</span></td><td><button class="link-btn" onclick="openCoupon('DIWALI15')">Manage</button></td></tr>
+      <tr data-status="Active" data-type="Percentage"><td><strong>NEWASPIRANT</strong><small>New registrations</small></td><td>Welcome</td><td>8%</td><td>Starter + Complete</td><td>01 Sep – 31 Dec</td><td>489</td><td>1,000</td><td><span class="status-pill success">Active</span></td><td><button class="link-btn" onclick="openCoupon('NEWASPIRANT')">Manage</button></td></tr>
+      <tr data-status="Paused" data-type="Percentage"><td><strong>CSAT25</strong><small>CSAT campaign</small></td><td>CSAT Drive</td><td>25%</td><td>CSAT Series</td><td>01 Sep – 25 Sep</td><td>67</td><td>100</td><td><span class="status-pill warning">Paused</span></td><td><button class="link-btn" onclick="openCoupon('CSAT25')">Manage</button></td></tr>
+      <tr data-status="Expired" data-type="Flat"><td><strong>EARLYBIRD500</strong><small>Founding batch</small></td><td>Launch Offer</td><td>₹500</td><td>Complete Plan</td><td>01 Aug – 31 Aug</td><td>115</td><td>250</td><td><span class="status-pill muted">Expired</span></td><td><button class="link-btn" onclick="openCoupon('EARLYBIRD500')">View</button></td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section class="two-col">
+    <div class="panel"><div class="panel-head"><div><h2>Campaign Performance</h2><p>Redemptions by campaign over the last 30 days.</p></div></div><div class="bars"><div><span>September Launch</span><div class="bar"><i style="width:82%"></i></div><b>342</b></div><div><span>Prelims Push</span><div class="bar"><i style="width:65%"></i></div><b>271</b></div><div><span>Welcome</span><div class="bar"><i style="width:100%"></i></div><b>489</b></div><div><span>CSAT Drive</span><div class="bar"><i style="width:14%"></i></div><b>67</b></div></div></div>
+    <div class="panel"><div class="panel-head"><div><h2>Coupon Rules</h2><p>Suggested safeguards for production use.</p></div></div><div class="check-list"><div>✓ Prevent coupon stacking</div><div>✓ Enforce minimum order value</div><div>✓ Limit one redemption per user</div><div>✓ Validate eligibility on backend</div><div>✓ Record discount against invoice</div><div>✓ Keep an immutable redemption log</div></div></div>
+  </section>
+</main></div>
+<div id="modal" class="modal"><div class="modal-box"><div class="modal-head"><h3 id="modalTitle">Create Subscription Plan</h3><button class="close" onclick="closeModal()">×</button></div><form class="form" onsubmit="savePlan(event)">
+<div><label class="label">Plan Name</label><input id="planName" class="field" required placeholder="e.g. Prelims Complete"></div>
+<div><label class="label">Status</label><select class="select"><option>Active</option><option>Draft</option><option>Archived</option></select></div>
+<div><label class="label">Price (₹)</label><input class="field" type="number" min="0" value="999"></div>
+<div><label class="label">Validity (days)</label><input class="field" type="number" min="1" value="180"></div>
+<div><label class="label">Trial (days)</label><input class="field" type="number" min="0" value="0"></div>
+<div><label class="label">Max Devices</label><input class="field" type="number" min="1" value="2"></div>
+<div class="full"><label class="label">Entitlements</label><div class="check-row"><label class="check"><input type="checkbox" checked> Test Series</label><label class="check"><input type="checkbox" checked> Question Bank</label><label class="check"><input type="checkbox" checked> Analytics</label><label class="check"><input type="checkbox"> Current Affairs</label><label class="check"><input type="checkbox"> Study Material</label><label class="check"><input type="checkbox"> PYQ Practice</label></div></div>
+<div class="full"><label class="label">Commercial Controls</label><div class="check-row"><label class="check"><input type="checkbox" checked> Show on public pricing page</label><label class="check"><input type="checkbox" checked> Allow purchase before release</label><label class="check"><input type="checkbox" checked> Allow renewal</label><label class="check"><input type="checkbox"> Auto-renew</label></div></div>
+<div class="full"><label class="label">Description</label><input class="field" placeholder="Short student-facing description"></div>
+<div class="modal-foot full"><button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button><button class="btn btn-primary" type="submit">Save Plan</button></div>
+</form></div></div>
+<script>
+const tabs=[...document.querySelectorAll('.tab')];
+const plansPanel=document.getElementById('plansPanel');const subscriptionsPanel=document.getElementById('subscriptionsPanel');
+const rows=[
+['Aarav Mehta','Prelims Complete','SUB-10482','01 Sep 2026','28 Feb 2027','₹999','Active'],
+['Kavya Sharma','Complete + Current Affairs','SUB-10479','18 Aug 2026','15 Apr 2027','₹1,499','Active'],
+['Rohan Singh','Prelims Starter','SUB-10471','02 Jun 2026','30 Aug 2026','₹499','Expiring'],
+['Priya Nair','Prelims Complete','SUB-10453','21 Apr 2026','18 Oct 2026','₹999','Active'],
+['Nikhil Verma','Prelims Starter','SUB-10421','14 Mar 2026','11 Jun 2026','₹499','Cancelled']];
+function renderRows(filter='active'){const body=document.getElementById('subRows');body.innerHTML='';rows.filter(r=> filter==='plans'?true : filter==='active'?r[6]==='Active' : filter==='expiring'?r[6]==='Expiring' : r[6]==='Cancelled').forEach(r=>{const tr=document.createElement('tr');const cls=r[6]==='Active'?'green':r[6]==='Expiring'?'amber':'red';tr.innerHTML=`<td><strong>${r[0]}</strong></td><td>${r[1]}</td><td class="subtext">${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td><td><span class="pill ${cls}">${r[6]}</span></td><td><button class="btn btn-ghost" onclick="alert('Student subscription details will open here.')">View</button></td>`;body.appendChild(tr)})}
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');const tab=t.dataset.tab;if(tab==='plans'){plansPanel.style.display='grid';subscriptionsPanel.style.display='none'}else{plansPanel.style.display='none';subscriptionsPanel.style.display='block';renderRows(tab)}}));
+function openPlanModal(name=''){document.getElementById('modalTitle').textContent=name?'Edit Subscription Plan':'Create Subscription Plan';document.getElementById('planName').value=name;document.getElementById('modal').classList.add('open')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function savePlan(e){e.preventDefault();alert('Plan saved in demo mode. Backend integration will persist pricing and entitlements.');closeModal()}
+window.addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+</script>
+
+<div id="modal" class="modal"><div class="modal-box"><div class="modal-head"><div><div class="eyebrow">COUPON EDITOR</div><h2 id="modalTitle">Create Coupon</h2></div><button class="close" onclick="closeModal()">×</button></div><div class="form-grid"><label>Coupon Code<input id="code" value=""></label><label>Campaign Name<input id="campaign" value=""></label><label>Discount Type<select id="discountType"><option>Percentage</option><option>Flat</option></select></label><label>Discount Value<input id="value" type="number" value="10"></label><label>Applies To<select id="applies"><option>All Plans</option><option>Prelims Series</option><option>Complete Plan</option><option>CSAT Series</option></select></label><label>Minimum Order Value<input type="number" value="0"></label><label>Start Date<input type="date"></label><label>End Date<input type="date"></label><label>Global Redemption Limit<input type="number" value="500"></label><label>Per User Limit<input type="number" value="1"></label></div><label class="full">Eligibility Notes<textarea rows="3" placeholder="Optional restrictions or campaign notes"></textarea></label><div class="toggle-row"><label><input type="checkbox" checked> Prevent stacking</label><label><input type="checkbox" checked> Active after approval</label><label><input type="checkbox"> First-time users only</label></div><div class="modal-actions"><button class="btn secondary" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveCoupon()">Save Coupon</button></div></div></div>
+<div id="importModal" class="modal"><div class="modal-box small"><div class="modal-head"><div><div class="eyebrow">BULK IMPORT</div><h2>Import Coupon Codes</h2></div><button class="close" onclick="closeImport()">×</button></div><p class="muted">Upload CSV/XLSX containing code, campaign, discount, validity and limits.</p><div class="upload-zone"><strong>Drop file here</strong><span>or choose a CSV/XLSX file</span><button class="btn secondary">Choose File</button></div><div class="modal-actions"><button class="btn secondary" onclick="closeImport()">Cancel</button><button class="btn primary" onclick="alert('Demo import queued for validation.')">Validate Import</button></div></div></div>
+<script>
+function openCoupon(code=''){document.getElementById('modal').classList.add('show');document.getElementById('modalTitle').textContent=code?'Manage Coupon · '+code:'Create Coupon'; if(code) document.getElementById('code').value=code;}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+function openImport(){document.getElementById('importModal').classList.add('show')}
+function closeImport(){document.getElementById('importModal').classList.remove('show')}
+function saveCoupon(){alert('Demo: coupon saved and queued for backend validation.');closeModal()}
+function filterTable(){const q=document.getElementById('search').value.toLowerCase();const st=document.getElementById('status').value;const ty=document.getElementById('type').value;document.querySelectorAll('#couponTable tbody tr').forEach(r=>{const txt=r.innerText.toLowerCase();const okQ=!q||txt.includes(q);const okS=!st||r.dataset.status===st;const okT=!ty||r.dataset.type===ty;r.style.display=okQ&&okS&&okT?'':'none';});}
+</script>
+
+<script src="api-client.js"></script><script src="admin-api.js"></script>
+</body></html>

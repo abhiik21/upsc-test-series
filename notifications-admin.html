@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications Management | UPSC Admin</title>
+<meta name="description" content="Create, schedule, target and monitor notifications for the UPSC Test Series student platform.">
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--bg:#f6f8fb;--white:#fff;--ink:#18212b;--muted:#667085;--line:#e5e7eb;--sidebar:#0f2238;--green:#198754;--amber:#a46a00;--red:#c2413a;--purple:#7653b5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none;color:inherit}.app{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.sidebar{background:var(--sidebar);color:#c7d2de;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:10px;padding:7px 10px 22px;color:#fff;font-weight:800}.mark{width:35px;height:35px;border-radius:10px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}.nav-section{margin:18px 8px 8px;color:#7f91a6;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:13px;margin:2px 0}.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);color:#fff}.sidebar-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding:15px 8px 0}.sidebar-bottom a{display:block;padding:8px 4px;font-size:12px;color:#a9b7c7}.main{min-width:0}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10}.eyebrow{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#7b8794;font-weight:850}.top-title strong{display:block;color:var(--navy);font-size:16px}.top-title span{font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:10px}.search{border:1px solid #d9dee5;background:#f8fafc;border-radius:9px;padding:9px 12px;width:250px;font-size:13px}.admin{display:flex;align-items:center;gap:9px;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:#fff}.avatar{width:30px;height:30px;border-radius:50%;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800}.content{padding:28px}.head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}.head h1{margin:3px 0 0;font-size:28px;color:var(--navy);letter-spacing:-.03em}.head p{margin:5px 0 0;color:var(--muted);font-size:13px}.btn{border:1px solid transparent;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-outline{background:#fff;color:var(--navy);border-color:#d6dce3}.btn-ghost{background:transparent;color:var(--blue);border:0;padding:6px 0;cursor:pointer;font-weight:750}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:25px;font-weight:850;color:var(--navy);margin-top:5px}.stat .meta{font-size:11px;color:#98a2b3;margin-top:6px}.tabs{display:flex;gap:6px;background:#eef2f6;padding:5px;border-radius:10px;width:max-content;margin-bottom:14px;flex-wrap:wrap}.tab{border:0;background:transparent;padding:8px 12px;border-radius:7px;font-size:12px;color:#667085;font-weight:750;cursor:pointer}.tab.active{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(16,36,62,.08)}.toolbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr auto;gap:10px;align-items:center}.field,.select,textarea{width:100%;border:1px solid #d9dee5;border-radius:9px;background:#fff;padding:10px 11px;font-size:12px;color:#344054}.field:focus,.select:focus,textarea:focus{outline:2px solid #dbeafe;border-color:#93c5fd}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:20px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:14px}.panel-head h2{font-size:15px;margin:0;color:var(--navy)}.panel-head p{font-size:11px;color:var(--muted);margin:4px 0 0}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:980px}.table th,.table td{text-align:left;padding:13px 12px;border-bottom:1px solid #eef0f3;font-size:12px;vertical-align:top}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#85909d;background:#fafbfc}.table tr:last-child td{border-bottom:0}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800;white-space:nowrap}.pill.green{background:#eaf7ef;color:#167343}.pill.blue{background:#eaf2fb;color:#245e9a}.pill.amber{background:#fff5dc;color:#946200}.pill.red{background:#fdebea;color:#a9352e}.pill.purple{background:#f1ebfb;color:#6848a1}.muted{color:var(--muted);font-size:11px}.subtext{font-size:10px;color:#8a94a3;margin-top:3px}.layout{display:grid;grid-template-columns:1.55fr 1fr;gap:20px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mini{border:1px solid #eef0f3;border-radius:12px;padding:14px}.mini strong{display:block;color:var(--navy);font-size:18px}.mini span{display:block;color:var(--muted);font-size:10px;margin-top:4px}.bars{display:grid;gap:12px}.bar-row{display:grid;grid-template-columns:1.1fr 2fr 40px;gap:10px;align-items:center;font-size:11px;color:#526171}.bar{height:8px;background:#edf1f5;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:#7ca4cc;border-radius:999px}.checklist{display:grid;gap:9px}.checklist div{border:1px solid #eef0f3;border-radius:9px;padding:10px 11px;font-size:11px;color:#526171}.checklist div strong{color:var(--navy)}.modal{position:fixed;inset:0;background:rgba(15,34,56,.46);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.open{display:flex}.modal-box{background:#fff;border-radius:16px;width:min(850px,100%);max-height:92vh;overflow:auto;box-shadow:0 25px 80px rgba(0,0,0,.18)}.modal-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0;color:var(--navy);font-size:16px}.close{border:0;background:#f1f3f5;border-radius:50%;width:30px;height:30px;cursor:pointer}.form{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:13px}.full{grid-column:1/-1}.label{font-size:11px;font-weight:800;color:#475467;display:block;margin-bottom:6px}.check-row{display:flex;flex-wrap:wrap;gap:9px}.check{border:1px solid #d9dee5;border-radius:9px;padding:9px 10px;display:flex;gap:7px;align-items:center;font-size:11px;color:#475467}.radio-row{display:flex;gap:8px;flex-wrap:wrap}.radio{border:1px solid #d9dee5;border-radius:9px;padding:9px 11px;font-size:11px;color:#475467;display:flex;gap:7px;align-items:center}.modal-foot{padding:15px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:9px}.target-box{border:1px solid #dce4ec;background:#f8fafc;border-radius:10px;padding:13px}.target-box p{margin:0 0 10px;font-size:11px;color:#667085}.range{display:grid;grid-template-columns:1fr 1fr;gap:10px}.callout{background:#eef6ff;border:1px solid #cfe2f6;border-radius:12px;padding:13px 14px;margin-top:16px;font-size:11px;color:#305b83;line-height:1.55}
+@media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr 1fr}.toolbar .field{grid-column:1/-1}.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.nav{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}.topbar{padding:0 16px}.top-actions .search{display:none}.content{padding:18px}.stats{grid-template-columns:1fr 1fr}.toolbar{grid-template-columns:1fr}.form{grid-template-columns:1fr}.full{grid-column:auto}.cards{grid-template-columns:1fr}.range{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="mark">U</div><span>UPSC Test Series</span></div>
+  <div class="nav-section">Overview</div><nav class="nav"><a href="admin-dashboard.html">⌂ <span>Dashboard</span></a></nav>
+  <div class="nav-section">Academic</div><nav class="nav">
+    <a href="student-management.html">◉ <span>Students</span></a>
+    <a href="question-bank-admin.html">☑ <span>Questions</span></a>
+    <a href="test-management-admin.html">▤ <span>Tests</span></a>
+    <a href="test-series-management-admin.html">▥ <span>Test Series</span></a>
+  </nav>
+  <div class="nav-section">Content</div><nav class="nav">
+    <a href="current-affairs-admin.html">◉ <span>Current Affairs</span></a>
+    <a href="study-material-admin.html">▤ <span>Study Material</span></a>
+    <a href="blog-admin.html">✎ <span>Blog / CMS</span></a>
+  </nav>
+  <div class="nav-section">Commerce</div><nav class="nav">
+    <a href="subscriptions-admin.html">◇ <span>Subscriptions</span></a>
+    <a href="payments-admin.html">₹ <span>Payments</span></a>
+    <a href="coupons-admin.html">% <span>Coupons</span></a>
+  </nav>
+  <div class="nav-section">Operations</div><nav class="nav">
+    <a href="results-admin.html">◫ <span>Results & Rankings</span></a>
+    <a href="notifications-admin.html" class="active">◌ <span>Notifications</span></a>
+    <a href="reports-admin.html">◈ <span>Reports</span></a>
+    <a href="settings-admin.html">⚙ <span>Settings</span></a>
+  </nav>
+  <div class="sidebar-bottom"><a href="index.html">View public website →</a><a href="student-dashboard.html">Open student portal →</a></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="top-title"><div class="eyebrow">OPERATIONS</div><strong>Notifications Management</strong><span>Create, target, schedule and monitor student communications</span></div><div class="top-actions"><input class="search" placeholder="Search notifications..." oninput="filterRows()"><div class="admin"><div class="avatar">AK</div><div><strong style="font-size:12px;color:#24364b">Admin</strong><div class="muted">Super Admin</div></div></div></div></header>
+<section class="content">
+  <div class="head"><div><div class="eyebrow">COMMUNICATION CENTRE</div><h1>Notifications</h1><p>Manage in-app, email and push notifications across the student lifecycle.</p></div><div style="display:flex;gap:9px"><button class="btn btn-outline" onclick="openTemplate()">Notification Templates</button><button class="btn btn-primary" onclick="openCompose()">+ Create Notification</button></div></div>
+
+  <div class="stats">
+    <div class="stat"><div class="label">Sent this month</div><div class="value">28,460</div><div class="meta">+14.8% vs last month</div></div>
+    <div class="stat"><div class="label">Open / Read rate</div><div class="value">68.4%</div><div class="meta">Across in-app + email</div></div>
+    <div class="stat"><div class="label">Scheduled</div><div class="value">17</div><div class="meta">Next 30 days</div></div>
+    <div class="stat"><div class="label">Failed deliveries</div><div class="value">142</div><div class="meta">0.5% of total sends</div></div>
+    <div class="stat"><div class="label">Active templates</div><div class="value">31</div><div class="meta">7 system templates</div></div>
+  </div>
+
+  <div class="tabs"><button class="tab active" data-status="All">All</button><button class="tab" data-status="Draft">Drafts</button><button class="tab" data-status="Scheduled">Scheduled</button><button class="tab" data-status="Sent">Sent</button><button class="tab" data-status="Failed">Failed</button></div>
+  <div class="toolbar"><input id="q" class="field" placeholder="Search by title, audience, campaign or notification ID..." oninput="filterRows()"><select id="channel" class="select" onchange="filterRows()"><option value="">All Channels</option><option>In-app</option><option>Email</option><option>Push</option><option>In-app + Email</option><option>All Channels</option></select><select id="type" class="select" onchange="filterRows()"><option value="">All Types</option><option>Test Reminder</option><option>Result Alert</option><option>Content Alert</option><option>Subscription</option><option>System</option><option>Marketing</option></select><select id="aud" class="select" onchange="filterRows()"><option value="">All Audiences</option><option>All Students</option><option>Active Subscribers</option><option>Free Users</option><option>Expiring Subscribers</option><option>Custom Segment</option></select><button class="btn btn-outline" onclick="resetFilters()">Reset</button></div>
+
+  <div class="panel table-wrap"><div class="panel-head"><div><h2>Notification Library</h2><p>Operational history and scheduled communication queue.</p></div><button class="btn btn-outline" onclick="exportData()">Export CSV</button></div>
+    <table class="table" id="notifTable"><thead><tr><th>Notification</th><th>Type</th><th>Channel</th><th>Audience</th><th>Schedule / Sent</th><th>Delivered</th><th>Read</th><th>Status</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr data-status="Scheduled" data-channel="Push" data-type="Test Reminder" data-aud="All Students"><td><strong>Test 15 opens tomorrow</strong><div class="subtext">NOT-2026-0918-15 · Test Series Reminder</div></td><td><span class="pill blue">Test Reminder</span></td><td>Push</td><td>All Students</td><td>20 Sep · 08:00</td><td>—</td><td>—</td><td><span class="pill amber">Scheduled</span></td><td><button class="btn btn-ghost" onclick="manage('NOT-2026-0918-15')">Manage</button></td></tr>
+      <tr data-status="Sent" data-channel="In-app + Email" data-type="Result Alert" data-aud="All Students"><td><strong>Test 14 results published</strong><div class="subtext">NOT-2026-0918-14 · Result Alert</div></td><td><span class="pill purple">Result Alert</span></td><td>In-app + Email</td><td>All Students</td><td>18 Sep · 18:30</td><td>4,802</td><td>3,287 (68.5%)</td><td><span class="pill green">Sent</span></td><td><button class="btn btn-ghost" onclick="viewStats('NOT-2026-0918-14')">Analytics</button></td></tr>
+      <tr data-status="Sent" data-channel="In-app" data-type="Content Alert" data-aud="Active Subscribers"><td><strong>September revision pack is live</strong><div class="subtext">NOT-2026-0917-11 · Study Material</div></td><td><span class="pill blue">Content Alert</span></td><td>In-app</td><td>Active Subscribers</td><td>17 Sep · 09:15</td><td>6,210</td><td>4,691 (75.5%)</td><td><span class="pill green">Sent</span></td><td><button class="btn btn-ghost" onclick="viewStats('NOT-2026-0917-11')">Analytics</button></td></tr>
+      <tr data-status="Draft" data-channel="Email" data-type="Marketing" data-aud="Expiring Subscribers"><td><strong>Your access expires in 7 days</strong><div class="subtext">NOT-2026-0916-08 · Renewal Campaign</div></td><td><span class="pill amber">Marketing</span></td><td>Email</td><td>Expiring Subscribers</td><td>Draft</td><td>—</td><td>—</td><td><span class="pill amber">Draft</span></td><td><button class="btn btn-ghost" onclick="manage('NOT-2026-0916-08')">Edit</button></td></tr>
+      <tr data-status="Failed" data-channel="Push" data-type="System" data-aud="All Students"><td><strong>System maintenance alert</strong><div class="subtext">NOT-2026-0915-03 · Infrastructure</div></td><td><span class="pill red">System</span></td><td>Push</td><td>All Students</td><td>15 Sep · 01:00</td><td>9,842</td><td>—</td><td><span class="pill red">Partial Failure</span></td><td><button class="btn btn-ghost" onclick="viewFailures()">View Failures</button></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="layout">
+    <div class="panel"><div class="panel-head"><div><h2>Delivery Performance</h2><p>Successful delivery by channel this month.</p></div></div>
+      <div class="bars">
+        <div class="bar-row"><span>In-app</span><div class="bar"><i style="width:98%"></i></div><strong>98%</strong></div>
+        <div class="bar-row"><span>Push</span><div class="bar"><i style="width:94%"></i></div><strong>94%</strong></div>
+        <div class="bar-row"><span>Email</span><div class="bar"><i style="width:91%"></i></div><strong>91%</strong></div>
+        <div class="bar-row"><span>SMS</span><div class="bar"><i style="width:88%"></i></div><strong>88%</strong></div>
+      </div>
+      <div class="cards" style="margin-top:16px"><div class="mini"><strong>28,460</strong><span>Messages sent</span></div><div class="mini"><strong>19,468</strong><span>Read / opened</span></div><div class="mini"><strong>142</strong><span>Failed</span></div></div>
+    </div>
+    <div class="panel"><div class="panel-head"><div><h2>Notification Rules</h2><p>Automations that can create notifications from platform events.</p></div></div>
+      <div class="checklist">
+        <div><strong>Test Reminder</strong><br>Send 24 hours and 1 hour before a scheduled test.</div>
+        <div><strong>Result Published</strong><br>Notify eligible students when results are released.</div>
+        <div><strong>Subscription Expiry</strong><br>Trigger renewal reminders at configured intervals.</div>
+        <div><strong>New Content</strong><br>Notify selected segments when content is published.</div>
+        <div><strong>System Incident</strong><br>Admin-triggered urgent notification with priority routing.</div>
+      </div>
+    </div>
+  </div>
+  <div class="callout"><strong>Production note:</strong> audience eligibility, frequency caps, unsubscribe preferences, channel consent, and delivery retries should be enforced by the backend notification service rather than trusted to the browser.</div>
+</section>
+</main></div>
+
+<div class="modal" id="composeModal"><div class="modal-box"><div class="modal-head"><div><div class="eyebrow">NOTIFICATION COMPOSER</div><h3>Create Notification</h3></div><button class="close" onclick="closeCompose()">×</button></div>
+<form class="form" onsubmit="saveNotification(event)">
+  <div><label class="label">Notification Title</label><input class="field" required placeholder="e.g. Test 16 starts tomorrow"></div>
+  <div><label class="label">Notification Type</label><select class="select"><option>Test Reminder</option><option>Result Alert</option><option>Content Alert</option><option>Subscription</option><option>System</option><option>Marketing</option></select></div>
+  <div class="full"><label class="label">Message</label><textarea rows="4" required placeholder="Write the student-facing notification..."></textarea></div>
+  <div><label class="label">Channels</label><div class="check-row"><label class="check"><input type="checkbox" checked> In-app</label><label class="check"><input type="checkbox"> Push</label><label class="check"><input type="checkbox"> Email</label><label class="check"><input type="checkbox"> SMS</label></div></div>
+  <div><label class="label">Priority</label><select class="select"><option>Normal</option><option>High</option><option>Urgent</option></select></div>
+  <div class="full"><div class="target-box"><p><strong>Audience targeting</strong> — select who should receive this notification.</p><div class="radio-row"><label class="radio"><input type="radio" name="audience" checked> All Students</label><label class="radio"><input type="radio" name="audience"> Active Subscribers</label><label class="radio"><input type="radio" name="audience"> Free Users</label><label class="radio"><input type="radio" name="audience"> Expiring Subscribers</label><label class="radio"><input type="radio" name="audience"> Custom Segment</label></div></div></div>
+  <div><label class="label">Delivery</label><select class="select" id="deliveryMode"><option>Send Immediately</option><option>Schedule</option></select></div>
+  <div class="range"><div><label class="label">Date</label><input class="field" type="date"></div><div><label class="label">Time</label><input class="field" type="time"></div></div>
+  <div><label class="label">Deep Link</label><input class="field" placeholder="e.g. /student/my-tests"></div>
+  <div><label class="label">Template</label><select class="select"><option>Start from scratch</option><option>Test Reminder</option><option>Result Published</option><option>Subscription Expiry</option></select></div>
+  <div class="modal-foot full"><button type="button" class="btn btn-outline" onclick="closeCompose()">Cancel</button><button type="submit" class="btn btn-primary">Save Notification</button></div>
+</form></div></div>
+
+<div class="modal" id="templateModal"><div class="modal-box"><div class="modal-head"><div><div class="eyebrow">LIBRARY</div><h3>Notification Templates</h3></div><button class="close" onclick="closeTemplate()">×</button></div><div style="padding:20px;display:grid;gap:10px"><div class="mini"><strong>Test Reminder</strong><span>“Your test {test_name} begins tomorrow at {time}.”</span></div><div class="mini"><strong>Result Published</strong><span>“Your result for {test_name} is now available.”</span></div><div class="mini"><strong>Subscription Expiry</strong><span>“Your access expires in {days} days. Renew to continue.”</span></div><div class="mini"><strong>New Current Affairs</strong><span>“New UPSC current affairs are available for revision.”</span></div><button class="btn btn-outline" onclick="alert('Template manager will be connected to the CMS.')">Manage Template Library</button></div></div></div>
+
+<script>
+const tabs=[...document.querySelectorAll('.tab')];
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active'); filterRows(t.dataset.status)}));
+function filterRows(forceStatus){const status=forceStatus||document.querySelector('.tab.active')?.dataset.status||'All';const q=(document.getElementById('q')?.value||'').toLowerCase();const ch=document.getElementById('channel')?.value||'';const ty=document.getElementById('type')?.value||'';const au=document.getElementById('aud')?.value||'';document.querySelectorAll('#notifTable tbody tr').forEach(r=>{const text=r.innerText.toLowerCase();const s=r.dataset.status;const ok=(status==='All'||s===status||((status==='Sent')&&s==='Sent'))&&!q||false;const okQ=!q||text.includes(q);const okCh=!ch||r.dataset.channel===ch;const okTy=!ty||r.dataset.type===ty;const okAu=!au||r.dataset.aud===au;const okStatus=status==='All'||s===status;r.style.display=okQ&&okCh&&okTy&&okAu&&okStatus?'':'none';})}
+function resetFilters(){document.getElementById('q').value='';document.getElementById('channel').value='';document.getElementById('type').value='';document.getElementById('aud').value='';tabs.forEach(x=>x.classList.remove('active'));tabs[0].classList.add('active');filterRows('All')}
+function openCompose(){document.getElementById('composeModal').classList.add('open')}
+function closeCompose(){document.getElementById('composeModal').classList.remove('open')}
+function openTemplate(){document.getElementById('templateModal').classList.add('open')}
+function closeTemplate(){document.getElementById('templateModal').classList.remove('open')}
+function saveNotification(e){e.preventDefault();alert('Demo: notification saved. Backend will apply audience eligibility, consent and channel rules before delivery.');closeCompose()}
+function manage(id){alert('Demo: opening notification '+id+' for editing and delivery settings.')}
+function viewStats(id){alert('Demo analytics for '+id+' will connect to delivery events, read/open rates and channel metrics.')}
+function viewFailures(){alert('Demo: failed deliveries will show provider response codes and retry state here.')}
+function exportData(){alert('Demo CSV export queued. Backend will generate the notification history export.')}
+window.addEventListener('click',e=>{if(e.target.id==='composeModal')closeCompose();if(e.target.id==='templateModal')closeTemplate()})
+</script>
+<script src="api-client.js"></script><script src="admin-api.js"></script>
+</body></html>

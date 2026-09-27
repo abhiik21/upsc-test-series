@@ -1,0 +1,59 @@
+databases:
+  - name: upsc-db
+    plan: basic-256mb
+    databaseName: upsc
+    user: upsc_user
+
+services:
+  - type: web
+    name: upsc-api
+    runtime: docker
+    dockerContext: backend
+    dockerfilePath: backend/Dockerfile
+    plan: starter
+    healthCheckPath: /health/ready
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: DB_BACKEND
+        value: postgres
+      - key: DATABASE_URL
+        fromDatabase:
+          name: upsc-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: https://upsctestseries.literaturemantra.com
+      - key: PAYMENT_PROVIDER
+        value: development
+      - key: AUTH_REQUIRE_VERIFICATION
+        value: "true"
+      - key: DEV_SHOW_OTP
+        value: "false"
+      - key: SEED_DEMO_DATA
+        value: "false"
+      - key: ADMIN_NAME
+        value: Admin
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+
+  - type: web
+    name: upsc-frontend
+    runtime: static
+    staticPublishPath: frontend
+    buildCommand: ""
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://upsc-api.onrender.com/api/*
+      - type: rewrite
+        source: /health/*
+        destination: https://upsc-api.onrender.com/health/*
+      - type: rewrite
+        source: /health
+        destination: https://upsc-api.onrender.com/health

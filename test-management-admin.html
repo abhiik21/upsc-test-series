@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Test Management | UPSC Admin</title>
+<meta name="description" content="Admin test management and test builder for the UPSC Test Series platform."/>
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--bg:#f6f8fb;--white:#fff;--ink:#18212b;--muted:#667085;--line:#e5e7eb;--sidebar:#0f2238;--green:#198754;--amber:#a46a00;--red:#c2413a}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none;color:inherit}.app{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.sidebar{background:var(--sidebar);color:#c7d2de;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:10px;padding:7px 10px 22px;color:#fff;font-weight:800}.mark{width:35px;height:35px;border-radius:10px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}.nav-section{margin:18px 8px 8px;color:#7f91a6;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:13px;margin:2px 0}.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);color:#fff}.nav .badge{margin-left:auto;background:var(--gold);color:#132130;border-radius:999px;padding:2px 6px;font-size:10px;font-weight:800}.sidebar-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding:15px 8px 0}.sidebar-bottom a{display:block;padding:8px 4px;font-size:12px;color:#a9b7c7}
+.main{min-width:0}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10}.top-title strong{display:block;color:var(--navy);font-size:16px}.top-title span{font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:10px}.search{border:1px solid #d9dee5;background:#f8fafc;border-radius:9px;padding:9px 12px;width:250px;font-size:13px}.admin{display:flex;align-items:center;gap:9px;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:#fff}.avatar{width:30px;height:30px;border-radius:50%;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800}
+.content{padding:28px}.head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}.head h1{margin:0;font-size:28px;color:var(--navy);letter-spacing:-.03em}.head p{margin:5px 0 0;color:var(--muted);font-size:13px}.btn{border:1px solid transparent;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-outline{background:#fff;color:var(--navy);border-color:#d6dce3}.btn-danger{background:#fff;color:var(--red);border-color:#e8c4c1}.btn-ghost{background:transparent;color:var(--blue);border:0;padding:8px;cursor:pointer;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:26px;font-weight:850;color:var(--navy);margin-top:5px}.stat .meta{font-size:11px;color:#98a2b3;margin-top:6px}
+.tabs{display:flex;gap:6px;background:#eef2f6;padding:5px;border-radius:10px;width:max-content;margin-bottom:14px}.tab{border:0;background:transparent;padding:8px 12px;border-radius:7px;font-size:12px;color:#667085;font-weight:750;cursor:pointer}.tab.active{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(16,36,62,.08)}
+.toolbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.45fr repeat(4,1fr) auto;gap:10px;align-items:center}.field,.select{width:100%;border:1px solid #d9dee5;border-radius:9px;background:#fff;padding:10px 11px;font-size:12px;color:#344054}.field:focus,.select:focus,textarea:focus{outline:2px solid #dbeafe;border-color:#93c5fd}
+.table-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:20px}.card-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.card-head h2{font-size:15px;margin:0;color:var(--navy)}.muted{color:var(--muted);font-size:11px}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:12px 14px;border-bottom:1px solid #eef0f3;font-size:12px;vertical-align:top}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#85909d;background:#fafbfc}.table tr:last-child td{border-bottom:0}.test-title{font-weight:800;color:#253953;line-height:1.35}.subtext{font-size:10px;color:#8a94a3;margin-top:5px}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800;white-space:nowrap}.pill.green{background:#eaf7ef;color:#167343}.pill.blue{background:#eaf2fb;color:#245e9a}.pill.amber{background:#fff5dc;color:#946200}.pill.red{background:#fdeceb;color:#a33c34}.pill.gray{background:#f0f2f5;color:#667085}.actions{display:flex;gap:5px;align-items:center}.iconbtn{width:31px;height:31px;border:1px solid #dfe4ea;background:#fff;border-radius:8px;display:grid;place-items:center;cursor:pointer;font-size:13px;color:#52606f}.iconbtn:hover{border-color:#b8c1cc;background:#f8fafc}.pager{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-top:1px solid var(--line);font-size:11px;color:#667085}.pages{display:flex;gap:5px}.page{width:30px;height:30px;border:1px solid #dfe4ea;border-radius:7px;background:#fff;font-size:11px;cursor:pointer}.page.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.builder{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-top:20px}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.panel h3{margin:0 0 14px;color:var(--navy);font-size:15px}.panel p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}.section{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}.section:first-child{border-top:0;padding-top:0;margin-top:0}.label{display:block;font-size:11px;color:#667085;margin-bottom:6px;font-weight:750;text-transform:uppercase;letter-spacing:.05em}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.full{grid-column:1/-1}.mini-stat{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eef0f3;font-size:12px}.mini-stat:last-child{border-bottom:0}.mini-stat strong{color:var(--navy)}.source-row{display:flex;gap:8px;align-items:center;margin-top:8px}.source-row .field{flex:1}.rule{display:grid;grid-template-columns:1fr 100px 100px;gap:8px;align-items:center;margin-top:8px}.question-pool{margin-top:14px;border:1px dashed #c9d3df;background:#f8fafc;border-radius:12px;padding:14px}.question-pool .count{font-size:24px;font-weight:850;color:var(--navy)}.pool-row{display:flex;justify-content:space-between;gap:10px;align-items:center}.checkrow{display:flex;gap:8px;align-items:center;font-size:12px;color:#475467;margin:7px 0}.checkrow input{accent-color:var(--blue)}.summary-box{background:#f8fafc;border:1px solid #e6ebf1;border-radius:12px;padding:13px}.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.summary-item{background:#fff;border:1px solid #edf0f4;border-radius:9px;padding:10px}.summary-item span{display:block;color:#8a94a3;font-size:10px}.summary-item strong{display:block;color:var(--navy);font-size:14px;margin-top:3px}.builder-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.hint{font-size:10px;color:#98a2b3;margin-top:5px}
+.overlay{position:fixed;inset:0;background:rgba(15,34,56,.48);display:none;align-items:center;justify-content:center;padding:20px;z-index:30}.overlay.show{display:flex}.modal{width:min(960px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.2)}.modal-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:2}.modal-head h3{margin:0;color:var(--navy);font-size:17px}.close{border:0;background:transparent;font-size:22px;cursor:pointer;color:#6b7280}.modal-body{padding:20px}.modal-foot{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:#fff}.pick-table{width:100%;border-collapse:collapse;margin-top:10px}.pick-table th,.pick-table td{padding:10px;border-bottom:1px solid #eef0f3;text-align:left;font-size:11px}.pick-table th{background:#fafbfc;text-transform:uppercase;font-size:9px;color:#85909d;letter-spacing:.08em}.pick-count{font-size:12px;color:#667085;margin-top:5px}.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:11px 14px;border-radius:9px;font-size:12px;display:none;z-index:50}.toast.show{display:block}
+@media(max-width:1150px){.toolbar{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.builder{grid-template-columns:1fr}}
+@media(max-width:900px){.app{grid-template-columns:82px 1fr}.sidebar{padding:16px 9px}.brand span:last-child,.nav-section,.nav a span:not(.badge),.sidebar-bottom{display:none}.brand{justify-content:center}.nav a{justify-content:center}.nav a .badge{display:none}.search{display:none}}
+@media(max-width:650px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{padding:0 16px}.content{padding:20px 16px}.head{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr 1fr}.toolbar{grid-template-columns:1fr 1fr}.form-grid,.summary-grid,.rule{grid-template-columns:1fr}.full{grid-column:auto}.table-card{overflow:auto}.table{min-width:1080px}.modal{max-height:95vh}}
+.notice{background:#fffaeb;border:1px solid #fedf89;color:#93370d;border-radius:10px;padding:10px 12px;font-size:12px;margin-bottom:14px;line-height:1.5}
+.sel-list{margin-top:12px;max-height:260px;overflow:auto}
+.sel-row{display:flex;gap:8px;align-items:center;padding:7px 0;border-top:1px solid #eef0f3;font-size:12px;color:#344054}
+.sel-no{width:26px;font-weight:800;color:#667085;flex:none}
+.sel-stem{flex:1;min-width:0}
+.sel-row .iconbtn{width:26px;height:26px;flex:none}
+.pick-table tr.pk-row:hover{background:#f8fafc}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="mark">U</div><span>UPSC Admin</span></div>
+  <div class="nav-section">Overview</div>
+  <nav class="nav">
+    <a href="admin-dashboard.html">▦ <span>Dashboard</span></a>
+    <a href="student-management.html">◉ <span>Students</span><span class="badge">18.5k</span></a>
+    <a href="question-bank-admin.html">☑ <span>Questions</span></a>
+    <a class="active" href="test-management-admin.html">▤ <span>Tests</span></a>
+    <a href="test-management-admin.html#series">▥ <span>Test Series</span></a>
+  </nav>
+  <div class="nav-section">Content</div>
+  <nav class="nav">
+    <a href="current-affairs-admin.html">✦ <span>Current Affairs</span></a>
+    <a href="study-material-admin.html">▣ <span>Study Material</span></a>
+    <a href="blog-admin.html">◌ <span>Blog / CMS</span></a>
+  </nav>
+  <div class="nav-section">Business</div>
+  <nav class="nav">
+    <a href="subscriptions-admin.html">₹ <span>Subscriptions</span></a>
+    <a href="payments-admin.html">◫ <span>Payments</span></a>
+    <a href="coupons-admin.html">◇ <span>Coupons</span></a>
+  </nav>
+  <div class="nav-section">Operations</div>
+  <nav class="nav">
+    <a href="results-admin.html">◎ <span>Results & Rankings</span></a>
+    <a href="notifications-admin.html">◫ <span>Notifications</span></a>
+    <a href="reports-admin.html">◈ <span>Reports</span></a>
+    <a href="settings-admin.html">⚙ <span>Settings</span></a>
+  </nav>
+  <div class="sidebar-bottom"><a href="index.html">View public website →</a><a href="login.html">Student login →</a></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="top-title"><strong>Test Management</strong><span>Create, configure, schedule and publish tests</span></div><div class="top-actions"><input class="search" id="globalSearch" placeholder="Search tests, series…"/><div class="admin"><div class="avatar">AD</div><span style="font-size:12px;font-weight:750;color:#344054">Admin</span></div></div></header>
+<div class="content">
+  <div class="head"><div><h1>Tests</h1><p>Manage individual tests and the question composition behind every assessment.</p></div><div style="display:flex;gap:8px"><button class="btn btn-outline" onclick="openSeries()">+ New Test Series</button><button class="btn btn-primary" onclick="openBuilder()">+ Create Test</button></div></div>
+  <div class="stats">
+    <div class="stat"><div class="label">Total Tests</div><div class="value" id="stTotal">-</div><div class="meta" id="stTotalMeta">&nbsp;</div></div>
+    <div class="stat"><div class="label">Published</div><div class="value" id="stPub">-</div><div class="meta">Visible to students</div></div>
+    <div class="stat"><div class="label">Scheduled</div><div class="value" id="stSched">-</div><div class="meta">Upcoming releases</div></div>
+    <div class="stat"><div class="label">Drafts</div><div class="value" id="stDraft">-</div><div class="meta">Work in progress</div></div>
+  </div>
+  <div class="tabs" id="statusTabs"><button class="tab active" data-status="all">All Tests</button><button class="tab" data-status="published">Published</button><button class="tab" data-status="scheduled">Scheduled</button><button class="tab" data-status="draft">Drafts</button><button class="tab" data-status="archived">Archived</button></div>
+  <div class="toolbar">
+    <input class="field" id="searchTests" placeholder="Search test title, series, tag…"/>
+    <select class="select" id="seriesFilter"></select>
+    <select class="select" id="typeFilter"></select>
+    <select class="select" id="audienceFilter"></select>
+    <select class="select" id="sortFilter"><option value="title">Title (A-Z)</option><option value="date">Release Date</option><option value="attempts">Most Attempted</option></select>
+    <button class="btn btn-outline" onclick="resetFilters()">Reset</button>
+  </div>
+  <div class="table-card">
+    <div class="card-head"><div><h2>Test Library</h2><span class="muted" id="resultCount">Loading…</span></div><button class="btn btn-outline" onclick="openBuilder()">Build New Test</button></div>
+    <table class="table"><thead><tr><th style="width:35%">Test</th><th>Series</th><th>Type</th><th>Questions</th><th>Release</th><th>Access</th><th>Status</th><th>Attempts</th><th>Actions</th></tr></thead><tbody id="testRows"></tbody></table>
+    <div class="pager"><span id="pagerText"></span></div>
+  </div>
+
+  <div class="builder" id="series">
+    <section class="panel"><h3>Test Series Overview</h3><p>Group tests into a structured programme and control order, access, pricing and release schedule.</p><div class="section" id="seriesOverview"></div><div class="builder-foot"><button class="btn btn-outline" onclick="openSeries()">Manage Series</button></div></section>
+    <section class="panel"><h3>Upcoming Releases</h3><p>Upcoming tests that have a configured release date.</p><div class="section" id="upcomingList"></div></section>
+  </div>
+</div>
+</main>
+</div>
+
+<div class="overlay" id="builderOverlay"><div class="modal"><div class="modal-head"><h3 id="builderTitle">Create Test</h3><button class="close" onclick="closeBuilder()">&times;</button></div><div class="modal-body">
+  <div class="notice" id="lockNotice" style="display:none"></div>
+  <div class="form-grid">
+    <div class="full"><label class="label" for="bTitle">Test Title</label><input class="field" id="bTitle" maxlength="200" placeholder="e.g. Ancient History - Harappan Civilisation Test 01"/></div>
+    <div><label class="label" for="bSeries">Test Series</label><select class="select" id="bSeries"></select></div>
+    <div><label class="label" for="bType">Test Type</label><select class="select" id="bType"></select></div>
+    <div><label class="label" for="bDuration">Duration (minutes)</label><input class="field" id="bDuration" type="number" min="1" value="120"/></div>
+    <div><label class="label" for="bAccess">Access</label><select class="select" id="bAccess"></select></div>
+    <div id="bTierWrap"><label class="label" for="bTier">Minimum plan required</label><select class="select" id="bTier"></select><div class="hint">A higher plan always includes everything a lower plan unlocks.</div></div>
+    <div><label class="label" for="bRelease">Release date &amp; time (optional)</label><input class="field" id="bRelease" type="datetime-local"/><div class="hint">Students can start the test from this time. Leave empty to open it as soon as it is published.</div></div>
+    <div><label class="label" for="bDesc">Description (optional)</label><input class="field" id="bDesc" maxlength="500"/></div>
+  </div>
+  <div class="section"><label class="label">Marking scheme (per question)</label><div class="rule"><div><span class="hint">Marks for a correct answer &middot; deduction for a wrong answer</span></div><input class="field" id="bMarks" type="number" min="0.01" step="0.01" value="2"/><input class="field" id="bNeg" type="number" min="0" step="0.01" value="0.67"/></div><div class="hint" id="marksHint"></div></div>
+  <div class="section"><label class="label">Questions</label><div class="question-pool"><div class="pool-row"><div><div class="count" id="pickedTotal">0</div><div class="hint">questions in this test, in the order students will see them</div></div><button class="btn btn-outline" id="selectBtn" onclick="openPicker()">Select Questions</button></div><div class="sel-list" id="selList"></div></div></div>
+</div><div class="modal-foot"><button class="btn btn-outline" onclick="closeBuilder()">Cancel</button><button class="btn btn-outline" id="draftBtn" onclick="saveTest('draft')">Save as Draft</button><button class="btn btn-primary" id="pubBtn" onclick="saveTest('published')">Save &amp; Publish</button></div></div></div>
+
+<div class="overlay" id="seriesOverlay"><div class="modal" style="width:min(640px,100%)"><div class="modal-head"><h3>Create Test Series</h3><button class="close" onclick="closeSeries()">&times;</button></div><div class="modal-body"><div class="form-grid"><div class="full"><label class="label" for="sName">Series Name</label><input class="field" id="sName" maxlength="200" placeholder="e.g. UPSC Prelims 2027 Complete Test Series"/></div><div><label class="label" for="sPrice">Price (&#8377;)</label><input class="field" id="sPrice" type="number" min="0" step="1" placeholder="999"/></div><div><label class="label" for="sValidity">Validity (days)</label><input class="field" id="sValidity" type="number" min="1" value="365"/></div><div class="full"><label class="label" for="sDesc">Description</label><textarea class="field" id="sDesc" style="min-height:90px" placeholder="What students receive in this series"></textarea></div></div></div><div class="modal-foot"><button class="btn btn-outline" onclick="closeSeries()">Cancel</button><button class="btn btn-primary" onclick="saveSeries()">Create Series</button></div></div></div>
+
+<div class="overlay" id="pickerOverlay"><div class="modal"><div class="modal-head"><h3>Select Questions</h3><button class="close" onclick="closePicker()">&times;</button></div><div class="modal-body"><div style="display:grid;grid-template-columns:1fr 1fr 1fr 2fr;gap:8px"><select class="select" id="pkSubject"><option value="">All Subjects</option><option value="polity">Indian Polity</option><option value="economy">Economy</option><option value="history">History</option><option value="geography">Geography</option><option value="environment">Environment</option><option value="science">Science &amp; Technology</option><option value="current">Current Affairs</option><option value="csat">CSAT</option></select><select class="select" id="pkDifficulty"><option value="">All Difficulty</option><option value="easy">Easy</option><option value="moderate">Moderate</option><option value="difficult">Difficult</option></select><select class="select" id="pkStatus"><option value="">Any status</option><option value="published">Published</option><option value="draft">Draft</option></select><input class="field" id="pkSearch" placeholder="Search question text"/></div><div class="pick-count"><span id="pkInfo"></span> &middot; Selected: <strong id="pickedCount">0</strong><label style="margin-left:14px;cursor:pointer"><input type="checkbox" id="pkAll"/> Select all shown</label></div><table class="pick-table"><thead><tr><th></th><th>Question</th><th>Subject</th><th>Topic</th><th>Difficulty</th></tr></thead><tbody id="pkRows"></tbody></table></div><div class="modal-foot"><button class="btn btn-outline" onclick="closePicker()">Cancel</button><button class="btn btn-primary" onclick="applySelection()">Use Selected Questions</button></div></div></div>
+
+<div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const TYPES=[['subject','Subject Test'],['full_length','Full Length'],['current_affairs','Current Affairs'],['pyq','PYQ Practice'],['csat','CSAT'],['mixed','Mixed']];
+const ACCESS=[['premium','Premium'],['free','Free'],['included','Included']];
+const labels={published:'Published',scheduled:'Scheduled',draft:'Draft',archived:'Archived'};
+const nameOf=(list,v)=>(list.find(x=>x[0]===v)||[v,v||'-'])[1];
+const api=()=>window.UPSC_API;
+let tests=[],seriesList=[],picked=[],editing=null,editSlug=null,editTotal=0,editNeg=0,locked=false,pickerSel=new Map(),pkRows=[],pkTimer=null,plans=[];
+
+function shownStatus(t){return t.status==='published'&&t.scheduled_at&&new Date(t.scheduled_at)>new Date()?'scheduled':t.status}
+function badge(status){const c=status==='published'?'green':status==='scheduled'?'blue':status==='draft'?'amber':'gray';return `<span class="pill ${c}">${labels[status]||esc(status)}</span>`}
+function accessBadge(x){const label=x.access_type==='free'?nameOf(ACCESS,'free'):`${nameOfTier(x.required_tier||1)}+`;return `<span class="pill ${x.access_type==='free'?'green':'blue'}">${esc(label)}</span>`}
+function diffPill(d){const c=d==='easy'?'green':d==='difficult'?'amber':'blue';return `<span class="pill ${c}">${esc(d?d[0].toUpperCase()+d.slice(1):'-')}</span>`}
+const fmtDate=iso=>iso?new Date(iso).toLocaleString('en-IN',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}):'Immediately';
+const fmtDay=iso=>new Date(iso).toLocaleDateString('en-IN',{day:'2-digit',month:'short'});
+const fmtNum=n=>String(+(+n).toFixed(2));
+const slugify=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80)||'test';
+const oneLine=(s,n)=>{const t=String(s||'').replace(/\s+/g,' ').trim();return t.length>n?t.slice(0,n)+'…':t};
+function toLocalInput(iso){const d=new Date(iso),p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`}
+function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),Math.max(2500,msg.length*70))}
+
+/* ---------- list ---------- */
+function fillSelects(){
+  const opts=(list,first)=>(first?`<option value="">${first}</option>`:'')+list.map(x=>`<option value="${esc(x[0])}">${esc(x[1])}</option>`).join('');
+  const sv=$('seriesFilter').value,bs=$('bSeries').value;
+  const sl=seriesList.map(s=>[s.id,s.name]);
+  $('seriesFilter').innerHTML=opts(sl,'All Series');$('seriesFilter').value=sv;
+  $('bSeries').innerHTML=sl.length?opts(sl):'<option value="">No series yet - create one first</option>';if(bs)$('bSeries').value=bs;
+  if(!$('typeFilter').options.length){$('typeFilter').innerHTML=opts(TYPES,'All Types');$('bType').innerHTML=opts(TYPES);$('audienceFilter').innerHTML=opts(ACCESS,'All Access');$('bAccess').innerHTML=opts(ACCESS)}
+  const bt=$('bTier').value;
+  const tiers=[...plans].sort((a,b)=>a.tier-b.tier).map(p=>[p.tier,`${p.name} (tier ${p.tier}) and above`]);
+  $('bTier').innerHTML=tiers.length?opts(tiers):'<option value="1">No plans configured</option>';if(bt)$('bTier').value=bt;
+  syncTierField();
+}
+function syncTierField(){$('bTierWrap').style.display=$('bAccess').value==='free'?'none':''}
+function nameOfTier(t){const p=plans.find(p=>p.tier===+t);return p?p.name:`Tier ${t}`}
+function renderSummary(){
+  const st=tests.map(shownStatus);
+  $('stTotal').textContent=tests.length;$('stTotalMeta').textContent=`Across ${seriesList.length} series`;
+  $('stPub').textContent=st.filter(x=>x==='published').length;$('stSched').textContent=st.filter(x=>x==='scheduled').length;$('stDraft').textContent=st.filter(x=>x==='draft').length;
+  $('seriesOverview').innerHTML=seriesList.length?seriesList.map(s=>`<div class="mini-stat"><span>${esc(s.name)}</span><strong>${s.test_count} test${s.test_count===1?'':'s'}</strong></div>`).join(''):'<div class="hint">No series yet. Click “+ New Test Series”.</div>';
+  const up=tests.filter(x=>shownStatus(x)==='scheduled').sort((a,b)=>a.scheduled_at.localeCompare(b.scheduled_at)).slice(0,5);
+  $('upcomingList').innerHTML=up.length?up.map(x=>`<div class="mini-stat"><span>${esc(x.title)}</span><strong>${fmtDay(x.scheduled_at)}</strong></div>`).join(''):'<div class="hint">No tests have a future release date.</div>';
+}
+function render(){
+  const q=$('searchTests').value.toLowerCase().trim(),s=$('seriesFilter').value,t=$('typeFilter').value,a=$('audienceFilter').value,active=document.querySelector('.tab.active').dataset.status;
+  const rows=tests.filter(x=>(!q||(x.title+' '+(x.series_name||'')).toLowerCase().includes(q))&&(!s||x.series_id===s)&&(!t||x.test_type===t)&&(!a||x.access_type===a)&&(active==='all'||shownStatus(x)===active));
+  const sort=$('sortFilter').value;
+  if(sort==='attempts')rows.sort((x,y)=>y.attempt_count-x.attempt_count);
+  else if(sort==='date')rows.sort((x,y)=>String(y.scheduled_at||'').localeCompare(String(x.scheduled_at||'')));
+  else rows.sort((x,y)=>x.title.localeCompare(y.title));
+  $('resultCount').textContent=`Showing ${rows.length} of ${tests.length} test${tests.length===1?'':'s'}`;
+  $('pagerText').textContent=`${tests.length} test${tests.length===1?'':'s'} in total`;
+  $('testRows').innerHTML=rows.length?rows.map(x=>`<tr><td><div class="test-title">${esc(x.title)}</div><div class="subtext">${x.duration_minutes} min &middot; ${fmtNum(x.total_marks)} marks</div></td><td>${esc(x.series_name||'-')}</td><td>${esc(nameOf(TYPES,x.test_type))}</td><td>${x.question_count}</td><td>${x.scheduled_at?esc(fmtDate(x.scheduled_at)):'Immediately'}</td><td>${accessBadge(x)}</td><td>${badge(shownStatus(x))}</td><td>${x.attempt_count.toLocaleString()}</td><td><div class="actions"><button class="iconbtn" title="Edit" onclick="editTest('${esc(x.id)}')">&#9998;</button><button class="iconbtn" title="Duplicate as draft" onclick="duplicateTest('${esc(x.id)}')">&#10697;</button></div></td></tr>`).join(''):`<tr><td colspan="9" style="text-align:center;padding:30px;color:#667085">${tests.length?'No tests match these filters.':'No tests yet. Click “+ Create Test” to build your first one.'}</td></tr>`;
+}
+function resetFilters(){$('searchTests').value='';$('seriesFilter').value='';$('typeFilter').value='';$('audienceFilter').value='';$('sortFilter').value='title';document.querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('active',i===0));render()}
+async function load(){
+  try{const [t,s,p]=await Promise.all([api().get('/admin/tests'),api().get('/admin/series'),api().get('/plans')]);tests=t;seriesList=s;plans=p;fillSelects();renderSummary();render()}
+  catch(e){showToast(e.message||'Could not load tests.')}
+}
+
+/* ---------- builder ---------- */
+function renderPicked(){
+  const n=picked.length,marks=parseFloat($('bMarks').value)||0;
+  $('pickedTotal').textContent=n;
+  $('marksHint').textContent=n?`Total marks: ${fmtNum(locked?editTotal:marks*n)} (${n} question${n===1?'':'s'})`:'Total marks are calculated from the number of questions you add.';
+  $('selList').innerHTML=n?picked.map((q,i)=>`<div class="sel-row"><span class="sel-no">${i+1}</span><span class="sel-stem">${esc(oneLine(q.stem,130))}</span>${locked?'':`<button class="iconbtn" title="Move up" onclick="moveQ(${i},-1)">&uarr;</button><button class="iconbtn" title="Move down" onclick="moveQ(${i},1)">&darr;</button><button class="iconbtn" title="Remove" onclick="removeQ(${i})">&times;</button>`}</div>`).join(''):'<div class="hint" style="margin-top:10px">No questions selected yet.</div>';
+}
+function moveQ(i,d){const j=i+d;if(j<0||j>=picked.length)return;[picked[i],picked[j]]=[picked[j],picked[i]];renderPicked()}
+function removeQ(i){picked.splice(i,1);renderPicked()}
+function setBuilder(t){
+  editing=t?t.id:null;editSlug=t?t.slug:null;editTotal=t?t.total_marks:0;editNeg=t?t.negative_mark:0;
+  $('builderTitle').textContent=t?'Edit Test':'Create Test';
+  $('bTitle').value=t?t.title:'';$('bDesc').value=t&&t.description||'';
+  $('bSeries').value=t&&t.series_id||(seriesList[0]?seriesList[0].id:'');if($('bSeries').selectedIndex<0)$('bSeries').selectedIndex=0;
+  $('bType').value=t?t.test_type:'subject';if($('bType').selectedIndex<0)$('bType').selectedIndex=0;
+  $('bAccess').value=t?t.access_type:'premium';if($('bAccess').selectedIndex<0)$('bAccess').selectedIndex=0;
+  $('bTier').value=t?String(t.required_tier||1):(plans.length?String(Math.min(...plans.map(p=>p.tier))):'1');if($('bTier').selectedIndex<0)$('bTier').selectedIndex=0;
+  syncTierField();
+  $('bDuration').value=t?t.duration_minutes:120;$('bRelease').value=t&&t.scheduled_at?toLocalInput(t.scheduled_at):'';
+  const n=t?t.questions.length:0;$('bMarks').value=t&&n?fmtNum(t.total_marks/n):2;$('bNeg').value=t?t.negative_mark:0.67;
+  picked=t?t.questions.map(q=>({id:q.id,stem:q.stem,subject_name:q.subject_name,topic_name:q.topic_name,difficulty:q.difficulty})):[];
+  locked=!!(t&&t.attempt_count>0);
+  ['bMarks','bNeg','selectBtn'].forEach(id=>$(id).disabled=locked);
+  const note=$('lockNotice');note.style.display=locked?'block':'none';
+  if(locked)note.textContent=`This test already has ${t.attempt_count} student attempt${t.attempt_count===1?'':'s'}, so its questions and marking can't be changed. You can still edit the title, access, release time and status. To change the questions, duplicate the test.`;
+  renderPicked();
+}
+function openBuilder(){
+  if(!seriesList.length){showToast('Create a test series first, then add tests to it.');openSeries();return}
+  setBuilder(null);$('builderOverlay').classList.add('show');
+}
+function closeBuilder(){$('builderOverlay').classList.remove('show')}
+async function editTest(id){
+  try{setBuilder(await api().get('/admin/tests/'+id));$('builderOverlay').classList.add('show')}
+  catch(e){showToast(e.message||'Could not open this test.')}
+}
+async function duplicateTest(id){
+  try{
+    const d=await api().get('/admin/tests/'+id);
+    await api().post('/admin/tests',{series_id:d.series_id,title:d.title+' (Copy)',slug:slugify(d.title+' copy'),description:d.description,test_type:d.test_type,duration_minutes:d.duration_minutes,total_marks:d.total_marks,negative_mark:d.negative_mark,access_type:d.access_type,required_tier:d.required_tier||1,scheduled_at:null,status:'draft',question_ids:d.questions.map(q=>q.id)});
+    showToast('A draft copy was created.');await load();
+  }catch(e){showToast(e.message||'Could not duplicate the test.')}
+}
+async function saveTest(status){
+  const title=$('bTitle').value.trim(),series_id=$('bSeries').value,duration=parseInt($('bDuration').value,10),marks=parseFloat($('bMarks').value),neg=parseFloat($('bNeg').value);
+  if(!title)return showToast('Enter a test title.');
+  if(!series_id)return showToast('Choose a test series.');
+  if(!(duration>0))return showToast('Enter the duration in minutes.');
+  if(!(marks>0))return showToast('Marks for a correct answer must be more than 0.');
+  if(!(neg>=0))return showToast('Negative marks cannot be below 0.');
+  if(status==='published'&&!picked.length)return showToast('Add at least one question before publishing.');
+  const requiredTier=parseInt($('bTier').value,10);
+  if($('bAccess').value!=='free'&&!plans.length)return showToast('Create a plan (Admin -> Subscriptions & Plans) before adding a paid test.');
+  const rel=$('bRelease').value;
+  const body={series_id,title,slug:editSlug||slugify(title),description:$('bDesc').value.trim()||null,test_type:$('bType').value,duration_minutes:duration,
+    total_marks:locked?editTotal:+(marks*Math.max(picked.length,1)).toFixed(2),negative_mark:locked?editNeg:neg,access_type:$('bAccess').value,required_tier:requiredTier,
+    scheduled_at:rel?new Date(rel).toISOString():null,status,question_ids:picked.map(q=>q.id)};
+  ['draftBtn','pubBtn'].forEach(id=>$(id).disabled=true);
+  try{
+    if(editing)await api().put('/admin/tests/'+editing,body);else await api().post('/admin/tests',body);
+    closeBuilder();showToast(status==='published'?'Test saved and published.':'Test saved as a draft.');await load();
+  }catch(e){showToast(e.message||'Could not save the test.')}
+  finally{['draftBtn','pubBtn'].forEach(id=>$(id).disabled=false)}
+}
+
+/* ---------- question picker ---------- */
+function updatePicked(){$('pickedCount').textContent=pickerSel.size;const boxes=[...document.querySelectorAll('#pkRows .pick')];$('pkAll').checked=boxes.length>0&&boxes.every(b=>b.checked)}
+function renderPicker(){
+  $('pkRows').innerHTML=pkRows.length?pkRows.map(q=>`<tr class="pk-row" data-id="${esc(q.id)}" style="cursor:pointer"><td><input type="checkbox" class="pick"${pickerSel.has(q.id)?' checked':''}/></td><td style="white-space:pre-line">${esc(oneLine(q.stem,280))}</td><td>${esc(q.subject_name||'-')}</td><td>${esc(q.topic_name||'-')}</td><td>${diffPill(q.difficulty)}</td></tr>`).join(''):'<tr><td colspan="5" style="text-align:center;padding:26px;color:#667085">No questions match. Import questions from Question Bank &rarr; Bulk Import.</td></tr>';
+  $('pkInfo').textContent=`Showing ${pkRows.length} question${pkRows.length===1?'':'s'}`+(pkRows.length>=300?' (first 300 - narrow the filters to see others)':'');
+  updatePicked();
+}
+async function loadPicker(){
+  const p=new URLSearchParams({limit:'300'});
+  [['pkSubject','subject'],['pkDifficulty','difficulty'],['pkStatus','status_filter']].forEach(([id,k])=>{if($(id).value)p.set(k,$(id).value)});
+  const s=$('pkSearch').value.trim();if(s)p.set('search',s);
+  $('pkInfo').textContent='Loading…';
+  try{pkRows=await api().get('/admin/questions?'+p.toString())}catch(e){pkRows=[];showToast(e.message||'Could not load questions.')}
+  renderPicker();
+}
+function openPicker(){if(locked)return;pickerSel=new Map(picked.map(q=>[q.id,q]));$('pickerOverlay').classList.add('show');loadPicker()}
+function closePicker(){$('pickerOverlay').classList.remove('show')}
+function applySelection(){picked=[...pickerSel.values()];closePicker();renderPicked();showToast(`${picked.length} question${picked.length===1?'':'s'} in this test.`)}
+function setPick(row,on){const q=pkRows.find(x=>x.id===row.dataset.id);if(!q)return;const box=row.querySelector('.pick');box.checked=on;if(on)pickerSel.set(q.id,{id:q.id,stem:q.stem,subject_name:q.subject_name,topic_name:q.topic_name,difficulty:q.difficulty});else pickerSel.delete(q.id)}
+
+/* ---------- series ---------- */
+function openSeries(){['sName','sPrice','sDesc'].forEach(id=>$(id).value='');$('sValidity').value=365;$('seriesOverlay').classList.add('show')}
+function closeSeries(){$('seriesOverlay').classList.remove('show')}
+async function saveSeries(){
+  const name=$('sName').value.trim(),price=parseFloat($('sPrice').value||'0');
+  if(!name)return showToast('Enter a series name.');
+  if(!(price>=0))return showToast('Enter a valid price (0 for free).');
+  try{
+    await api().post('/admin/series',{name,slug:slugify(name),description:$('sDesc').value.trim()||null,price_paise:Math.round(price*100),validity_days:parseInt($('sValidity').value,10)||null,status:'published',featured:false});
+    closeSeries();showToast('Test series created.');await load();
+  }catch(e){showToast(e.message||'Could not create the series.')}
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()}));
+  ['searchTests','seriesFilter','typeFilter','audienceFilter','sortFilter'].forEach(id=>$(id).addEventListener('input',render));
+  $('globalSearch').addEventListener('input',e=>{$('searchTests').value=e.target.value;render()});
+  $('bMarks').addEventListener('input',renderPicked);
+  $('bAccess').addEventListener('input',syncTierField);
+  ['pkSubject','pkDifficulty','pkStatus'].forEach(id=>$(id).addEventListener('input',loadPicker));
+  $('pkSearch').addEventListener('input',()=>{clearTimeout(pkTimer);pkTimer=setTimeout(loadPicker,250)});
+  $('pkRows').addEventListener('click',e=>{const row=e.target.closest('tr.pk-row');if(!row)return;const box=row.querySelector('.pick');const on=e.target===box?box.checked:!box.checked;setPick(row,on);updatePicked()});
+  $('pkAll').addEventListener('change',e=>{document.querySelectorAll('#pkRows tr.pk-row').forEach(r=>setPick(r,e.target.checked));updatePicked()});
+  fillSelects();load();
+});
+</script>
+<script src="api-client.js"></script><script src="admin-api.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Question Bank | UPSC Admin</title>
+<meta name="description" content="Admin question bank management for the UPSC Test Series platform."/>
+<style>
+:root{--navy:#10243e;--blue:#1d5fa7;--gold:#d7a93b;--bg:#f6f8fb;--white:#fff;--ink:#18212b;--muted:#667085;--line:#e5e7eb;--sidebar:#0f2238;--green:#198754;--amber:#a46a00;--red:#c2413a}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none;color:inherit}.app{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.sidebar{background:var(--sidebar);color:#c7d2de;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:10px;padding:7px 10px 22px;color:#fff;font-weight:800}.mark{width:35px;height:35px;border-radius:10px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900}.nav-section{margin:18px 8px 8px;color:#7f91a6;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:13px;margin:2px 0}.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);color:#fff}.nav .badge{margin-left:auto;background:var(--gold);color:#132130;border-radius:999px;padding:2px 6px;font-size:10px;font-weight:800}.sidebar-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding:15px 8px 0}.sidebar-bottom a{display:block;padding:8px 4px;font-size:12px;color:#a9b7c7}
+.main{min-width:0}.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10}.top-title strong{display:block;color:var(--navy);font-size:16px}.top-title span{font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:10px}.search{border:1px solid #d9dee5;background:#f8fafc;border-radius:9px;padding:9px 12px;width:250px;font-size:13px}.admin{display:flex;align-items:center;gap:9px;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:#fff}.avatar{width:30px;height:30px;border-radius:50%;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800}
+.content{padding:28px}.head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}.head h1{margin:0;font-size:28px;color:var(--navy);letter-spacing:-.03em}.head p{margin:5px 0 0;color:var(--muted);font-size:13px}.btn{border:1px solid transparent;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-outline{background:#fff;color:var(--navy);border-color:#d6dce3}.btn-danger{background:#fff;color:var(--red);border-color:#e8c4c1}.btn-ghost{background:transparent;color:var(--blue);border:0;padding:8px;cursor:pointer;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.stat .label{font-size:12px;color:var(--muted)}.stat .value{font-size:26px;font-weight:850;color:var(--navy);margin-top:5px}.stat .meta{font-size:11px;color:#98a2b3;margin-top:6px}
+.toolbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.5fr repeat(5,1fr);gap:10px;align-items:center}.field,.select{width:100%;border:1px solid #d9dee5;border-radius:9px;background:#fff;padding:10px 11px;font-size:12px;color:#344054}.field:focus,.select:focus,textarea:focus{outline:2px solid #dbeafe;border-color:#93c5fd}.toolbar-actions{display:flex;gap:8px}.toolbar-actions .btn{flex:1}
+.bulkbar{margin-top:12px;background:#eef4fb;border:1px solid #cfe0f2;border-radius:12px;padding:9px 12px;display:none;align-items:center;justify-content:space-between;gap:10px;color:#214c79;font-size:12px}.bulkbar.show{display:flex}.bulkbar-actions{display:flex;gap:8px}
+.table-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:20px}.card-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.card-head h2{font-size:15px;margin:0;color:var(--navy)}.muted{color:var(--muted);font-size:11px}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:11px 14px;border-bottom:1px solid #eef0f3;font-size:12px;vertical-align:top}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#85909d;background:#fafbfc}.table tr:last-child td{border-bottom:0}.q-check{width:32px}.q-id{font-weight:800;color:var(--blue);white-space:nowrap}.qtext{font-weight:650;color:#26384e;line-height:1.45;max-width:430px}.subtext{font-size:10px;color:#8a94a3;margin-top:5px}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800;white-space:nowrap}.pill.green{background:#eaf7ef;color:#167343}.pill.blue{background:#eaf2fb;color:#245e9a}.pill.amber{background:#fff5dc;color:#946200}.pill.red{background:#fdeceb;color:#a33c34}.pill.gray{background:#f0f2f5;color:#667085}.actions{display:flex;gap:5px;align-items:center}.iconbtn{width:31px;height:31px;border:1px solid #dfe4ea;background:#fff;border-radius:8px;display:grid;place-items:center;cursor:pointer;font-size:13px;color:#52606f}.iconbtn:hover{border-color:#b8c1cc;background:#f8fafc}.pager{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-top:1px solid var(--line);font-size:11px;color:#667085}.pages{display:flex;gap:5px}.page{width:30px;height:30px;border:1px solid #dfe4ea;border-radius:7px;background:#fff;font-size:11px;cursor:pointer}.page.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.overlay{position:fixed;inset:0;background:rgba(15,34,56,.48);display:none;align-items:center;justify-content:center;padding:20px;z-index:30}.overlay.show{display:flex}.modal{width:min(920px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.2)}.modal-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:2}.modal-head h3{margin:0;color:var(--navy);font-size:17px}.close{border:0;background:transparent;font-size:22px;cursor:pointer;color:#6b7280}.modal-body{padding:20px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.full{grid-column:1/-1}.label{display:block;font-size:11px;color:#667085;margin-bottom:6px;font-weight:750;text-transform:uppercase;letter-spacing:.05em}.textarea{min-height:110px;resize:vertical}.option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.option{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fbfcfd}.option .field{margin-top:4px}.modal-foot{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:#fff}
+.import-box{border:1px dashed #b9c5d3;border-radius:12px;padding:24px;text-align:center;background:#f8fafc}.drop-icon{font-size:28px;color:var(--blue)}.import-box strong{display:block;color:var(--navy);margin-top:7px}.import-box span{display:block;color:var(--muted);font-size:12px;margin:5px 0 13px}.import-status{margin-top:12px;font-size:12px;color:#475467;display:none}.import-status.show{display:block}.sample-link{color:var(--blue);font-weight:750;cursor:pointer}
+.detail{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}.panel{border:1px solid var(--line);border-radius:12px;padding:14px}.panel h4{margin:0 0 11px;color:var(--navy);font-size:13px}.detail-q{font-size:14px;font-weight:700;color:#23364e;line-height:1.55}.detail-opt{margin:9px 0;padding:9px 10px;border:1px solid #e6e9ee;border-radius:8px;font-size:12px}.detail-opt.correct{background:#edf8f1;border-color:#c5e6d1}.mini{font-size:11px;color:#667085;line-height:1.5}.split{display:flex;justify-content:space-between;gap:10px;align-items:center}.audit{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:10px;color:#8a94a3}
+@media(max-width:1150px){.toolbar{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.app{grid-template-columns:82px 1fr}.sidebar{padding:16px 9px}.brand span:last-child,.nav-section,.nav a span:not(.badge),.sidebar-bottom{display:none}.brand{justify-content:center}.nav a{justify-content:center}.nav a .badge{display:none}.search{display:none}.detail{grid-template-columns:1fr}}
+@media(max-width:650px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{padding:0 16px}.content{padding:20px 16px}.head{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr 1fr}.toolbar{grid-template-columns:1fr 1fr}.form-grid,.option-grid{grid-template-columns:1fr}.full{grid-column:auto}.table-card{overflow:auto}.table{min-width:980px}.modal{max-height:95vh}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="mark">U</div><span>UPSC Admin</span></div>
+  <div class="nav-section">Overview</div>
+  <nav class="nav">
+    <a href="admin-dashboard.html">▦ <span>Dashboard</span></a>
+    <a href="student-management.html">◉ <span>Students</span><span class="badge">18.5k</span></a>
+    <a class="active" href="question-bank-admin.html">☑ <span>Questions</span></a>
+    <a href="test-management-admin.html">▤ <span>Tests</span></a>
+    <a href="test-management-admin.html#series">▥ <span>Test Series</span></a>
+  </nav>
+  <div class="nav-section">Content</div>
+  <nav class="nav">
+    <a href="current-affairs-admin.html">✦ <span>Current Affairs</span></a>
+    <a href="study-material-admin.html">▣ <span>Study Material</span></a>
+    <a href="blog-admin.html">◌ <span>Blog / CMS</span></a>
+  </nav>
+  <div class="nav-section">Business</div>
+  <nav class="nav">
+    <a href="subscriptions-admin.html">₹ <span>Subscriptions</span></a>
+    <a href="payments-admin.html">◫ <span>Payments</span></a>
+    <a href="coupons-admin.html">◇ <span>Coupons</span></a>
+  </nav>
+  <div class="nav-section">Operations</div>
+  <nav class="nav">
+    <a href="results-admin.html">◎ <span>Results & Rankings</span></a>
+    <a href="notifications-admin.html">◫ <span>Notifications</span></a>
+    <a href="reports-admin.html">◈ <span>Reports</span></a>
+    <a href="settings-admin.html">⚙ <span>Settings</span></a>
+  </nav>
+  <div class="sidebar-bottom"><a href="index.html">View public website →</a><a href="login.html">Student login →</a></div>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div class="top-title"><strong>Question Bank</strong><span>Manage, review and organize UPSC questions</span></div>
+    <div class="top-actions"><input class="search" id="globalSearch" placeholder="Search questions, tags…"/><div class="admin"><div class="avatar">AD</div><span style="font-size:12px;font-weight:750;color:#344054">Admin</span></div></div>
+  </header>
+  <div class="content">
+    <div class="head">
+      <div><h1>Question Bank</h1><p>Central repository for UPSC MCQs, PYQs and practice content.</p></div>
+      <div style="display:flex;gap:8px"><button class="btn btn-outline" onclick="openImport()">⇧ Bulk Import</button><button class="btn btn-primary" onclick="openQuestion()">+ Add Question</button></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="label">Total Questions</div><div class="value" id="statTotal">12,840</div><div class="meta">Across all subjects</div></div>
+      <div class="stat"><div class="label">Published</div><div class="value">11,934</div><div class="meta">Ready for students</div></div>
+      <div class="stat"><div class="label">Needs Review</div><div class="value" id="statReview">312</div><div class="meta">Awaiting editorial check</div></div>
+      <div class="stat"><div class="label">Drafts</div><div class="value">594</div><div class="meta">Not yet published</div></div>
+    </div>
+
+    <div class="toolbar">
+      <input class="field" id="searchQuestions" placeholder="Search question text, source, tag…"/>
+      <select class="select" id="subjectFilter"><option value="">All Subjects</option><option>Polity</option><option>Economy</option><option>History</option><option>Geography</option><option>Environment</option><option>Science & Technology</option><option>Current Affairs</option><option>CSAT</option></select>
+      <select class="select" id="topicFilter"><option value="">All Topics</option><option>Parliament</option><option>Fundamental Rights</option><option>Monetary Policy</option><option>Ecology</option><option>Modern India</option><option>Physical Geography</option><option>Governance</option></select>
+      <select class="select" id="difficultyFilter"><option value="">All Difficulty</option><option>Easy</option><option>Moderate</option><option>Difficult</option></select>
+      <select class="select" id="statusFilter"><option value="">All Status</option><option>Published</option><option>Draft</option><option>Needs Review</option></select>
+      <select class="select" id="sourceFilter"><option value="">All Sources</option><option>Original</option><option>UPSC PYQ</option><option>Current Affairs</option><option>Reference-based</option></select>
+    </div>
+
+    <div class="bulkbar" id="bulkbar"><span><strong id="selectedCount">0</strong> questions selected</span><div class="bulkbar-actions"><button class="btn btn-outline" onclick="bulkAction('publish')">Publish</button><button class="btn btn-outline" onclick="bulkAction('review')">Send to Review</button><button class="btn btn-danger" onclick="bulkAction('delete')">Delete</button></div></div>
+
+    <div class="table-card">
+      <div class="card-head"><div><h2>Question Repository</h2><span class="muted" id="resultCount">Showing 6 questions</span></div><div style="display:flex;gap:8px"><select class="select" id="sortFilter" style="width:160px"><option value="new">Newest First</option><option value="old">Oldest First</option><option value="difficulty">Difficulty</option><option value="subject">Subject</option></select><button class="btn btn-outline" onclick="resetFilters()">Reset</button></div></div>
+      <table class="table"><thead><tr><th class="q-check"><input type="checkbox" id="selectAll"/></th><th>ID</th><th>Question</th><th>Subject / Topic</th><th>Difficulty</th><th>Source</th><th>Status</th><th>Usage</th><th>Actions</th></tr></thead>
+      <tbody id="questionRows"></tbody></table>
+      <div class="pager"><span>Showing <strong id="pagerText">1–6</strong> of 12,840 questions</span><div class="pages"><button class="page active">1</button><button class="page">2</button><button class="page">3</button><button class="page">…</button><button class="page">2140</button><button class="page">›</button></div></div>
+    </div>
+  </div>
+</main>
+</div>
+
+<!-- Add/Edit modal -->
+<div class="overlay" id="questionOverlay">
+  <div class="modal">
+    <div class="modal-head"><h3 id="modalTitle">Add Question</h3><button class="close" onclick="closeModal('questionOverlay')">×</button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div><label class="label">Subject</label><select class="select" id="qSubject"><option>Polity</option><option>Economy</option><option>History</option><option>Geography</option><option>Environment</option><option>Science & Technology</option><option>Current Affairs</option><option>CSAT</option></select></div>
+        <div><label class="label">Topic</label><select class="select" id="qTopic"><option>Parliament</option><option>Fundamental Rights</option><option>Constitutional Bodies</option><option>Monetary Policy</option><option>Ecology</option><option>Modern India</option><option>Physical Geography</option></select></div>
+        <div><label class="label">Sub-topic</label><input class="field" id="qSubtopic" placeholder="e.g. Money Bills"/></div>
+        <div><label class="label">Difficulty</label><select class="select" id="qDifficulty"><option>Easy</option><option selected>Moderate</option><option>Difficult</option></select></div>
+        <div class="full"><label class="label">Question</label><textarea class="field textarea" id="qText" placeholder="Enter the UPSC-style question…"></textarea></div>
+        <div class="full"><label class="label">Options</label><div class="option-grid">
+          <div class="option"><strong>A</strong><input class="field" id="optA" placeholder="Option A"/></div>
+          <div class="option"><strong>B</strong><input class="field" id="optB" placeholder="Option B"/></div>
+          <div class="option"><strong>C</strong><input class="field" id="optC" placeholder="Option C"/></div>
+          <div class="option"><strong>D</strong><input class="field" id="optD" placeholder="Option D"/></div>
+        </div></div>
+        <div><label class="label">Correct Answer</label><select class="select" id="qAnswer"><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+        <div><label class="label">Source Type</label><select class="select" id="qSourceType"><option>Original</option><option>UPSC PYQ</option><option>Current Affairs</option><option>Reference-based</option></select></div>
+        <div class="full"><label class="label">Explanation</label><textarea class="field textarea" id="qExplanation" placeholder="Detailed explanation for the student…"></textarea></div>
+        <div><label class="label">Source / Reference</label><input class="field" id="qSource" placeholder="Constitution, PIB, standard reference…"/></div>
+        <div><label class="label">Tags</label><input class="field" id="qTags" placeholder="parliament, polity, article-110"/></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('questionOverlay')">Cancel</button><button class="btn btn-outline" onclick="saveQuestion('draft')">Save Draft</button><button class="btn btn-primary" onclick="saveQuestion('publish')">Save & Publish</button></div>
+  </div>
+</div>
+
+<!-- Import modal -->
+<div class="overlay" id="importOverlay">
+  <div class="modal" style="width:min(760px,100%)">
+    <div class="modal-head"><h3>Bulk Import Questions</h3><button class="close" onclick="closeModal('importOverlay')">×</button></div>
+    <div class="modal-body">
+      <div class="import-box" id="dropZone"><div class="drop-icon">⇧</div><strong>Upload a Word (.docx) or CSV question file</strong><span>Word files: one “QUESTION 1”, “QUESTION 2”… heading per question, followed by the question, options A) to D), “Answer: B” and an optional “Explanation:”.</span><input type="file" id="csvInput" accept=".docx,.csv" style="display:none"/><button class="btn btn-outline" onclick="document.getElementById('csvInput').click()">Choose File</button><div class="import-status" id="importStatus" style="text-align:left"></div></div>
+      <div style="margin-top:16px" class="form-grid">
+        <div><label class="label" for="impSubject">Subject (for all questions in the file)</label><select class="select" id="impSubject"><option value="">Select subject…</option><option value="polity">Indian Polity</option><option value="economy">Economy</option><option value="history">History</option><option value="geography">Geography</option><option value="environment">Environment</option><option value="science">Science &amp; Technology</option><option value="current">Current Affairs</option><option value="csat">CSAT</option></select></div>
+        <div><label class="label" for="impTopic">Topic (optional)</label><input class="select" id="impTopic" placeholder="e.g. Harappan Civilisation" maxlength="120"/></div>
+        <div><label class="label" for="impDifficulty">Difficulty</label><select class="select" id="impDifficulty"><option value="easy">Easy</option><option value="moderate" selected>Moderate</option><option value="difficult">Difficult</option></select></div>
+        <div><label class="label" for="impStatus">Save as</label><select class="select" id="impStatus"><option value="draft" selected>Draft (hidden from students)</option><option value="published">Published (visible in Question Bank)</option></select></div>
+        <div class="full"><label class="label" for="impSource">Source (optional)</label><input class="select" id="impSource" placeholder="e.g. NCERT Class 11 · Our Pasts" maxlength="200"/></div>
+        <div class="full"><label class="label" for="impYear">UPSC exam year (only for previous-year questions)</label><input class="select" id="impYear" type="number" min="1990" max="2100" placeholder="e.g. 2019 — leave empty for ordinary practice questions"/><div style="font-size:11px;color:#667085;margin-top:4px">Questions with a year appear on the public PYQs page (with answer and explanation) once they are saved as Published.</div></div>
+      </div>
+      <div style="margin-top:16px" class="detail"><div class="panel"><h4>CSV columns</h4><div class="mini">Question · A · B · C · D · Answer (required) — Subject · Topic · Difficulty · Explanation · Source · Year (optional; a Subject in the CSV overrides the one selected above). Excel files: save as CSV first.</div></div><div class="panel"><h4>Validation</h4><div class="mini">Nothing is saved until you have seen the result of the check. Questions with a missing answer or option, or that already exist in the bank, are flagged and skipped.</div></div></div>
+      <div style="margin-top:14px;text-align:center;font-size:12px"><span class="sample-link" onclick="downloadTemplate()">Download sample CSV template</span></div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('importOverlay')">Cancel</button><button class="btn btn-primary" id="importBtn" onclick="runImport()">Validate file</button></div>
+  </div>
+</div>
+
+<!-- View modal -->
+<div class="overlay" id="viewOverlay"><div class="modal" style="width:min(1000px,100%)"><div class="modal-head"><h3 id="viewTitle">Question Details</h3><button class="close" onclick="closeModal('viewOverlay')">×</button></div><div class="modal-body" id="viewBody"></div><div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('viewOverlay')">Close</button><button class="btn btn-primary" id="editFromView">Edit Question</button></div></div></div>
+
+<script>
+const questions=[
+{id:'Q-12840',text:'Consider the following statements regarding Money Bills in Parliament:\n1. A Money Bill can be introduced only in the Lok Sabha.\n2. The Rajya Sabha can reject a Money Bill.\n3. The Speaker certifies whether a Bill is a Money Bill.',subject:'Polity',topic:'Parliament',difficulty:'Moderate',sourceType:'Original',source:'Constitution of India — Articles 109 & 110',status:'Published',usage:4821,correct:'C',options:['Only one of the statements','Only two of the statements','All three of the statements','None of the statements'],tags:'money-bill,parliament'},
+{id:'Q-12839',text:'With reference to monetary policy, which of the following is the most direct effect of an increase in the policy repo rate?',subject:'Economy',topic:'Monetary Policy',difficulty:'Moderate',sourceType:'Original',source:'RBI monetary policy framework',status:'Needs Review',usage:0,correct:'B',options:['Increase in system liquidity','Higher short-term borrowing costs','Immediate fall in government revenue','Automatic appreciation of all commodities'],tags:'repo-rate,rbi,inflation'},
+{id:'Q-12838',text:'Which one of the following pairs is correctly matched?',subject:'History',topic:'Modern India',difficulty:'Easy',sourceType:'UPSC PYQ',source:'UPSC Civil Services Preliminary Examination',status:'Published',usage:3920,correct:'A',options:['Champaran — Indigo cultivation','Dandi — Permanent Settlement','Bardoli — Swadeshi Movement','Kheda — Home Rule Movement'],tags:'modern-india,pyq'},
+{id:'Q-12837',text:'In the context of biodiversity, the term endemic species refers to a species that:',subject:'Environment',topic:'Ecology',difficulty:'Easy',sourceType:'Reference-based',source:'Standard ecology references',status:'Published',usage:3684,correct:'D',options:['is found in every continent','has recently become extinct','migrates seasonally between habitats','is naturally restricted to a particular geographic area'],tags:'biodiversity,endemism'},
+{id:'Q-12836',text:'Which of the following factors most directly explains the formation of western disturbances affecting north-western India?',subject:'Geography',topic:'Physical Geography',difficulty:'Difficult',sourceType:'Original',source:'Indian climatology references',status:'Draft',usage:0,correct:'A',options:['Temperate extra-tropical systems','Summer monsoon trough','Local convection over the Thar','Tropical easterly jet'],tags:'western-disturbances,winter-rainfall'},
+{id:'Q-12835',text:'A government portal introduces a new digital service for citizens. Which principle most closely aligns with improving ease of access while retaining accountability?',subject:'Governance',topic:'Governance',difficulty:'Moderate',sourceType:'Current Affairs',source:'Government digital governance update',status:'Published',usage:2741,correct:'C',options:['Centralisation of every decision','Removal of all documentation','Transparent, trackable service delivery','Restriction of citizen feedback'],tags:'governance,digital-public-services'}
+];
+
+const subjectOrder=['Polity','Economy','History','Geography','Environment','Science & Technology','Current Affairs','CSAT'];
+let selected=new Set(); let editingId=null;
+function badge(status){let c=status==='Published'?'green':status==='Needs Review'?'amber':status==='Draft'?'gray':'red';return `<span class="pill ${c}">${status}</span>`}
+function diff(d){let c=d==='Easy'?'green':d==='Moderate'?'blue':'red';return `<span class="pill ${c}">${d}</span>`}
+function esc(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+function render(){
+ const search=(document.getElementById('searchQuestions').value||document.getElementById('globalSearch').value).toLowerCase();
+ const sf=document.getElementById('subjectFilter').value, tf=document.getElementById('topicFilter').value, df=document.getElementById('difficultyFilter').value, st=document.getElementById('statusFilter').value, src=document.getElementById('sourceFilter').value;
+ let rows=questions.filter(q=>(!search||[q.id,q.text,q.source,q.tags,q.subject,q.topic].join(' ').toLowerCase().includes(search))&&(!sf||q.subject===sf)&&(!tf||q.topic===tf)&&(!df||q.difficulty===df)&&(!st||q.status===st)&&(!src||q.sourceType===src));
+ const sort=document.getElementById('sortFilter').value; rows.sort((a,b)=>sort==='old'?a.id.localeCompare(b.id):sort==='difficulty'?['Easy','Moderate','Difficult'].indexOf(a.difficulty)-['Easy','Moderate','Difficult'].indexOf(b.difficulty):sort==='subject'?a.subject.localeCompare(b.subject):b.id.localeCompare(a.id));
+ document.getElementById('resultCount').textContent=`Showing ${rows.length} question${rows.length===1?'':'s'} in current filter`;
+ document.getElementById('pagerText').textContent=`1–${rows.length}`;
+ document.getElementById('questionRows').innerHTML=rows.map(q=>`<tr>
+ <td><input type="checkbox" class="qrow" data-id="${q.id}" ${selected.has(q.id)?'checked':''}/></td>
+ <td><span class="q-id">${q.id}</span><div class="subtext">${q.tags.split(',').map(t=>'#'+t).join(' ')}</div></td>
+ <td><div class="qtext">${esc(q.text).replace(/\n/g,'<br>')}</div><div class="subtext">Correct: ${q.correct}</div></td>
+ <td><div style="font-weight:750;color:#344054">${q.subject}</div><div class="subtext">${q.topic}</div></td>
+ <td>${diff(q.difficulty)}</td><td><span class="pill blue">${q.sourceType}</span><div class="subtext">${esc(q.source).slice(0,45)}${q.source.length>45?'…':''}</div></td>
+ <td>${badge(q.status)}</td><td><strong>${q.usage.toLocaleString()}</strong><div class="subtext">attempts</div></td>
+ <td><div class="actions"><button class="iconbtn" title="View" onclick="viewQuestion('${q.id}')">⌕</button><button class="iconbtn" title="Edit" onclick="editQuestion('${q.id}')">✎</button><button class="iconbtn" title="Duplicate" onclick="duplicateQuestion('${q.id}')">⧉</button></div></td></tr>`).join('');
+ document.querySelectorAll('.qrow').forEach(el=>el.addEventListener('change',e=>{if(e.target.checked)selected.add(e.target.dataset.id);else selected.delete(e.target.dataset.id);updateBulk()}));
+ updateBulk();
+}
+function updateBulk(){document.getElementById('selectedCount').textContent=selected.size;document.getElementById('bulkbar').classList.toggle('show',selected.size>0);document.getElementById('selectAll').checked=false}
+function resetFilters(){['searchQuestions','globalSearch'].forEach(id=>document.getElementById(id).value='');['subjectFilter','topicFilter','difficultyFilter','statusFilter','sourceFilter'].forEach(id=>document.getElementById(id).value='');document.getElementById('sortFilter').value='new';render()}
+function openQuestion(){editingId=null;document.getElementById('modalTitle').textContent='Add Question';['qSubtopic','qText','optA','optB','optC','optD','qExplanation','qSource','qTags'].forEach(id=>document.getElementById(id).value='');document.getElementById('questionOverlay').classList.add('show')}
+function editQuestion(id){const q=questions.find(x=>x.id===id);if(!q)return;editingId=id;document.getElementById('modalTitle').textContent='Edit '+id;document.getElementById('qSubject').value=q.subject;document.getElementById('qTopic').value=q.topic;document.getElementById('qDifficulty').value=q.difficulty;document.getElementById('qText').value=q.text;document.getElementById('optA').value=q.options[0];document.getElementById('optB').value=q.options[1];document.getElementById('optC').value=q.options[2];document.getElementById('optD').value=q.options[3];document.getElementById('qAnswer').value=q.correct;document.getElementById('qSourceType').value=q.sourceType;document.getElementById('qExplanation').value='Detailed explanation will be stored here.';document.getElementById('qSource').value=q.source;document.getElementById('qTags').value=q.tags;document.getElementById('questionOverlay').classList.add('show')}
+function saveQuestion(mode){const text=document.getElementById('qText').value.trim();if(!text){alert('Please enter the question text.');return}const obj={id:editingId||'Q-'+(12841+questions.length),text,subject:document.getElementById('qSubject').value,topic:document.getElementById('qTopic').value,difficulty:document.getElementById('qDifficulty').value,sourceType:document.getElementById('qSourceType').value,source:document.getElementById('qSource').value||'Not specified',status:mode==='publish'?'Published':'Draft',usage:0,correct:document.getElementById('qAnswer').value,options:[document.getElementById('optA').value,document.getElementById('optB').value,document.getElementById('optC').value,document.getElementById('optD').value],tags:document.getElementById('qTags').value};if(editingId){const i=questions.findIndex(x=>x.id===editingId);questions[i]={...questions[i],...obj}}else questions.unshift(obj);closeModal('questionOverlay');render();alert(mode==='publish'?'Question saved and published.':'Question saved as draft.')}
+function duplicateQuestion(id){const q=questions.find(x=>x.id===id);if(!q)return;questions.unshift({...q,id:'Q-'+(12841+questions.length),status:'Draft',usage:0});render();alert('Question duplicated as a draft.')}
+function viewQuestion(id){const q=questions.find(x=>x.id===id);if(!q)return;document.getElementById('viewTitle').textContent=q.id+' · '+q.subject;document.getElementById('viewBody').innerHTML=`<div class="detail"><div class="panel"><div class="split"><div>${badge(q.status)} ${diff(q.difficulty)}</div><span class="mini">${q.sourceType}</span></div><div class="detail-q" style="margin-top:14px">${esc(q.text).replace(/\n/g,'<br>')}</div>${q.options.map((o,i)=>`<div class="detail-opt ${String.fromCharCode(65+i)===q.correct?'correct':''}"><strong>${String.fromCharCode(65+i)}.</strong> ${esc(o)}</div>`).join('')}<div class="audit">Correct answer: <strong>${q.correct}</strong> · Usage: ${q.usage.toLocaleString()} attempts</div></div><div><div class="panel"><h4>Metadata</h4><div class="mini"><strong>Subject:</strong> ${q.subject}<br><strong>Topic:</strong> ${q.topic}<br><strong>Source:</strong> ${esc(q.source)}<br><strong>Tags:</strong> ${esc(q.tags)}</div></div><div class="panel" style="margin-top:12px"><h4>Editorial note</h4><div class="mini">Detailed solution and editorial comments will appear here when connected to the content database.</div></div></div></div>`;document.getElementById('editFromView').onclick=()=>{closeModal('viewOverlay');editQuestion(id)};document.getElementById('viewOverlay').classList.add('show')}
+function bulkAction(action){if(!selected.size)return;const msg=action==='delete'?`Delete ${selected.size} selected questions?`:`${action==='publish'?'Publish':'Send '+selected.size+' questions to review'}?`;if(action==='delete'&&!confirm(msg))return;alert(action==='delete'?'Selected questions deleted (demo).':msg.replace('?',' completed (demo).'));selected.clear();updateBulk()}
+let importFile=null,importChecked=false;
+function importMsg(html,kind){const el=document.getElementById('importStatus');el.innerHTML=html;el.style.color=kind==='error'?'#b42318':kind==='ok'?'#067647':'#475467';el.classList.add('show')}
+function importBtn(label,disabled){const b=document.getElementById('importBtn');b.textContent=label;b.disabled=!!disabled}
+function resetImportCheck(){importChecked=false;importBtn('Validate file',false)}
+function openImport(){importFile=null;document.getElementById('csvInput').value='';const el=document.getElementById('importStatus');el.classList.remove('show');el.innerHTML='';resetImportCheck();document.getElementById('importOverlay').classList.add('show')}
+async function runImport(){
+  if(!importFile){importMsg('Choose a .docx or .csv file first.','error');return}
+  const isDocx=importFile.name.toLowerCase().endsWith('.docx');
+  const subject=document.getElementById('impSubject').value;
+  if(isDocx&&!subject){importMsg('Select a subject for the questions in this file.','error');return}
+  const commit=importChecked;
+  const params=new URLSearchParams({dry_run:commit?'false':'true',difficulty:document.getElementById('impDifficulty').value,status:document.getElementById('impStatus').value});
+  if(subject)params.set('subject_id',subject);
+  const topic=document.getElementById('impTopic').value.trim();if(topic)params.set('topic',topic);
+  const src=document.getElementById('impSource').value.trim();if(src)params.set('source',src);const yr=document.getElementById('impYear').value.trim();if(yr)params.set('year',yr);
+  const fd=new FormData();fd.append('file',importFile);
+  importBtn(commit?'Importing…':'Checking…',true);
+  try{
+    const r=await window.UPSC_API.upload('/admin/questions/import?'+params.toString(),fd);
+    const problems=(r.errors||[]).slice(0,10).map(e=>`<li>Question ${esc(e.number)}: ${esc(e.problems.join('; '))}</li>`).join('');
+    const more=r.flagged>10?`<li>…and ${r.flagged-10} more</li>`:'';
+    const flagged=r.flagged?`<div style="margin-top:8px"><strong>${r.flagged} will be skipped:</strong><ul style="margin:4px 0 0 18px;padding:0">${problems}${more}</ul></div>`:'';
+    if(commit){
+      importMsg(`<strong>Imported ${r.created} question${r.created===1?'':'s'}.</strong>${r.flagged?` ${r.flagged} skipped.`:''}${flagged}`,'ok');
+      importFile=null;document.getElementById('csvInput').value='';resetImportCheck();
+      if(window.reloadAdminQuestions)window.reloadAdminQuestions();
+    }else{
+      const first=(r.preview||[])[0];
+      const prev=first?`<div style="margin-top:10px;padding:10px;border:1px solid #e4e7ec;border-radius:8px;background:#fff;color:#344054"><strong>Preview — question ${esc(first.number)}</strong><div style="white-space:pre-line;margin-top:6px">${esc(first.stem)}</div><div style="margin-top:6px">${['A','B','C','D'].map(k=>`${k===first.answer?'✔ ':''}${k}) ${esc(first.options[k]||'')}`).join('<br>')}</div></div>`:'';
+      importMsg(`<strong>${r.valid} of ${r.total} question${r.total===1?'':'s'} ready to import.</strong>${flagged}${prev}`,r.valid?'ok':'error');
+      importChecked=r.valid>0;
+      importBtn(r.valid?`Import ${r.valid} question${r.valid===1?'':'s'}`:'Validate file',false);
+    }
+  }catch(e){
+    importMsg(esc(e.message||'Import failed'),'error');
+    importBtn(commit?`Import questions`:'Validate file',false);
+  }
+}
+function downloadTemplate(){const csv='Question,A,B,C,D,Answer,Subject,Topic,Difficulty,Explanation,Source,Tags\n"Sample UPSC question?","Option A","Option B","Option C","Option D","A","Polity","Parliament","Moderate","Detailed explanation...","Reference","tag1,tag2"\n';const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);a.download='upsc-question-bank-template.csv';a.click()}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+document.getElementById('selectAll').addEventListener('change',e=>{document.querySelectorAll('.qrow').forEach(el=>{el.checked=e.target.checked;if(e.target.checked)selected.add(el.dataset.id);else selected.delete(el.dataset.id)});updateBulk()});
+['searchQuestions','globalSearch','subjectFilter','topicFilter','difficultyFilter','statusFilter','sourceFilter','sortFilter'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+document.getElementById('csvInput').addEventListener('change',e=>{importFile=e.target.files[0]||null;resetImportCheck();if(importFile)importMsg(`Selected: <strong>${esc(importFile.name)}</strong> (${Math.max(1,Math.round(importFile.size/1024))} KB). Choose the subject below, then click “Validate file”.`,'info')});
+['impSubject','impTopic','impDifficulty','impStatus','impSource','impYear'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{if(importChecked)resetImportCheck()}));
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.overlay').forEach(x=>x.classList.remove('show'))}});
+render();
+</script>
+<script src="api-client.js"></script><script src="admin-api.js"></script>
+</body></html>

@@ -1,46 +1,60 @@
-# UPSC Test Series Backend
+# UPSC Test Series Platform — v54
 
-FastAPI backend for the UPSC Test Series platform.
+This package contains the public website, student portal, admin panel, API client, CMS screens, and a runnable FastAPI backend.
 
-## Local development
+## Architecture
+
+`public website → authentication → student portal → test engine → results/analytics`
+
+`admin portal → question/test/CMS management → subscriptions/payments → notifications/reports/settings`
+
+## Run locally with SQLite
 
 ```bash
 cd backend
-python -m venv .venv
-.venv\Scripts\activate   # Windows
-# source .venv/bin/activate # macOS/Linux
 pip install -r requirements.txt
-set DB_BACKEND=sqlite       # Windows cmd
-# export DB_BACKEND=sqlite  # macOS/Linux
-uvicorn app:app --reload --port 8000
+DB_BACKEND=sqlite uvicorn app:app --reload --port 8000
 ```
 
-API docs: `http://127.0.0.1:8000/docs`
+Serve the project root separately, for example:
 
-## Authentication
+```bash
+python -m http.server 5500
+```
 
-- JWT access tokens
-- OTP verification endpoints
-- Password-reset OTP + one-time reset tokens
-- Optional mandatory email verification via `AUTH_REQUIRE_VERIFICATION=true`
-- Development OTP is shown only when `DEV_SHOW_OTP=true` outside production
+Then open `login.html` and register a student. On a development machine only (`APP_ENV` not `production`), an admin account is created for testing:
 
-## Notifications
+`admin@example.com` / `AdminPass1!`
 
-Email delivery uses SMTP when `SMTP_HOST` and `EMAIL_FROM` are configured. In-app notifications are stored in the database. Delivery attempts are recorded in `notification_deliveries`.
+**This account does not exist in production.** A production server creates its first admin from `ADMIN_EMAIL` / `ADMIN_PASSWORD` and refuses to start while the development admin still has this password. See `deployment/README.md` for going live.
 
-## File storage
+## Run with PostgreSQL
 
-The admin file-upload endpoint supports `local` and S3-compatible object storage. Production should use S3/object storage and private access for protected resources.
+The backend now supports PostgreSQL through psycopg 3.
 
-## Database
+```bash
+DB_BACKEND=postgres
+DATABASE_URL=postgresql://upsc_user:password@localhost:5432/upsc
+JWT_SECRET=<long-random-secret>
+```
 
-SQLite is convenient for local development. PostgreSQL is the intended production backend; set `DB_BACKEND=postgres` and `DATABASE_URL`.
+The runtime schema used by the active application is:
 
-## Payments
+`backend/database/schema-runtime-postgres.sql`
 
-Razorpay is implemented in `payment/razorpay_provider.py` (Orders API, Checkout signature check, webhook signature check, refunds; standard library only). Set `PAYMENT_PROVIDER=razorpay` with `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET` and `RAZORPAY_WEBHOOK_SECRET`; the browser confirms via `POST /payments/razorpay/verify` and Razorpay itself calls `POST /payments/razorpay/webhook`. In production the development provider is switched off (checkout answers 503). Keep credentials in environment variables; never place secrets in frontend files.
+The helper script is:
 
-## Production start-up checks
+`backend/scripts/init_postgres.py`
 
-With `APP_ENV=production` the API refuses to start unless `JWT_SECRET` is a random value of 32+ characters, and unless an admin exists (or `ADMIN_EMAIL` and a 12+ character `ADMIN_PASSWORD` are supplied for the first start). Sample data and the development admin are never created in production (`SEED_DEMO_DATA=true` adds sample data for a staging copy). See `deployment/README.md`.
+The Docker deployment scaffold is under `deployment/`.
+
+## Current production status
+
+The repository and schema are prepared for PostgreSQL, but this build environment does not provide a running PostgreSQL server, so a live PostgreSQL connection could not be executed here. SQLite regression tests and the PostgreSQL adapter unit path were verified.
+
+Real payment-gateway credentials, email/SMS/push providers, object storage, managed PostgreSQL backups, TLS and production secrets must be configured before accepting live traffic.
+
+
+## v55 — Checkout
+
+Open `checkout.html?plan_id=plan2` after logging in to test the development checkout. Set `PAYMENT_PROVIDER=development` for local simulation. Real gateway integration is intentionally disabled until a concrete provider adapter and production credentials are configured.
